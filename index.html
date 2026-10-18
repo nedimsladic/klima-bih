@@ -423,14 +423,22 @@ footer strong { font: 700 1.15rem/1.4 var(--f-display); color: var(--ink); displ
     <div class="head text">
       <p class="label">1901 → 2099</p>
       <h2><span class="bs">Klima <em>u pokretu</em></span><span class="en">Climate <em>in motion</em></span></h2>
-      <p class="bs">Šest perioda jedan za drugim, s udjelom klimatskih tipova ispod karte. GIF verziju možete preuzeti i podijeliti.</p>
-      <p class="en">Six periods one after another, with climate type shares below the map. You can download the GIF and share it.</p>
+      <p class="bs">Šest perioda jedan za drugim, za BiH ili cijelu regiju (BiH, Slovenija, Hrvatska, Srbija, Crna Gora, Kosovo, Albanija
+        i Sjeverna Makedonija), s udjelom klimatskih tipova u legendi. GIF verzije možete preuzeti i podijeliti.</p>
+      <p class="en">Six periods one after another, for BiH or the whole region (BiH, Slovenia, Croatia, Serbia, Montenegro, Kosovo, Albania
+        and North Macedonia), with climate type shares in the legend. You can download the GIFs and share them.</p>
     </div>
-    <div class="controls"><div class="grp tabs" data-target="animImg">
-      <button class="chip" aria-pressed="true" data-src="img/animacija_ssp245.webp">SSP2-4.5</button>
-      <button class="chip" aria-pressed="false" data-src="img/animacija_ssp585.webp">SSP5-8.5</button>
+    <div class="controls" data-chooser="animImg" data-pattern="img/animacija{r}_{s}.webp">
+      <div class="grp" data-key="r"><span><span class="bs">Područje</span><span class="en">Area</span></span>
+        <button class="chip" aria-pressed="true" data-v="">BiH</button>
+        <button class="chip" aria-pressed="false" data-v="_regija">Balkan</button></div>
+      <div class="grp" data-key="s"><span><span class="bs">Scenarij</span><span class="en">Scenario</span></span>
+        <button class="chip" aria-pressed="true" data-v="ssp245">SSP2-4.5</button>
+        <button class="chip" aria-pressed="false" data-v="ssp585">SSP5-8.5</button></div>
     </div>
-    <div class="grp"><a href="img/animacija_ssp245.gif" class="chip">GIF · SSP2-4.5</a><a href="img/animacija_ssp585.gif" class="chip">GIF · SSP5-8.5</a></div></div>
+    <div class="controls"><div class="grp"><span>GIF</span>
+      <a href="img/animacija_ssp245.gif" class="chip">BiH · SSP2-4.5</a><a href="img/animacija_ssp585.gif" class="chip">BiH · SSP5-8.5</a>
+      <a href="img/animacija_regija_ssp245.gif" class="chip">Balkan · SSP2-4.5</a><a href="img/animacija_regija_ssp585.gif" class="chip">Balkan · SSP5-8.5</a></div></div>
     <figure style="max-width: 620px">
       <a class="plate" href="#" id="animImg" data-src="img/animacija_ssp245.webp" data-cap="Klima u pokretu 1901–2099">
         <img src="img/animacija_ssp245.webp" alt="Animacija klimatskih tipova BiH od 1901. do 2099." loading="lazy"></a>
