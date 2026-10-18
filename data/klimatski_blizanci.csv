@@ -1,21 +1,281 @@
-grad u BiH,2041–2070 SSP245,2071–2099 SSP126,2071–2099 SSP245,2071–2099 SSP585
-Gradiška,Treviso (Italija),Treviso (Italija),Venecija (Italija),Bologna (Italija)
-Prijedor,Treviso (Italija),Treviso (Italija),Treviso (Italija),Firenca (Italija)
-Cazin,Bihać (BiH),Bihać (BiH),Bihać (BiH),Tirana (Albanija)
-Brčko,Bijeljina (BiH),Bijeljina (BiH),Bologna (Italija),Bologna (Italija)
-Bihać,Trieste (Italija),Trieste (Italija),Kutaisi (Gruzija),Tirana (Albanija)
-Banja Luka,Prijedor (BiH),Prijedor (BiH),Prijedor (BiH),Venecija (Italija)
-Bijeljina,Brčko (BiH),Brčko (BiH),Bologna (Italija),Katerini (Grčka)
-Doboj,Gradiška (BiH),Gradiška (BiH),Treviso (Italija),Bologna (Italija)
-Tuzla,Bijeljina (BiH),Doboj (BiH),Bijeljina (BiH),Bologna (Italija)
-Zvornik,Gradiška (BiH),Prijedor (BiH),Treviso (Italija),Venecija (Italija)
-Travnik,Zenica (BiH),Zenica (BiH),Zenica (BiH),Peć (Kosovo)
-Zenica,Sarajevo (BiH),Sarajevo (BiH),Prijedor (BiH),Prizren (Kosovo)
-Bugojno,Prizren (Kosovo),Sarajevo (BiH),Prizren (Kosovo),Bologna (Italija)
-Sarajevo,Goražde (BiH),Goražde (BiH),Goražde (BiH),Prizren (Kosovo)
-Livno,Foča (BiH),Foča (BiH),Foča (BiH),Peć (Kosovo)
-Goražde,Peć (Kosovo),Peć (Kosovo),Prizren (Kosovo),Firenca (Italija)
-Konjic,Mostar (BiH),Mostar (BiH),Elbasan (Albanija),Tirana (Albanija)
-Foča,Peć (Kosovo),Peć (Kosovo),Peć (Kosovo),Split (Hrvatska)
-Mostar,Tirana (Albanija),Tirana (Albanija),Shkodër (Albanija),Shkodër (Albanija)
-Trebinje,Podgorica (Crna Gora),Podgorica (Crna Gora),Podgorica (Crna Gora),Shkodër (Albanija)
+grad u BiH,period,scenarij,klimatski blizanac,relativna udaljenost,kvalitet,"razlika jul (°C, blizanac − budući grad)"
+Gradiška,2041–2070,SSP119,Treviso (Italija),1.23,dobro,+0.1
+Gradiška,2041–2070,SSP126,Treviso (Italija),1.24,dobro,-0.5
+Gradiška,2041–2070,SSP434,Treviso (Italija),1.44,dobro,-0.8
+Gradiška,2041–2070,SSP245,Treviso (Italija),1.33,dobro,-1.0
+Gradiška,2041–2070,SSP460,Treviso (Italija),1.37,dobro,-0.9
+Gradiška,2041–2070,SSP370,Treviso (Italija),1.49,dobro,-1.4
+Gradiška,2041–2070,SSP585,Venecija (Italija),1.69,umjereno,-2.0
+Gradiška,2071–2099,SSP119,Treviso (Italija),1.30,dobro,+0.2
+Gradiška,2071–2099,SSP126,Treviso (Italija),1.23,dobro,-0.6
+Gradiška,2071–2099,SSP434,Treviso (Italija),1.38,dobro,-1.1
+Gradiška,2071–2099,SSP245,Venecija (Italija),1.62,umjereno,-1.9
+Gradiška,2071–2099,SSP460,Venecija (Italija),1.89,umjereno,-2.1
+Gradiška,2071–2099,SSP370,Bologna (Italija),2.29,umjereno,-2.2
+Gradiška,2071–2099,SSP585,Bologna (Italija),2.80,slabo,-3.4
+Prijedor,2041–2070,SSP119,Grenoble (Francuska),1.37,dobro,-1.4
+Prijedor,2041–2070,SSP126,Treviso (Italija),1.41,dobro,+0.0
+Prijedor,2041–2070,SSP434,Treviso (Italija),1.40,dobro,-0.3
+Prijedor,2041–2070,SSP245,Treviso (Italija),1.33,dobro,-0.5
+Prijedor,2041–2070,SSP460,Treviso (Italija),1.40,dobro,-0.4
+Prijedor,2041–2070,SSP370,Treviso (Italija),1.44,dobro,-0.8
+Prijedor,2041–2070,SSP585,Venecija (Italija),1.55,umjereno,-1.4
+Prijedor,2071–2099,SSP119,Grenoble (Francuska),1.31,dobro,-1.4
+Prijedor,2071–2099,SSP126,Treviso (Italija),1.40,dobro,+0.0
+Prijedor,2071–2099,SSP434,Treviso (Italija),1.47,dobro,-0.6
+Prijedor,2071–2099,SSP245,Treviso (Italija),1.61,umjereno,-1.3
+Prijedor,2071–2099,SSP460,Venecija (Italija),1.70,umjereno,-1.6
+Prijedor,2071–2099,SSP370,Firenca (Italija),2.15,umjereno,-2.4
+Prijedor,2071–2099,SSP585,Firenca (Italija),2.65,slabo,-3.7
+Cazin,2041–2070,SSP119,Bihać (BiH),0.46,dobro,-0.5
+Cazin,2041–2070,SSP126,Bihać (BiH),0.67,dobro,-1.1
+Cazin,2041–2070,SSP434,Bihać (BiH),1.05,dobro,-1.4
+Cazin,2041–2070,SSP245,Bihać (BiH),1.01,dobro,-1.5
+Cazin,2041–2070,SSP460,Bihać (BiH),1.06,dobro,-1.4
+Cazin,2041–2070,SSP370,Bihać (BiH),1.31,dobro,-1.9
+Cazin,2041–2070,SSP585,Bihać (BiH),1.68,umjereno,-2.4
+Cazin,2071–2099,SSP119,Bihać (BiH),0.35,dobro,-0.4
+Cazin,2071–2099,SSP126,Bihać (BiH),0.72,dobro,-1.1
+Cazin,2071–2099,SSP434,Bihać (BiH),1.24,dobro,-1.7
+Cazin,2071–2099,SSP245,Bihać (BiH),1.62,umjereno,-2.4
+Cazin,2071–2099,SSP460,Bihać (BiH),2.00,umjereno,-2.7
+Cazin,2071–2099,SSP370,Burrel (Albanija),2.10,umjereno,-1.9
+Cazin,2071–2099,SSP585,Berat (Albanija),2.25,umjereno,-1.4
+Brčko,2041–2070,SSP119,Bijeljina (BiH),0.83,dobro,-0.9
+Brčko,2041–2070,SSP126,Bijeljina (BiH),1.15,dobro,-1.6
+Brčko,2041–2070,SSP434,Bijeljina (BiH),1.37,dobro,-1.8
+Brčko,2041–2070,SSP245,Bijeljina (BiH),1.49,dobro,-2.1
+Brčko,2041–2070,SSP460,Bijeljina (BiH),1.45,dobro,-2.0
+Brčko,2041–2070,SSP370,Bijeljina (BiH),1.77,umjereno,-2.5
+Brčko,2041–2070,SSP585,Bologna (Italija),1.84,umjereno,-0.6
+Brčko,2071–2099,SSP119,Bijeljina (BiH),0.77,dobro,-0.9
+Brčko,2071–2099,SSP126,Bijeljina (BiH),1.21,dobro,-1.7
+Brčko,2071–2099,SSP434,Bijeljina (BiH),1.58,umjereno,-2.1
+Brčko,2071–2099,SSP245,Bologna (Italija),1.92,umjereno,-0.4
+Brčko,2071–2099,SSP460,Bologna (Italija),1.87,umjereno,-0.6
+Brčko,2071–2099,SSP370,Bologna (Italija),2.13,umjereno,-2.1
+Brčko,2071–2099,SSP585,Bologna (Italija),2.73,slabo,-3.4
+Bihać,2041–2070,SSP119,Trieste (Italija),1.41,dobro,-0.8
+Bihać,2041–2070,SSP126,Trieste (Italija),1.45,dobro,-1.3
+Bihać,2041–2070,SSP434,Trieste (Italija),1.84,umjereno,-1.6
+Bihać,2041–2070,SSP245,Trieste (Italija),1.77,umjereno,-1.8
+Bihać,2041–2070,SSP460,Trieste (Italija),1.88,umjereno,-1.7
+Bihać,2041–2070,SSP370,Kutaisi (Gruzija),1.94,umjereno,-0.7
+Bihać,2041–2070,SSP585,Kutaisi (Gruzija),2.01,umjereno,-1.2
+Bihać,2071–2099,SSP119,Trieste (Italija),1.38,dobro,-0.7
+Bihać,2071–2099,SSP126,Trieste (Italija),1.53,umjereno,-1.3
+Bihać,2071–2099,SSP434,Burrel (Albanija),1.98,umjereno,-0.4
+Bihać,2071–2099,SSP245,Kutaisi (Gruzija),1.87,umjereno,-1.2
+Bihać,2071–2099,SSP460,Gramsh (Albanija),2.04,umjereno,-1.5
+Bihać,2071–2099,SSP370,Tirana (Albanija),2.25,umjereno,-1.8
+Bihać,2071–2099,SSP585,Berat (Albanija),2.27,umjereno,-2.1
+Banja Luka,2041–2070,SSP119,Prijedor (BiH),0.78,dobro,-0.2
+Banja Luka,2041–2070,SSP126,Prijedor (BiH),0.89,dobro,-0.8
+Banja Luka,2041–2070,SSP434,Prijedor (BiH),0.91,dobro,-1.1
+Banja Luka,2041–2070,SSP245,Prijedor (BiH),1.01,dobro,-1.3
+Banja Luka,2041–2070,SSP460,Prijedor (BiH),1.04,dobro,-1.2
+Banja Luka,2041–2070,SSP370,Prijedor (BiH),1.26,dobro,-1.7
+Banja Luka,2041–2070,SSP585,Treviso (Italija),1.45,dobro,-0.4
+Banja Luka,2071–2099,SSP119,Prijedor (BiH),0.69,dobro,-0.1
+Banja Luka,2071–2099,SSP126,Prijedor (BiH),0.93,dobro,-0.9
+Banja Luka,2071–2099,SSP434,Prijedor (BiH),1.07,dobro,-1.4
+Banja Luka,2071–2099,SSP245,Treviso (Italija),1.56,umjereno,-0.3
+Banja Luka,2071–2099,SSP460,Treviso (Italija),1.48,dobro,-0.6
+Banja Luka,2071–2099,SSP370,Venecija (Italija),1.79,umjereno,-1.9
+Banja Luka,2071–2099,SSP585,Venecija (Italija),2.24,umjereno,-3.2
+Bijeljina,2041–2070,SSP119,Brčko (BiH),1.27,dobro,-1.4
+Bijeljina,2041–2070,SSP126,Brčko (BiH),1.59,umjereno,-2.1
+Bijeljina,2041–2070,SSP434,Brčko (BiH),1.73,umjereno,-2.3
+Bijeljina,2041–2070,SSP245,Brčko (BiH),1.92,umjereno,-2.6
+Bijeljina,2041–2070,SSP460,Khaskovo (Bugarska),1.86,umjereno,-1.1
+Bijeljina,2041–2070,SSP370,Bologna (Italija),1.99,umjereno,-0.2
+Bijeljina,2041–2070,SSP585,Bologna (Italija),1.95,umjereno,-0.8
+Bijeljina,2071–2099,SSP119,Brčko (BiH),1.19,dobro,-1.4
+Bijeljina,2071–2099,SSP126,Brčko (BiH),1.66,umjereno,-2.2
+Bijeljina,2071–2099,SSP434,Modena (Italija),1.74,umjereno,-0.1
+Bijeljina,2071–2099,SSP245,Bologna (Italija),2.03,umjereno,-0.7
+Bijeljina,2071–2099,SSP460,Bologna (Italija),1.99,umjereno,-0.8
+Bijeljina,2071–2099,SSP370,Bologna (Italija),2.32,umjereno,-2.4
+Bijeljina,2071–2099,SSP585,Seres (Grčka),2.94,slabo,-2.4
+Doboj,2041–2070,SSP119,Gradiška (BiH),0.93,dobro,-0.6
+Doboj,2041–2070,SSP126,Gradiška (BiH),1.16,dobro,-1.2
+Doboj,2041–2070,SSP434,Bijeljina (BiH),1.32,dobro,-1.4
+Doboj,2041–2070,SSP245,Gradiška (BiH),1.43,dobro,-1.8
+Doboj,2041–2070,SSP460,Bijeljina (BiH),1.48,dobro,-1.6
+Doboj,2041–2070,SSP370,Treviso (Italija),1.56,umjereno,-0.8
+Doboj,2041–2070,SSP585,Treviso (Italija),1.72,umjereno,-1.4
+Doboj,2071–2099,SSP119,Gradiška (BiH),0.78,dobro,-0.6
+Doboj,2071–2099,SSP126,Gradiška (BiH),1.21,dobro,-1.3
+Doboj,2071–2099,SSP434,Treviso (Italija),1.47,dobro,-0.4
+Doboj,2071–2099,SSP245,Treviso (Italija),1.62,umjereno,-1.2
+Doboj,2071–2099,SSP460,Modena (Italija),1.87,umjereno,-0.5
+Doboj,2071–2099,SSP370,Bologna (Italija),2.01,umjereno,-1.6
+Doboj,2071–2099,SSP585,Bologna (Italija),2.46,umjereno,-2.9
+Tuzla,2041–2070,SSP119,Doboj (BiH),0.64,dobro,-0.6
+Tuzla,2041–2070,SSP126,Doboj (BiH),0.94,dobro,-1.2
+Tuzla,2041–2070,SSP434,Bijeljina (BiH),0.82,dobro,-0.7
+Tuzla,2041–2070,SSP245,Bijeljina (BiH),1.05,dobro,-1.0
+Tuzla,2041–2070,SSP460,Bijeljina (BiH),0.97,dobro,-0.9
+Tuzla,2041–2070,SSP370,Bijeljina (BiH),1.21,dobro,-1.4
+Tuzla,2041–2070,SSP585,Bijeljina (BiH),1.46,dobro,-2.0
+Tuzla,2071–2099,SSP119,Doboj (BiH),0.54,dobro,-0.5
+Tuzla,2071–2099,SSP126,Doboj (BiH),0.97,dobro,-1.3
+Tuzla,2071–2099,SSP434,Bijeljina (BiH),1.09,dobro,-0.9
+Tuzla,2071–2099,SSP245,Bijeljina (BiH),1.49,dobro,-1.9
+Tuzla,2071–2099,SSP460,Bijeljina (BiH),1.56,umjereno,-2.0
+Tuzla,2071–2099,SSP370,Bologna (Italija),1.99,umjereno,-1.0
+Tuzla,2071–2099,SSP585,Bologna (Italija),2.26,umjereno,-2.2
+Zvornik,2041–2070,SSP119,Prijedor (BiH),1.23,dobro,-0.1
+Zvornik,2041–2070,SSP126,Prijedor (BiH),1.37,dobro,-0.8
+Zvornik,2041–2070,SSP434,Doboj (BiH),1.32,dobro,-1.1
+Zvornik,2041–2070,SSP245,Gradiška (BiH),1.47,dobro,-0.8
+Zvornik,2041–2070,SSP460,Gradiška (BiH),1.48,dobro,-0.6
+Zvornik,2041–2070,SSP370,Gradiška (BiH),1.65,umjereno,-1.2
+Zvornik,2041–2070,SSP585,Treviso (Italija),1.71,umjereno,-0.4
+Zvornik,2071–2099,SSP119,Prijedor (BiH),1.11,dobro,-0.1
+Zvornik,2071–2099,SSP126,Prijedor (BiH),1.37,dobro,-0.8
+Zvornik,2071–2099,SSP434,Prijedor (BiH),1.45,dobro,-1.2
+Zvornik,2071–2099,SSP245,Treviso (Italija),1.73,umjereno,-0.3
+Zvornik,2071–2099,SSP460,Treviso (Italija),1.82,umjereno,-0.4
+Zvornik,2071–2099,SSP370,Venecija (Italija),2.02,umjereno,-2.0
+Zvornik,2071–2099,SSP585,Venecija (Italija),2.51,slabo,-3.2
+Travnik,2041–2070,SSP119,Zenica (BiH),1.71,umjereno,+1.4
+Travnik,2041–2070,SSP126,Zenica (BiH),1.49,dobro,+0.8
+Travnik,2041–2070,SSP434,Zenica (BiH),1.25,dobro,+0.5
+Travnik,2041–2070,SSP245,Zenica (BiH),1.16,dobro,+0.2
+Travnik,2041–2070,SSP460,Zenica (BiH),1.27,dobro,+0.4
+Travnik,2041–2070,SSP370,Zenica (BiH),1.07,dobro,-0.1
+Travnik,2041–2070,SSP585,Zenica (BiH),1.01,dobro,-0.8
+Travnik,2071–2099,SSP119,Solothurn (Švicarska),1.74,umjereno,-0.6
+Travnik,2071–2099,SSP126,Zenica (BiH),1.47,dobro,+0.8
+Travnik,2071–2099,SSP434,Zenica (BiH),1.28,dobro,+0.2
+Travnik,2071–2099,SSP245,Zenica (BiH),1.12,dobro,-0.6
+Travnik,2071–2099,SSP460,Zenica (BiH),1.00,dobro,-0.8
+Travnik,2071–2099,SSP370,Goražde (BiH),0.83,dobro,-1.1
+Travnik,2071–2099,SSP585,Peć (Kosovo),1.30,dobro,-0.9
+Zenica,2041–2070,SSP119,Sarajevo (BiH),0.68,dobro,+0.1
+Zenica,2041–2070,SSP126,Sarajevo (BiH),0.70,dobro,-0.6
+Zenica,2041–2070,SSP434,Sarajevo (BiH),0.73,dobro,-0.8
+Zenica,2041–2070,SSP245,Sarajevo (BiH),0.79,dobro,-1.1
+Zenica,2041–2070,SSP460,Sarajevo (BiH),0.80,dobro,-1.0
+Zenica,2041–2070,SSP370,Sarajevo (BiH),1.04,dobro,-1.5
+Zenica,2041–2070,SSP585,Prijedor (BiH),1.22,dobro,-0.8
+Zenica,2071–2099,SSP119,Sarajevo (BiH),0.62,dobro,+0.1
+Zenica,2071–2099,SSP126,Sarajevo (BiH),0.72,dobro,-0.6
+Zenica,2071–2099,SSP434,Sarajevo (BiH),0.82,dobro,-1.1
+Zenica,2071–2099,SSP245,Prijedor (BiH),1.21,dobro,-0.7
+Zenica,2071–2099,SSP460,Prizren (Kosovo),1.25,dobro,+0.1
+Zenica,2071–2099,SSP370,Prizren (Kosovo),1.24,dobro,-1.4
+Zenica,2071–2099,SSP585,Prizren (Kosovo),1.82,umjereno,-2.7
+Bugojno,2041–2070,SSP119,Sarajevo (BiH),0.92,dobro,-0.4
+Bugojno,2041–2070,SSP126,Sarajevo (BiH),1.09,dobro,-1.1
+Bugojno,2041–2070,SSP434,Sarajevo (BiH),1.50,umjereno,-1.4
+Bugojno,2041–2070,SSP245,Prizren (Kosovo),1.39,dobro,+0.6
+Bugojno,2041–2070,SSP460,Prizren (Kosovo),1.31,dobro,+0.7
+Bugojno,2041–2070,SSP370,Prizren (Kosovo),1.22,dobro,+0.2
+Bugojno,2041–2070,SSP585,Prizren (Kosovo),1.15,dobro,-0.4
+Bugojno,2071–2099,SSP119,Sarajevo (BiH),0.91,dobro,-0.4
+Bugojno,2071–2099,SSP126,Sarajevo (BiH),1.06,dobro,-1.1
+Bugojno,2071–2099,SSP434,Prizren (Kosovo),1.31,dobro,+0.6
+Bugojno,2071–2099,SSP245,Prizren (Kosovo),1.06,dobro,-0.3
+Bugojno,2071–2099,SSP460,Prizren (Kosovo),1.32,dobro,-0.5
+Bugojno,2071–2099,SSP370,Arezzo (Italija),1.55,umjereno,-1.4
+Bugojno,2071–2099,SSP585,Bologna (Italija),1.81,umjereno,-0.8
+Sarajevo,2041–2070,SSP119,Zenica (BiH),0.84,dobro,-0.2
+Sarajevo,2041–2070,SSP126,Goražde (BiH),0.73,dobro,+0.3
+Sarajevo,2041–2070,SSP434,Goražde (BiH),0.81,dobro,+0.1
+Sarajevo,2041–2070,SSP245,Goražde (BiH),0.62,dobro,-0.2
+Sarajevo,2041–2070,SSP460,Goražde (BiH),0.69,dobro,-0.1
+Sarajevo,2041–2070,SSP370,Goražde (BiH),0.62,dobro,-0.6
+Sarajevo,2041–2070,SSP585,Goražde (BiH),0.83,dobro,-1.1
+Sarajevo,2071–2099,SSP119,Zenica (BiH),0.88,dobro,-0.1
+Sarajevo,2071–2099,SSP126,Goražde (BiH),0.68,dobro,+0.3
+Sarajevo,2071–2099,SSP434,Goražde (BiH),0.70,dobro,-0.1
+Sarajevo,2071–2099,SSP245,Goražde (BiH),0.72,dobro,-1.1
+Sarajevo,2071–2099,SSP460,Goražde (BiH),1.07,dobro,-1.1
+Sarajevo,2071–2099,SSP370,Prizren (Kosovo),1.13,dobro,-0.4
+Sarajevo,2071–2099,SSP585,Prizren (Kosovo),1.33,dobro,-1.7
+Livno,2041–2070,SSP119,Foča (BiH),2.16,umjereno,+2.1
+Livno,2041–2070,SSP126,Foča (BiH),1.94,umjereno,+1.4
+Livno,2041–2070,SSP434,Pogradec (Albanija),1.92,umjereno,+0.6
+Livno,2041–2070,SSP245,Foča (BiH),1.66,umjereno,+1.0
+Livno,2041–2070,SSP460,Foča (BiH),1.74,umjereno,+1.1
+Livno,2041–2070,SSP370,Foča (BiH),1.57,umjereno,+0.6
+Livno,2041–2070,SSP585,Foča (BiH),1.42,dobro,+0.1
+Livno,2071–2099,SSP119,Foča (BiH),2.26,umjereno,+2.1
+Livno,2071–2099,SSP126,Foča (BiH),1.86,umjereno,+1.4
+Livno,2071–2099,SSP434,Foča (BiH),1.85,umjereno,+0.9
+Livno,2071–2099,SSP245,Foča (BiH),1.44,dobro,+0.1
+Livno,2071–2099,SSP460,Foča (BiH),1.51,umjereno,-0.1
+Livno,2071–2099,SSP370,Librazhd (Albanija),1.33,dobro,-0.6
+Livno,2071–2099,SSP585,Librazhd (Albanija),1.53,umjereno,-1.8
+Goražde,2041–2070,SSP119,Peć (Kosovo),1.10,dobro,+0.2
+Goražde,2041–2070,SSP126,Peć (Kosovo),1.04,dobro,-0.5
+Goražde,2041–2070,SSP434,Peć (Kosovo),1.25,dobro,-0.7
+Goražde,2041–2070,SSP245,Peć (Kosovo),1.24,dobro,-1.0
+Goražde,2041–2070,SSP460,Peć (Kosovo),1.19,dobro,-0.9
+Goražde,2041–2070,SSP370,Prizren (Kosovo),1.40,dobro,-0.5
+Goražde,2041–2070,SSP585,Prizren (Kosovo),1.42,dobro,-1.1
+Goražde,2071–2099,SSP119,Peć (Kosovo),1.12,dobro,+0.2
+Goražde,2071–2099,SSP126,Peć (Kosovo),1.08,dobro,-0.5
+Goražde,2071–2099,SSP434,Peć (Kosovo),1.17,dobro,-0.9
+Goražde,2071–2099,SSP245,Prizren (Kosovo),1.54,umjereno,-1.0
+Goražde,2071–2099,SSP460,Prizren (Kosovo),1.50,umjereno,-1.1
+Goražde,2071–2099,SSP370,Firenca (Italija),2.02,umjereno,-1.1
+Goražde,2071–2099,SSP585,Berat (Albanija),2.21,umjereno,-1.6
+Konjic,2041–2070,SSP119,Mostar (BiH),1.68,umjereno,+1.1
+Konjic,2041–2070,SSP126,Burrel (Albanija),1.49,dobro,+0.6
+Konjic,2041–2070,SSP434,Burrel (Albanija),1.25,dobro,+0.3
+Konjic,2041–2070,SSP245,Burrel (Albanija),1.20,dobro,+0.1
+Konjic,2041–2070,SSP460,Burrel (Albanija),1.18,dobro,+0.2
+Konjic,2041–2070,SSP370,Burrel (Albanija),1.08,dobro,-0.2
+Konjic,2041–2070,SSP585,Burrel (Albanija),0.98,dobro,-0.9
+Konjic,2071–2099,SSP119,Mostar (BiH),1.76,umjereno,+1.1
+Konjic,2071–2099,SSP126,Burrel (Albanija),1.47,dobro,+0.6
+Konjic,2071–2099,SSP434,Burrel (Albanija),1.18,dobro,+0.1
+Konjic,2071–2099,SSP245,Burrel (Albanija),1.06,dobro,-0.8
+Konjic,2071–2099,SSP460,Burrel (Albanija),1.10,dobro,-0.9
+Konjic,2071–2099,SSP370,Burrel (Albanija),1.54,umjereno,-2.4
+Konjic,2071–2099,SSP585,Tirana (Albanija),1.92,umjereno,-2.8
+Foča,2041–2070,SSP119,Peć (Kosovo),1.24,dobro,+0.8
+Foča,2041–2070,SSP126,Peć (Kosovo),1.02,dobro,+0.1
+Foča,2041–2070,SSP434,Peć (Kosovo),0.89,dobro,-0.1
+Foča,2041–2070,SSP245,Peć (Kosovo),0.91,dobro,-0.4
+Foča,2041–2070,SSP460,Peć (Kosovo),0.97,dobro,-0.3
+Foča,2041–2070,SSP370,Peć (Kosovo),1.01,dobro,-0.8
+Foča,2041–2070,SSP585,Peć (Kosovo),1.18,dobro,-1.4
+Foča,2071–2099,SSP119,Peć (Kosovo),1.27,dobro,+0.8
+Foča,2071–2099,SSP126,Peć (Kosovo),1.08,dobro,+0.1
+Foča,2071–2099,SSP434,Peć (Kosovo),1.07,dobro,-0.4
+Foča,2071–2099,SSP245,Peć (Kosovo),1.24,dobro,-1.3
+Foča,2071–2099,SSP460,Peć (Kosovo),1.39,dobro,-1.4
+Foča,2071–2099,SSP370,Gramsh (Albanija),1.78,umjereno,-1.6
+Foča,2071–2099,SSP585,Berat (Albanija),1.76,umjereno,-1.1
+Mostar,2041–2070,SSP119,Rrëshen (Albanija),1.01,dobro,-0.7
+Mostar,2041–2070,SSP126,Rrëshen (Albanija),1.04,dobro,-1.3
+Mostar,2041–2070,SSP434,Rrëshen (Albanija),1.10,dobro,-1.6
+Mostar,2041–2070,SSP245,Rrëshen (Albanija),1.17,dobro,-1.8
+Mostar,2041–2070,SSP460,Rrëshen (Albanija),1.20,dobro,-1.8
+Mostar,2041–2070,SSP370,Lezhë (Albanija),1.35,dobro,-0.8
+Mostar,2041–2070,SSP585,Lezhë (Albanija),1.24,dobro,-1.3
+Mostar,2071–2099,SSP119,Rrëshen (Albanija),1.05,dobro,-0.6
+Mostar,2071–2099,SSP126,Rrëshen (Albanija),1.11,dobro,-1.4
+Mostar,2071–2099,SSP434,Rrëshen (Albanija),1.31,dobro,-1.9
+Mostar,2071–2099,SSP245,Lezhë (Albanija),1.34,dobro,-1.2
+Mostar,2071–2099,SSP460,Lezhë (Albanija),1.32,dobro,-1.4
+Mostar,2071–2099,SSP370,Lezhë (Albanija),1.63,umjereno,-2.8
+Mostar,2071–2099,SSP585,Lezhë (Albanija),2.28,umjereno,-3.9
+Trebinje,2041–2070,SSP119,Podgorica (Crna Gora),2.03,umjereno,+2.4
+Trebinje,2041–2070,SSP126,Podgorica (Crna Gora),1.82,umjereno,+1.8
+Trebinje,2041–2070,SSP434,Podgorica (Crna Gora),1.85,umjereno,+1.5
+Trebinje,2041–2070,SSP245,Podgorica (Crna Gora),1.62,umjereno,+1.3
+Trebinje,2041–2070,SSP460,Podgorica (Crna Gora),1.73,umjereno,+1.4
+Trebinje,2041–2070,SSP370,Podgorica (Crna Gora),1.55,umjereno,+1.0
+Trebinje,2041–2070,SSP585,Podgorica (Crna Gora),1.41,dobro,+0.4
+Trebinje,2071–2099,SSP119,Podgorica (Crna Gora),2.07,umjereno,+2.4
+Trebinje,2071–2099,SSP126,Podgorica (Crna Gora),1.81,umjereno,+1.8
+Trebinje,2071–2099,SSP434,Podgorica (Crna Gora),1.57,umjereno,+1.2
+Trebinje,2071–2099,SSP245,Podgorica (Crna Gora),1.39,dobro,+0.5
+Trebinje,2071–2099,SSP460,Podgorica (Crna Gora),1.68,umjereno,+0.2
+Trebinje,2071–2099,SSP370,Podgorica (Crna Gora),1.64,umjereno,-0.9
+Trebinje,2071–2099,SSP585,Shkodër (Albanija),2.17,umjereno,-2.1

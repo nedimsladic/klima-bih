@@ -736,18 +736,29 @@ footer strong { font: 700 1.15rem/1.4 var(--f-display); color: var(--ink); displ
     <div class="head text">
       <p class="label"><span class="bs">Gradovi s istom klimom</span><span class="en">Cities with the same climate</span></p>
       <h2><span class="bs">Klimatski <em>blizanci</em></span><span class="en">Climate <em>twins</em></span></h2>
-      <p class="bs">Za svaki grad u BiH tražili smo grad u Evropi i na Mediteranu koji danas ima klimu kakvu bi taj grad mogao imati.
-        Prema SSP5-8.5 do 2071–2099 Banja Luka i Zvornik bi imali klimu današnje Venecije, Tuzla, Brčko i Doboj Bologne,
-        Sarajevo i Zenica Prizrena, a Mostar i Trebinje Skadra. Prema SSP2-4.5 blizanci su većinom bliži: Treviso, Podgorica ili topliji gradovi u BiH.</p>
-      <p class="en">For every city in BiH we looked for the city in Europe or the Mediterranean that has its possible future climate today.
-        Under SSP5-8.5 by 2071–2099, Banja Luka and Zvornik would have the climate of today's Venice, Tuzla, Brčko and Doboj that of Bologna,
-        Sarajevo and Zenica that of Prizren, and Mostar and Trebinje that of Shkodër. Under SSP2-4.5 the twins are mostly closer:
-        Treviso, Podgorica or warmer cities within BiH.</p>
+      <p class="bs">Za svaki grad u BiH tražili smo grad u Evropi i na Mediteranu (od 10.000 stanovnika naviše) koji danas ima klimu
+        kakvu bi taj grad mogao imati. Prema SSP5-8.5 do 2071–2099 Banja Luka i Zvornik bi imali klimu današnje Venecije,
+        Tuzla, Brčko i Doboj Bologne, Sarajevo i Zenica Prizrena, Mostar Lješa, a Trebinje Skadra. Prema SSP1-2.6 i SSP2-4.5
+        blizanci su bliži: Treviso, Podgorica, Peć ili topliji gradovi u samoj BiH.</p>
+      <p class="bs">Boja pokazuje koliko je blizanac dobar. Što su emisije veće, to je podudaranje slabije: prema SSP5-8.5 za Posavinu
+        i Semberiju danas ne postoji grad s tako vrućim ljetom uz takve zime i padavine, pa su i najbliži blizanci za 2–4 °C hladniji u julu.
+        Isti blizanci dobijaju se i kad se traži među gradovima cijelog svijeta.</p>
+      <p class="en">For every city in BiH we looked for a city in Europe or the Mediterranean (10,000 people or more) that has its possible
+        future climate today. Under SSP5-8.5 by 2071–2099, Banja Luka and Zvornik would have the climate of today's Venice, Tuzla, Brčko and
+        Doboj that of Bologna, Sarajevo and Zenica that of Prizren, Mostar that of Lezhë and Trebinje that of Shkodër. Under SSP1-2.6 and
+        SSP2-4.5 the twins are closer: Treviso, Podgorica, Peć or warmer cities within BiH.</p>
+      <p class="en">Colour shows how good the match is. The higher the emissions, the weaker the match: under SSP5-8.5 no city today has
+        summers as hot as future Posavina and Semberija together with similar winters and rainfall, so even the closest twins are 2–4 °C
+        cooler in July. A search among cities worldwide gives the same twins.</p>
     </div>
     <figure><a class="plate" href="#" data-src="img/klimatski_blizanci_karta.webp" data-cap="Klimatski blizanci: karta">
       <img src="img/klimatski_blizanci_karta.webp" alt="Karta sa strelicama od gradova u BiH do njihovih klimatskih blizanaca" loading="lazy"></a></figure>
-    <figure><a class="plate" href="#" data-src="img/klimatski_blizanci_tabela.webp" data-cap="Klimatski blizanci: tabela">
-      <img src="img/klimatski_blizanci_tabela.webp" alt="Tabela klimatskih blizanaca za 20 gradova i četiri scenarija" loading="lazy"></a></figure>
+    <div class="controls"><div class="grp tabs" data-target="blizImg">
+      <button class="chip" aria-pressed="false" data-src="img/klimatski_blizanci_tabela_2041_2070.webp">2041–2070</button>
+      <button class="chip" aria-pressed="true" data-src="img/klimatski_blizanci_tabela_2071_2099.webp">2071–2099</button>
+    </div></div>
+    <figure><a class="plate" href="#" id="blizImg" data-src="img/klimatski_blizanci_tabela_2071_2099.webp" data-cap="Klimatski blizanci: svi scenariji">
+      <img src="img/klimatski_blizanci_tabela_2071_2099.webp" alt="Tabela klimatskih blizanaca za 20 gradova i sedam scenarija" loading="lazy"></a></figure>
   </section>
 
   <section id="opcine">
