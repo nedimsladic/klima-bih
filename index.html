@@ -1,0 +1,750 @@
+<!doctype html>
+<html lang="bs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Atlas klime Bosne i Hercegovine 1901–2099: Köppen-Geigerovi klimatski tipovi, temperatura, zima i ljeto, mrazni, vrući i kišni dani po sedam SSP scenarija.">
+<meta property="og:title" content="Klima Bosne i Hercegovine 1901–2099">
+<meta property="og:description" content="Köppen-Geigerovi klimatski tipovi, temperatura, mrazni, vrući i kišni dani po sedam SSP scenarija. Analiza: Nedim Sladić.">
+<meta property="og:image" content="img/panel_historijski.webp">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' rx='3' fill='%23155e63'/%3E%3Crect x='3' y='9' width='10' height='3' fill='%23c8ff50'/%3E%3Crect x='3' y='4' width='10' height='3' fill='%2337c8ff'/%3E%3C/svg%3E">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}</style>
+<title>Klima Bosne i Hercegovine 1901–2099</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Barlow+Semi+Condensed:wght@500;600&display=swap">
+<style>
+/* Raspored: atlas. Uska kolona teksta (≈640px) unutar široke kolone karata (≈1180px);
+   karte su bijele "ploče" u obje teme, kao listovi otisnutog atlasa. */
+:root {
+  --bg: #f6f7f4;
+  --ink: #18211f;
+  --muted: #5d6865;
+  --faint: #8a9491;
+  --rule: #d7ddd9;
+  --accent: #155e63;
+  --plate: #ffffff;
+  --plate-edge: #e1e6e2;
+  --chip: #eaeeeb;
+  --shadow: 0 1px 1px rgba(20, 35, 32, .04), 0 12px 32px -8px rgba(20, 35, 32, .12);
+  --f-display: "DIN Alternate", "DIN Next", "DIN 2014", "Barlow", "Helvetica Neue", Arial, sans-serif;
+  --f-body: "Barlow", "DIN Next", "Helvetica Neue", Arial, sans-serif;
+  --f-ui: "Barlow Semi Condensed", "Barlow", "Helvetica Neue", Arial, sans-serif;
+  --f-num: "DIN Alternate", "DIN Next", "Barlow", "Helvetica Neue", Arial, sans-serif;
+  /* Köppen-Geigerove boje iz Beck et al. (2023) */
+  --Csa: #ffff00; --Csb: #c8c800; --Cfa: #c8ff50; --Cfb: #64ff50;
+  --Dfa: #00ffff; --Dfb: #37c8ff; --Dfc: #007d7d;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #101615; --ink: #e6ece9; --muted: #a0aca8; --faint: #7a8683; --rule: #28322f;
+    --accent: #6cc6c4; --plate: #fbfcfb; --plate-edge: #2c3633; --chip: #1b2422;
+    --shadow: 0 1px 1px rgba(0, 0, 0, .3), 0 14px 34px -8px rgba(0, 0, 0, .55);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #101615; --ink: #e6ece9; --muted: #a0aca8; --faint: #7a8683; --rule: #28322f;
+  --accent: #6cc6c4; --plate: #fbfcfb; --plate-edge: #2c3633; --chip: #1b2422;
+  --shadow: 0 1px 1px rgba(0, 0, 0, .3), 0 14px 34px -8px rgba(0, 0, 0, .55);
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body {
+  background: var(--bg); color: var(--ink);
+  font: 400 18px/1.65 var(--f-body);
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+  font-feature-settings: "kern", "liga";
+}
+.wrap { max-width: 1180px; margin: 0 auto; }
+.text { max-width: 640px; }
+a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+a:focus-visible, button:focus-visible, select:focus-visible, .plate:focus-visible {
+  outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px;
+}
+h1, h2, h3 { font-family: var(--f-display); font-weight: 700; text-wrap: balance; margin: 0; letter-spacing: -.012em; }
+h1 { font-size: clamp(2.6rem, 6.4vw, 5.2rem); line-height: 1; font-weight: 700; }
+h1 em { font-style: normal; font-family: var(--f-body); font-weight: 300; color: var(--accent); }
+h2 { font-size: clamp(1.8rem, 3.4vw, 2.6rem); line-height: 1.1; }
+h2 em { font-style: normal; font-family: var(--f-body); font-weight: 300; }
+h3 { font-size: 1.3rem; line-height: 1.25; font-weight: 600; }
+p { margin: 0; }
+.label {
+  font: 600 .74rem/1.2 var(--f-ui); text-transform: uppercase; letter-spacing: .16em; color: var(--muted);
+}
+.num { font-family: var(--f-ui); font-variant-numeric: tabular-nums lining-nums; }
+
+/* navigacija */
+nav.top {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 10;
+  background: color-mix(in srgb, var(--bg) 90%, transparent);
+  backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--rule);
+  margin-left: calc(-1 * max(16px, env(safe-area-inset-left, 0px)));
+  margin-right: calc(-1 * max(16px, env(safe-area-inset-right, 0px)));
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+nav.top .wrap { display: flex; align-items: baseline; gap: 24px; overflow-x: auto; padding-block: 13px; scrollbar-width: none; }
+nav.top .wrap::-webkit-scrollbar { display: none; }
+nav.top a { font: 500 .88rem/1 var(--f-ui); color: var(--muted); text-decoration: none; white-space: nowrap; }
+nav.top a:hover, nav.top a.on { color: var(--ink); }
+nav.top .brand { font: 600 1.05rem/1 var(--f-display); color: var(--ink); letter-spacing: .02em; }
+
+/* uvod */
+header.hero { padding-block: clamp(48px, 9vw, 112px) 24px; display: grid; gap: 26px; }
+.lede { font-size: 1.28rem; line-height: 1.55; max-width: 660px; font-weight: 400; }
+.byline { font: 400 .95rem/1.4 var(--f-ui); color: var(--muted); }
+.byline b { font-weight: 600; color: var(--ink); }
+
+/* Köppen trake */
+.stripes { margin-top: 26px; display: grid; gap: 16px; }
+.stripes-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 12px 24px; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip {
+  font: 500 .84rem/1 var(--f-ui); padding: 8px 13px; border-radius: 999px; cursor: pointer;
+  border: 1px solid var(--rule); background: transparent; color: var(--muted);
+  display: inline-flex; align-items: center; gap: 7px; transition: background .15s, color .15s;
+}
+.chip:hover { color: var(--ink); border-color: var(--muted); }
+.chip i { width: 9px; height: 9px; border-radius: 50%; display: inline-block; }
+.chip[aria-pressed="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+.rows { display: grid; gap: 7px; }
+.row { display: grid; grid-template-columns: 100px 1fr 70px; align-items: center; gap: 14px; }
+.row .lbl { font: 500 .86rem/1.15 var(--f-ui); color: var(--muted); font-variant-numeric: tabular-nums; }
+.row .lbl b { display: block; color: var(--ink); font-weight: 600; }
+.row .t { font: 700 .98rem/1 var(--f-num); text-align: right; font-variant-numeric: tabular-nums; }
+.bar { display: flex; height: 30px; border-radius: 2px; overflow: hidden; background: var(--chip); }
+.bar span {
+  display: flex; align-items: center; justify-content: center; overflow: hidden; white-space: nowrap;
+  font: 600 .74rem/1 var(--f-ui); color: #10201c; transition: flex-basis .5s ease;
+  border-right: 2px solid var(--bg);
+}
+.bar span:last-child { border-right: 0; }
+.divider { height: 1px; background: var(--rule); margin: 12px 0 10px 114px; position: relative; }
+.divider::after {
+  content: "projekcije"; position: absolute; left: 0; top: -8px; padding-right: 10px;
+  background: var(--bg); font: 600 .68rem/1 var(--f-ui); color: var(--faint); letter-spacing: .16em; text-transform: uppercase;
+}
+.keyline { display: flex; flex-wrap: wrap; gap: 8px 20px; font: 400 .86rem/1.3 var(--f-ui); color: var(--muted); }
+.keyline span { display: inline-flex; align-items: center; gap: 7px; }
+.keyline i { width: 11px; height: 11px; border-radius: 50%; display: inline-block; border: 1px solid rgba(0,0,0,.2); }
+.keyline b { font-weight: 600; color: var(--ink); }
+
+/* brojke */
+.facts {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  border-top: 1px solid var(--ink); border-bottom: 1px solid var(--rule); margin-top: 48px;
+}
+.fact { padding: 22px 22px 24px 0; display: grid; gap: 8px; align-content: start; }
+.fact + .fact { padding-left: 22px; border-left: 1px solid var(--rule); }
+.fact .n { white-space: nowrap; font: 700 2.6rem/1 var(--f-num); font-variant-numeric: tabular-nums; }
+.fact .n small { font-size: 1.2rem; color: var(--muted); font-weight: 500; }
+.fact p { font: 400 .92rem/1.45 var(--f-ui); color: var(--muted); }
+@media (max-width: 720px) {
+  .fact + .fact { padding-left: 0; border-left: 0; border-top: 1px solid var(--rule); }
+  .row { grid-template-columns: 76px 1fr 56px; gap: 10px; }
+  .divider { margin-left: 86px; }
+}
+
+/* poglavlja */
+section { padding-block: 88px 8px; display: grid; gap: 24px; scroll-margin-top: 60px; }
+section > .head { display: grid; gap: 14px; }
+section > .head .label { display: flex; align-items: center; gap: 14px; }
+section > .head .label::after { content: ""; flex: 0 0 48px; height: 1px; background: var(--rule); }
+section .text p + p { margin-top: 14px; }
+.part {
+  padding-block: 96px 0; display: grid; gap: 10px; border-bottom: 1px solid var(--ink); padding-bottom: 18px;
+}
+.part h2 { font-size: clamp(2.2rem, 4.4vw, 3.4rem); }
+.part p { font: 400 1.15rem/1.5 var(--f-body); color: var(--muted); max-width: 640px; }
+.controls { display: flex; flex-wrap: wrap; gap: 10px 22px; align-items: center; }
+.controls .grp { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.controls .grp > span { font: 600 .7rem/1 var(--f-ui); text-transform: uppercase; letter-spacing: .14em; color: var(--faint); margin-right: 4px; }
+figure { margin: 0; display: grid; gap: 12px; }
+.plate {
+  background: var(--plate); border: 1px solid var(--plate-edge); border-radius: 3px;
+  padding: clamp(8px, 1.6vw, 20px); box-shadow: var(--shadow); cursor: zoom-in; display: block;
+}
+.plate img { display: block; width: 100%; height: auto; }
+figcaption { font: 400 .88rem/1.5 var(--f-ui); color: var(--muted); max-width: 760px; }
+.grid2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 460px), 1fr)); gap: 28px; }
+.note { font: 400 .9rem/1.55 var(--f-ui); color: var(--muted); max-width: 720px; border-left: 2px solid var(--rule); padding-left: 14px; }
+
+/* atlas */
+.atlas { display: grid; grid-template-columns: minmax(0, 300px) minmax(0, 1fr); gap: 32px; align-items: start; }
+.atlas .side { display: grid; gap: 18px; position: sticky; top: 76px; }
+.field { display: grid; gap: 6px; }
+.field label { font: 600 .72rem/1.2 var(--f-ui); text-transform: uppercase; letter-spacing: .14em; color: var(--muted); }
+select {
+  font: 500 1rem/1.2 var(--f-ui); padding: 10px 12px; border-radius: 4px;
+  border: 1px solid var(--rule); background: var(--bg); color: var(--ink); width: 100%;
+}
+.atlas .plate { max-width: 760px; }
+@media (max-width: 760px) { .atlas { grid-template-columns: 1fr; } .atlas .side { position: static; } }
+
+/* izvori */
+.sources { display: grid; gap: 16px; font: 400 .95rem/1.55 var(--f-ui); }
+.sources dt { font-weight: 600; }
+.sources dd { margin: 2px 0 0; color: var(--muted); }
+footer { padding-block: 56px 56px; color: var(--muted); font: 400 .9rem/1.5 var(--f-ui); border-top: 1px solid var(--ink); margin-top: 88px; }
+footer em { font: 500 1.15rem/1.4 var(--f-display); font-style: normal; color: var(--ink); display: block; margin-bottom: 6px; }
+
+/* povećanje slike */
+.lightbox {
+  position: fixed; inset: 0; z-index: 50; background: rgba(8, 12, 11, .94);
+  display: grid; grid-template-rows: auto 1fr; padding:
+    calc(env(safe-area-inset-top, 0px) + 10px) max(12px, env(safe-area-inset-right, 0px))
+    calc(env(safe-area-inset-bottom, 0px) + 12px) max(12px, env(safe-area-inset-left, 0px));
+}
+.lightbox .bar2 { display: flex; justify-content: space-between; align-items: center; gap: 12px; color: #dfe7e4; font: 500 1.05rem/1.3 var(--f-display); padding-bottom: 10px; }
+.lightbox button { font: 500 .9rem/1 var(--f-ui); color: #0f1514; background: #e9efec; border: 0; border-radius: 999px; padding: 9px 14px; cursor: pointer; }
+.lightbox .scroll { overflow: auto; background: #fff; border-radius: 3px; }
+.lightbox img { display: block; width: 100%; height: auto; }
+.lightbox.zoom img { width: auto; max-width: none; }
+@media (prefers-reduced-motion: reduce) { .bar span, .chip { transition: none; } }
+</style>
+</head>
+<body>
+
+
+<nav class="top" aria-label="Poglavlja">
+  <div class="wrap">
+    <a class="brand" href="#uvod">Klima BiH</a>
+    <a href="#historija">Historija</a>
+    <a href="#projekcije">Projekcije</a>
+    <a href="#promjena">Gdje se mijenja</a>
+    <a href="#temperatura">Temperatura</a>
+    <a href="#sezone">Zima i ljeto</a>
+    <a href="#dani">Hladni i vrući dani</a>
+    <a href="#kisa">Kišni dani</a>
+    <a href="#udio">Udio tipova</a>
+    <a href="#gradovi">Gradovi</a>
+    <a href="#pouzdanost">Pouzdanost</a>
+    <a href="#atlas">Atlas</a>
+    <a href="#izvori">Izvori</a>
+  </div>
+</nav>
+
+<main class="wrap">
+  <header class="hero" id="uvod">
+    <p class="label">Atlas klime · Köppen-Geigerova klasifikacija · 1901–2099</p>
+    <h1>Klima Bosne i Hercegovine<br><em>od 1901. do 2099.</em></h1>
+    <p class="lede">Do 1990. godine 84 % zemlje imalo je kontinentalnu klimu s hladnim zimama.
+      U periodu 1991–2020 taj udio je pao na 41 %. Do kraja vijeka umjereno topla klima s vrućim ljetom,
+      kakvu danas imaju Posavina i Semberija, mogla bi prekriti između 44 % i 90 % zemlje.
+      Zime postaju kraće i blaže, a ljeta duža, toplija i suša.</p>
+    <p class="byline"><b>Analiza: Nedim Sladić</b>, prateći Beck et al. (2018, 2023)</p>
+
+    <div class="stripes" aria-label="Udio klimatskih tipova po periodima">
+      <div class="stripes-head">
+        <h3>Udio klimatskih tipova u površini BiH</h3>
+        <div class="chips" id="sspChips" role="group" aria-label="Scenarij za projekcije"></div>
+      </div>
+      <div class="rows" id="rows"></div>
+      <div class="keyline" id="keyline"></div>
+    </div>
+
+    <div class="facts">
+      <div class="fact"><span class="n">+1,2 <small>°C</small></span>
+        <p>Zagrijavanje između 1961–1990 i 1991–2020, prosjek za BiH (9,1 → 10,3 °C).</p></div>
+      <div class="fact"><span class="n">21 → 71</span>
+        <p>Vrućih dana (≥ 30 °C) godišnje: danas i do 2071–2099 prema SSP5-8.5. Prema SSP1-2.6: 34.</p></div>
+      <div class="fact"><span class="n">92 → 43</span>
+        <p>Mraznih dana (najniža temperatura &lt; 0 °C) godišnje: danas i do 2071–2099 prema SSP5-8.5.</p></div>
+      <div class="fact"><span class="n">−23 <small>%</small></span>
+        <p>Ljetnih padavina do 2071–2099 prema SSP5-8.5. Zimi padavine blago rastu.</p></div>
+    </div>
+  </header>
+
+  <!-- I. KLIMATSKI TIPOVI -->
+  <div class="part"><p class="label">Prvi dio</p><h2>Klimatski tipovi</h2>
+    <p>Köppen-Geigerova klasifikacija dijeli klimu prema temperaturi i padavinama kroz godinu.</p></div>
+
+  <section id="historija">
+    <div class="head text">
+      <p class="label">Opažanja 1901–2020</p>
+      <h2>Najveća promjena <em>već se dogodila</em></h2>
+      <p>Tri perioda do 1990. godine izgledaju gotovo isto: kontinentalna klima (Dfb) pokriva veći dio zemlje,
+        a topliji tipovi drže se Posavine, Semberije i Hercegovine. U periodu 1991–2020 umjereno topla klima
+        (Cfa i Cfb) zauzima sjever, doline i niže predjele centralne Bosne.</p>
+    </div>
+    <figure>
+      <a class="plate" href="#" data-src="img/panel_historijski.webp" data-cap="Klimatski tipovi u historijskim periodima 1901–2020">
+        <img src="img/panel_historijski.webp" alt="Četiri karte BiH s klimatskim tipovima za 1901–1930, 1931–1960, 1961–1990 i 1991–2020" loading="lazy"></a>
+    </figure>
+  </section>
+
+  <section id="projekcije">
+    <div class="head text">
+      <p class="label">Sedam SSP scenarija</p>
+      <h2>Kako bi klima <em>mogla izgledati</em></h2>
+      <p>Scenariji zajedničkih socioekonomskih puteva (SSP) opisuju različite budućnosti emisija,
+        od SSP1-1.9, u kojem se globalno zagrijavanje zaustavlja blizu 1,5 °C, do SSP5-8.5 s vrlo visokim emisijama.
+        Prva karta u svakoj slici je referentni period 1991–2020.</p>
+    </div>
+    <div class="controls"><div class="grp tabs" data-target="projImg">
+      <button class="chip" aria-pressed="false" data-src="img/panel_scenariji_2041_2070.webp">2041–2070</button>
+      <button class="chip" aria-pressed="true" data-src="img/panel_scenariji_2071_2099.webp">2071–2099</button>
+    </div></div>
+    <figure>
+      <a class="plate" href="#" id="projImg" data-src="img/panel_scenariji_2071_2099.webp" data-cap="Projekcije klimatskih tipova po SSP scenarijima">
+        <img src="img/panel_scenariji_2071_2099.webp" alt="Osam karata BiH: referentni period 1991–2020 i sedam SSP scenarija" loading="lazy"></a>
+    </figure>
+  </section>
+
+  <section id="promjena">
+    <div class="head text">
+      <p class="label">U odnosu na 1991–2020</p>
+      <h2>Gdje se klimatski tip <em>mijenja</em></h2>
+      <p>Siva boja znači da tip ostaje isti kao danas; boja pokazuje novi tip. Sjever je siv u svim
+        scenarijima jer već danas ima klimu Cfa. Promjene su najveće u centralnoj Bosni i na planinama,
+        a mediteranska klima (Csa) širi se iz Hercegovine prema unutrašnjosti.</p>
+    </div>
+    <div class="controls"><div class="grp tabs" data-target="chgImg">
+      <button class="chip" aria-pressed="false" data-src="img/panel_promjena_2041_2070.webp">2041–2070</button>
+      <button class="chip" aria-pressed="true" data-src="img/panel_promjena_2071_2099.webp">2071–2099</button>
+    </div></div>
+    <figure>
+      <a class="plate" href="#" id="chgImg" data-src="img/panel_promjena_2071_2099.webp" data-cap="Promjena klimatskog tipa u odnosu na 1991–2020">
+        <img src="img/panel_promjena_2071_2099.webp" alt="Karte promjene klimatskog tipa po scenarijima" loading="lazy"></a>
+    </figure>
+  </section>
+
+  <!-- II. TEMPERATURA I PADAVINE -->
+  <div class="part"><p class="label">Drugi dio</p><h2>Temperatura i padavine</h2>
+    <p>Prosjeci, godišnja doba i dani s ekstremnim temperaturama i padavinama.</p></div>
+
+  <section id="temperatura">
+    <div class="head text">
+      <p class="label">Prosjek za teritoriju BiH</p>
+      <h2>Srednja <em>temperatura</em></h2>
+      <p>Srednja godišnja temperatura bila je oko 9 °C sve do 1990. godine, a u periodu 1991–2020 porasla je na 10,3 °C.
+        Do 2071–2099 mogla bi iznositi 11,2 °C (SSP1-1.9), 12,6 °C (SSP2-4.5) ili 14,6 °C (SSP5-8.5).
+        Ljeta se zagrijavaju brže od zima: u avgustu do +6,3 °C prema SSP5-8.5.</p>
+    </div>
+    <figure>
+      <a class="plate" href="#" data-src="img/temperatura_godisnja.webp" data-cap="Srednja godišnja temperatura i zagrijavanje">
+        <img src="img/temperatura_godisnja.webp" alt="Linijski grafikon srednje godišnje temperature 1901–2099 i stubičasti grafikon zagrijavanja po scenarijima" loading="lazy"></a>
+    </figure>
+    <div class="grid2">
+      <figure>
+        <a class="plate" href="#" data-src="img/temperatura_mjesecna.webp" data-cap="Godišnji hod temperature i zagrijavanje po mjesecima">
+          <img src="img/temperatura_mjesecna.webp" alt="Godišnji hod temperature i toplotna mapa zagrijavanja po mjesecima" loading="lazy"></a>
+      </figure>
+      <figure>
+        <a class="plate" href="#" data-src="img/temperatura_padavine_sezone.webp" data-cap="Promjene temperature i padavina po godišnjim dobima">
+          <img src="img/temperatura_padavine_sezone.webp" alt="Stubičasti grafikoni promjene temperature i padavina po godišnjim dobima" loading="lazy"></a>
+      </figure>
+    </div>
+  </section>
+
+  <section id="sezone">
+    <div class="head text">
+      <p class="label">Zima (DJF) i ljeto (JJA)</p>
+      <h2>Zima <em>i</em> ljeto</h2>
+      <p>Srednja zimska temperatura u BiH bila je oko 0 °C u periodu 1961–1990 i 0,9 °C u periodu 1991–2020.
+        Do 2071–2099 mogla bi iznositi 2,2 °C (SSP1-2.6), 3,1 °C (SSP2-4.5) ili 4,7 °C (SSP5-8.5).
+        Ljeto je s 17,7 °C poraslo na 19,5 °C, a prema SSP5-8.5 dostiglo bi 25,3 °C.</p>
+      <p>Zimi padavine rastu za 3–7 %, a ljeti opadaju: za 5 % prema SSP1-2.6 i za 23 % prema SSP5-8.5.</p>
+    </div>
+    <div class="controls" data-chooser="sezImg" data-pattern="img/{s}_temperatura_{p}.webp">
+      <div class="grp" data-key="s"><span>Sezona</span>
+        <button class="chip" aria-pressed="true" data-v="zima">Zima</button>
+        <button class="chip" aria-pressed="false" data-v="ljeto">Ljeto</button></div>
+      <div class="grp" data-key="p"><span>Period</span>
+        <button class="chip" aria-pressed="false" data-v="historijski">1901–2020</button>
+        <button class="chip" aria-pressed="false" data-v="2041_2070">2041–2070</button>
+        <button class="chip" aria-pressed="true" data-v="2071_2099">2071–2099</button></div>
+    </div>
+    <figure>
+      <a class="plate" href="#" id="sezImg" data-src="img/zima_temperatura_2071_2099.webp" data-cap="Srednja temperatura zime i ljeta">
+        <img src="img/zima_temperatura_2071_2099.webp" alt="Karte srednje sezonske temperature po periodima i scenarijima" loading="lazy"></a>
+    </figure>
+    <div class="grid2">
+      <figure>
+        <a class="plate" href="#" data-src="img/promjena_temperature_zima_ljeto.webp" data-cap="Promjena temperature zimi i ljeti do 2071–2099">
+          <img src="img/promjena_temperature_zima_ljeto.webp" alt="Karte promjene temperature zimi i ljeti za četiri scenarija" loading="lazy"></a>
+        <figcaption>Promjena srednje temperature do 2071–2099, zima i ljeto, četiri scenarija.</figcaption>
+      </figure>
+      <figure>
+        <a class="plate" href="#" data-src="img/promjena_padavina_zima_ljeto.webp" data-cap="Promjena padavina zimi i ljeti do 2071–2099">
+          <img src="img/promjena_padavina_zima_ljeto.webp" alt="Karte promjene padavina zimi i ljeti za četiri scenarija" loading="lazy"></a>
+        <figcaption>Promjena količine padavina do 2071–2099, zima i ljeto, četiri scenarija.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section id="dani">
+    <div class="head text">
+      <p class="label">Dnevne temperature</p>
+      <h2>Hladni <em>i</em> vrući dani</h2>
+      <p><b>Mrazni dan</b> ima najnižu temperaturu ispod 0 °C, a <b>ledeni dan</b> najvišu ispod 0 °C.
+        <b>Vrući dan</b> ima najvišu temperaturu od najmanje 30 °C, a <b>vrlo vrući dan</b> od najmanje 35 °C.</p>
+      <p>U periodu 1991–2020 BiH je u prosjeku imala 92 mrazna i 21 vrući dan godišnje. Do 2071–2099 to bi bilo
+        73 mrazna i 34 vruća dana prema SSP1-2.6, odnosno 43 mrazna i 71 vrući dan prema SSP5-8.5.
+        Banja Luka bi imala oko 95 vrućih dana, Mostar više od 100, a Sarajevo 60.</p>
+    </div>
+    <figure>
+      <a class="plate" href="#" data-src="img/dani_prosjek_bih.webp" data-cap="Mrazni, ledeni, vrući i vrlo vrući dani: prosjek za BiH">
+        <img src="img/dani_prosjek_bih.webp" alt="Četiri linijska grafikona broja mraznih, ledenih, vrućih i vrlo vrućih dana 1901–2099" loading="lazy"></a>
+    </figure>
+    <div class="controls" data-chooser="daniImg" data-pattern="img/dani_{k}_{p}.webp">
+      <div class="grp" data-key="k"><span>Pokazatelj</span>
+        <button class="chip" aria-pressed="false" data-v="mrazni">Mrazni</button>
+        <button class="chip" aria-pressed="false" data-v="ledeni">Ledeni</button>
+        <button class="chip" aria-pressed="true" data-v="vruci">Vrući</button>
+        <button class="chip" aria-pressed="false" data-v="vrlo_vruci">Vrlo vrući</button></div>
+      <div class="grp" data-key="p"><span>Period</span>
+        <button class="chip" aria-pressed="false" data-v="historijski">1901–2020</button>
+        <button class="chip" aria-pressed="false" data-v="2041_2070">2041–2070</button>
+        <button class="chip" aria-pressed="true" data-v="2071_2099">2071–2099</button></div>
+    </div>
+    <figure>
+      <a class="plate" href="#" id="daniImg" data-src="img/dani_vruci_2071_2099.webp" data-cap="Broj dana godišnje po scenarijima">
+        <img src="img/dani_vruci_2071_2099.webp" alt="Karte broja dana godišnje po periodima i scenarijima" loading="lazy"></a>
+    </figure>
+    <figure>
+      <a class="plate" href="#" data-src="img/dani_po_gradovima.webp" data-cap="Mrazni, ledeni, vrući i vrlo vrući dani u gradovima i na planinama">
+        <img src="img/dani_po_gradovima.webp" alt="Tabela broja mraznih, ledenih, vrućih i vrlo vrućih dana za gradove i planine" loading="lazy"></a>
+      <figcaption>Vrijednosti su za ćeliju mreže od oko 10 km na lokaciji mjesta. Vlašić je izostavljen jer leži u istoj ćeliji kao Travnik.</figcaption>
+    </figure>
+  </section>
+
+  <section id="kisa">
+    <div class="head text">
+      <p class="label">Dnevne padavine</p>
+      <h2>Kišni dani <em>i jake padavine</em></h2>
+      <p>BiH u prosjeku ima 111 dana godišnje s najmanje 1 mm padavina, 35 dana s najmanje 10 mm i 7 dana s najmanje 20 mm.
+        Do 2071–2099 broj dana s jakim padavinama (≥ 10 mm) mogao bi pasti na 29 prema SSP5-8.5, uglavnom zbog suših ljeta.
+        Prema SSP1-1.9 i SSP1-2.6 ostaje gotovo isti.</p>
+    </div>
+    <figure>
+      <a class="plate" href="#" data-src="img/padavine_dani_prosjek_bih.webp" data-cap="Dani s padavinama: prosjek za BiH">
+        <img src="img/padavine_dani_prosjek_bih.webp" alt="Tri linijska grafikona broja dana s padavinama ≥ 1, ≥ 10 i ≥ 20 mm" loading="lazy"></a>
+    </figure>
+    <div class="controls" data-chooser="kisaImg" data-pattern="img/padavine_{k}_{p}.webp">
+      <div class="grp" data-key="k"><span>Prag</span>
+        <button class="chip" aria-pressed="false" data-v="r1">≥ 1 mm</button>
+        <button class="chip" aria-pressed="true" data-v="r10">≥ 10 mm</button>
+        <button class="chip" aria-pressed="false" data-v="r20">≥ 20 mm</button></div>
+      <div class="grp" data-key="p"><span>Period</span>
+        <button class="chip" aria-pressed="false" data-v="historijski">1901–2020</button>
+        <button class="chip" aria-pressed="false" data-v="2041_2070">2041–2070</button>
+        <button class="chip" aria-pressed="true" data-v="2071_2099">2071–2099</button></div>
+    </div>
+    <figure>
+      <a class="plate" href="#" id="kisaImg" data-src="img/padavine_r10_2071_2099.webp" data-cap="Dani s padavinama po scenarijima">
+        <img src="img/padavine_r10_2071_2099.webp" alt="Karte broja dana s padavinama po periodima i scenarijima" loading="lazy"></a>
+    </figure>
+    <figure>
+      <a class="plate" href="#" data-src="img/padavine_promjena_dana.webp" data-cap="Promjena broja dana s padavinama do 2071–2099">
+        <img src="img/padavine_promjena_dana.webp" alt="Karte promjene broja dana s padavinama u procentima" loading="lazy"></a>
+    </figure>
+    <p class="note">Broj kišnih dana (≥ 1 mm) gotovo se ne mijenja jer korištena metoda mijenja količinu kiše
+      u danima kad pada, ali ne i broj dana bez kiše. Stvarna promjena broja kišnih dana ljeti vjerovatno je veća.</p>
+  </section>
+
+  <!-- III. DETALJI -->
+  <div class="part"><p class="label">Treći dio</p><h2>Detalji</h2>
+    <p>Udjeli klimatskih tipova, gradovi i planine, pouzdanost i pojedinačne karte.</p></div>
+
+  <section id="udio">
+    <div class="head text">
+      <p class="label">1901–2099</p>
+      <h2>Udio klimatskih tipova <em>kroz vrijeme</em></h2>
+      <p>Svaki grafikon prati jedan klimatski tip. Crna linija su opažanja, a obojene linije scenariji.
+        Kontinentalna (Dfb) i subalpska klima (Dfc) gube površinu u svim scenarijima.</p>
+    </div>
+    <figure>
+      <a class="plate" href="#" data-src="img/udio_klimatskih_tipova_linije.webp" data-cap="Promjena udjela klimatskih tipova u BiH (1901–2099)">
+        <img src="img/udio_klimatskih_tipova_linije.webp" alt="Linijski grafikoni udjela klimatskih tipova Csa, Cfa, Cfb, Dfb i Dfc" loading="lazy"></a>
+    </figure>
+    <figure>
+      <a class="plate" href="#" data-src="img/udio_klimatskih_tipova.webp" data-cap="Udio klimatskih tipova u ukupnoj površini BiH">
+        <img src="img/udio_klimatskih_tipova.webp" alt="Naslagani stubičasti grafikon udjela klimatskih tipova po periodima i scenarijima" loading="lazy"></a>
+    </figure>
+  </section>
+
+  <section id="gradovi">
+    <div class="head text">
+      <p class="label">20 gradova i 5 planinskih centara</p>
+      <h2>Gradovi <em>i</em> planine</h2>
+      <p>Banja Luka, Tuzla i Doboj prešli su iz Dfb u Cfa već u periodu 1991–2020. Sarajevo, Travnik,
+        Bugojno i Livno to čine do sredine vijeka u gotovo svim scenarijima. Bjelašnica i Vlašić u većini scenarija
+        gube subalpsku klimu (Dfc), a Kupres i Blidinje prema visokim scenarijima dobijaju umjereno toplu klimu.</p>
+    </div>
+    <figure>
+      <a class="plate" href="#" data-src="img/klima_po_gradovima.webp" data-cap="Klimatski tip za bosanskohercegovačke gradove i planine">
+        <img src="img/klima_po_gradovima.webp" alt="Tabela klimatskih tipova za 20 gradova i 5 planinskih centara po periodima i scenarijima" loading="lazy"></a>
+      <figcaption>Podebljana oznaka znači da se tip razlikuje od perioda 1991–2020. Lokacije planinskih centara su približne.</figcaption>
+    </figure>
+  </section>
+
+  <section id="pouzdanost">
+    <div class="head text">
+      <p class="label">Slaganje članova ansambla</p>
+      <h2>Koliko su karte <em>pouzdane</em></h2>
+      <p>Pouzdanost pokazuje koliki se dio modela (za projekcije) ili skupova opažanja (za historijske periode)
+        slaže oko klimatskog tipa u svakoj ćeliji. Prosječna pouzdanost je 82–90 %. Najniža je na
+        granicama između tipova, u planinama centralne Bosne i u brdima Hercegovine.</p>
+    </div>
+    <div class="controls"><div class="grp tabs" data-target="confImg">
+      <button class="chip" aria-pressed="false" data-src="img/panel_pouzdanost_historijski.webp">1901–2020</button>
+      <button class="chip" aria-pressed="false" data-src="img/panel_pouzdanost_2041_2070.webp">2041–2070</button>
+      <button class="chip" aria-pressed="true" data-src="img/panel_pouzdanost_2071_2099.webp">2071–2099</button>
+    </div></div>
+    <figure>
+      <a class="plate" href="#" id="confImg" data-src="img/panel_pouzdanost_2071_2099.webp" data-cap="Pouzdanost klasifikacije">
+        <img src="img/panel_pouzdanost_2071_2099.webp" alt="Karte pouzdanosti klasifikacije po scenarijima" loading="lazy"></a>
+    </figure>
+  </section>
+
+  <section id="atlas">
+    <div class="head text">
+      <p class="label">18 karata</p>
+      <h2>Atlas <em>pojedinačnih karata</em></h2>
+      <p>Svaka karta prikazuje 20 gradova i 5 planinskih centara, s udjelom svakog klimatskog tipa u legendi.</p>
+    </div>
+    <div class="atlas">
+      <div class="side">
+        <div class="field">
+          <label for="atPeriod">Period</label>
+          <select id="atPeriod">
+            <option value="1901_1930">1901–1930</option>
+            <option value="1931_1960">1931–1960</option>
+            <option value="1961_1990">1961–1990</option>
+            <option value="1991_2020" selected>1991–2020</option>
+            <option value="2041_2070">2041–2070</option>
+            <option value="2071_2099">2071–2099</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="atSsp">Scenarij</label>
+          <select id="atSsp" disabled>
+            <option value="ssp119">SSP1-1.9 · vrlo niske emisije</option>
+            <option value="ssp126">SSP1-2.6 · niske emisije</option>
+            <option value="ssp434">SSP4-3.4 · srednje niske emisije</option>
+            <option value="ssp245" selected>SSP2-4.5 · srednje emisije</option>
+            <option value="ssp460">SSP4-6.0 · srednje visoke emisije</option>
+            <option value="ssp370">SSP3-7.0 · visoke emisije</option>
+            <option value="ssp585">SSP5-8.5 · vrlo visoke emisije</option>
+          </select>
+        </div>
+        <p class="note" id="atNote">Historijski periodi nemaju scenarij.</p>
+      </div>
+      <figure>
+        <a class="plate" href="#" id="atImg" data-src="img/kg_bih_1991_2020.webp" data-cap="Pojedinačna karta">
+          <img src="img/kg_bih_1991_2020.webp" alt="Karta klimatskih tipova BiH" loading="lazy"></a>
+      </figure>
+    </div>
+  </section>
+
+  <section id="izvori">
+    <div class="head text">
+      <p class="label">Metodologija</p>
+      <h2>Podaci <em>i izvori</em></h2>
+    </div>
+    <dl class="sources text">
+      <div><dt>Klimatski tipovi, pouzdanost, temperatura i padavine</dt>
+        <dd>Beck, H. E. i sar. (2023). High-resolution (1 km) Köppen-Geiger maps for 1901–2099 based on constrained CMIP6 projections.
+          <a href="https://www.nature.com/articles/s41597-023-02549-6">Scientific Data 10, 724</a>.
+          Karte klimatskih tipova i pouzdanosti imaju rezoluciju 1 km; mjesečna temperatura i padavine 0,1° (godišnji prosjeci 0,5°).</dd></div>
+      <div><dt>Klasifikacija</dt>
+        <dd>Beck, H. E. i sar. (2018). Present and future Köppen-Geiger climate classification maps at 1-km resolution.
+          <a href="https://www.nature.com/articles/sdata2018214">Scientific Data 5, 180214</a>.</dd></div>
+      <div><dt>Dnevne temperature i padavine</dt>
+        <dd>E-OBS v31.0e, mreža 0,1°, srednja vrijednost ansambla (Cornes i sar., 2018, Journal of Geophysical Research: Atmospheres 123).
+          Podaci Copernicus Climate Change Service i projekta ECA&amp;D, za nekomercijalnu upotrebu.</dd></div>
+      <div><dt>Broj dana u prošlosti i budućnosti</dt>
+        <dd>Metoda „delta change”: dnevne vrijednosti iz perioda 1991–2020 pomjeraju se za razliku mjesečne
+          temperature (odnosno množe omjerom mjesečnih padavina) između datog perioda i 1991–2020 iz Beck et al. (2023).
+          Za periode prije 1991. to je procjena. Metoda ne mijenja dnevnu varijabilnost ni broj dana bez kiše.
+          E-OBS na mreži od oko 10 km izglađuje vrijednosti, pa su gradovi u dolinama nešto topliji nego što pokazuju karte.</dd></div>
+      <div><dt>Granica BiH i podloga</dt><dd>geoBoundaries (gbOpen, ADM0); Esri World Shaded Relief.</dd></div>
+      <div><dt>Udjeli površine</dt>
+        <dd>Računati s ponderom cos(geografske širine), jer ćelije pravilne mreže geografskih koordinata nemaju istu površinu.</dd></div>
+    </dl>
+  </section>
+
+  <footer>
+    <em>Klima Bosne i Hercegovine 1901–2099</em>
+    <p>Analiza: Nedim Sladić, prateći Beck et al. (2018, 2023). Sve karte i grafikoni postoje i u punoj rezoluciji (600 dpi).</p>
+  </footer>
+</main>
+
+<div class="lightbox" id="lb" hidden role="dialog" aria-modal="true" aria-label="Povećana slika">
+  <div class="bar2"><span id="lbCap"></span>
+    <span style="display:flex;gap:8px"><button id="lbZoom" type="button">Puna veličina</button><button id="lbClose" type="button">Zatvori</button></span></div>
+  <div class="scroll"><img id="lbImg" alt=""></div>
+</div>
+
+<script>
+(function () {
+  // Udio klimatskih tipova (%) iz udio_klimatskih_tipova.csv i srednja godišnja temperatura (°C)
+  var CLS = ["Csa", "Csb", "Cfa", "Cfb", "Dfa", "Dfb", "Dfc"];
+  var NAMES = {
+    Csa: "Mediteranska, vruće ljeto", Csb: "Mediteranska, toplo ljeto", Cfa: "Umjereno topla, vruće ljeto",
+    Cfb: "Umjereno topla, toplo ljeto", Dfa: "Kontinentalna, vruće ljeto", Dfb: "Kontinentalna, toplo ljeto",
+    Dfc: "Subalpska (planinska)"
+  };
+  var H = {
+    "1901–1930": [[0.88,0.21,4.71,6.06,0,84.29,3.86], 8.9],
+    "1931–1960": [[3.46,1.04,5.66,3.10,1.48,83.22,2.03], 9.1],
+    "1961–1990": [[1.52,0.26,2.88,8.98,0,83.73,2.63], 9.1],
+    "1991–2020": [[1.65,0.14,26.98,29.08,0,40.72,1.43], 10.3]
+  };
+  var F = {
+    ssp119: {l: "SSP1-1.9", c: "#00ADCF", a: [[1.39,0,47.29,20.21,0,30.91,0.20], 11.3], b: [[1.11,0,44.36,24.03,0,30.20,0.30], 11.2]},
+    ssp126: {l: "SSP1-2.6", c: "#173C66", a: [[1.08,0,56.97,15.77,0,26.10,0.08], 11.6], b: [[1.24,0,57.44,17.47,0,23.76,0.09], 11.7]},
+    ssp434: {l: "SSP4-3.4", c: "#4E9FD3", a: [[3.83,0,58.92,15.50,0,21.73,0.02], 11.8], b: [[4.17,0,59.61,17.74,0,18.48,0.01], 12.0]},
+    ssp245: {l: "SSP2-4.5", c: "#F79420", a: [[1.50,0,61.49,14.81,0,22.17,0.04], 12.0], b: [[2.97,0,72.59,7.84,0,16.60,0], 12.6]},
+    ssp460: {l: "SSP4-6.0", c: "#C0812B", a: [[2.88,0,61.66,13.09,0,22.35,0.01], 11.9], b: [[6.47,0,75.91,3.39,0,14.23,0], 12.8]},
+    ssp370: {l: "SSP3-7.0", c: "#E71D25", a: [[2.32,0,65.32,15.46,0,16.91,0], 12.3], b: [[7.63,0,84.04,2.12,0,6.21,0], 13.8]},
+    ssp585: {l: "SSP5-8.5", c: "#951B1E", a: [[2.51,0,74.70,9.13,0,13.66,0], 12.7], b: [[8.09,0,89.62,0.04,0,2.25,0], 14.6]}
+  };
+  var css = getComputedStyle(document.documentElement);
+  function color(k) { return css.getPropertyValue("--" + k).trim(); }
+  function fmt(v) { return v.toFixed(1).replace(".", ","); }
+  function each(list, fn) { Array.prototype.forEach.call(list, fn); }
+
+  function row(label, sub, shares, t) {
+    var r = document.createElement("div");
+    r.className = "row";
+    var parts = shares.map(function (v, i) {
+      if (v < 0.05) return "";
+      var txt = v >= 9 ? CLS[i] + " " + Math.round(v) + " %" : "";
+      return '<span style="flex:0 0 ' + v + '%;background:' + color(CLS[i]) + '" title="' + CLS[i] + " · " +
+        NAMES[CLS[i]] + ": " + fmt(v) + ' %">' + txt + "</span>";
+    }).join("");
+    r.innerHTML = '<div class="lbl"><b>' + label + "</b>" + (sub || "") + '</div><div class="bar">' + parts +
+      '</div><div class="t">' + fmt(t) + " °C</div>";
+    return r;
+  }
+
+  var rows = document.getElementById("rows");
+  var cur = "ssp245";
+  try { cur = localStorage.getItem("klimaBihSsp") || cur; } catch (e) {}
+  if (!F[cur]) cur = "ssp245";
+
+  function render() {
+    rows.innerHTML = "";
+    Object.keys(H).forEach(function (k) { rows.appendChild(row(k, "", H[k][0], H[k][1])); });
+    var d = document.createElement("div"); d.className = "divider"; rows.appendChild(d);
+    rows.appendChild(row("2041–2070", F[cur].l, F[cur].a[0], F[cur].a[1]));
+    rows.appendChild(row("2071–2099", F[cur].l, F[cur].b[0], F[cur].b[1]));
+    each(document.querySelectorAll("#sspChips .chip"), function (b) {
+      b.setAttribute("aria-pressed", b.dataset.k === cur ? "true" : "false");
+    });
+  }
+
+  var chips = document.getElementById("sspChips");
+  Object.keys(F).forEach(function (k) {
+    var b = document.createElement("button");
+    b.type = "button"; b.className = "chip"; b.dataset.k = k;
+    b.innerHTML = '<i style="background:' + F[k].c + '"></i>' + F[k].l;
+    b.addEventListener("click", function () {
+      cur = k; render();
+      try { localStorage.setItem("klimaBihSsp", k); } catch (e) {}
+    });
+    chips.appendChild(b);
+  });
+  document.getElementById("keyline").innerHTML = CLS.filter(function (k) { return k !== "Dfa"; }).map(function (k) {
+    return '<span><i style="background:' + color(k) + '"></i><b>' + k + "</b> " + NAMES[k] + "</span>";
+  }).join("");
+  render();
+
+  function show(target, src) {
+    target.dataset.src = src;
+    target.querySelector("img").src = src;
+  }
+
+  // jednostavne kartice: svaka tipka nosi svoju sliku
+  each(document.querySelectorAll(".tabs"), function (t) {
+    var target = document.getElementById(t.dataset.target);
+    t.addEventListener("click", function (e) {
+      var b = e.target.closest("button"); if (!b) return;
+      each(t.querySelectorAll("button"), function (x) { x.setAttribute("aria-pressed", x === b ? "true" : "false"); });
+      show(target, b.dataset.src);
+    });
+  });
+
+  // birači s dvije grupe (npr. pokazatelj × period): slika se slaže iz uzorka
+  each(document.querySelectorAll("[data-chooser]"), function (c) {
+    var target = document.getElementById(c.dataset.chooser);
+    function update() {
+      var src = c.dataset.pattern;
+      each(c.querySelectorAll("[data-key]"), function (g) {
+        var on = g.querySelector('[aria-pressed="true"]');
+        src = src.replace("{" + g.dataset.key + "}", on.dataset.v);
+      });
+      show(target, src);
+    }
+    c.addEventListener("click", function (e) {
+      var b = e.target.closest("button"); if (!b) return;
+      var g = b.closest("[data-key]");
+      each(g.querySelectorAll("button"), function (x) { x.setAttribute("aria-pressed", x === b ? "true" : "false"); });
+      update();
+    });
+  });
+
+  // atlas
+  var per = document.getElementById("atPeriod"), ssp = document.getElementById("atSsp");
+  var at = document.getElementById("atImg"), note = document.getElementById("atNote");
+  function atlas() {
+    var fut = per.value >= "2041";
+    ssp.disabled = !fut;
+    note.hidden = fut;
+    show(at, "img/kg_bih_" + per.value + (fut ? "_" + ssp.value : "") + ".webp");
+  }
+  per.addEventListener("change", atlas);
+  ssp.addEventListener("change", atlas);
+
+  // povećanje slike
+  var lb = document.getElementById("lb"), lbImg = document.getElementById("lbImg");
+  var lbCap = document.getElementById("lbCap"), lbZoom = document.getElementById("lbZoom");
+  var last = null;
+  document.addEventListener("click", function (e) {
+    var p = e.target.closest(".plate"); if (!p) return;
+    e.preventDefault();
+    last = p;
+    lbImg.src = p.dataset.src;
+    lbImg.alt = p.querySelector("img").alt;
+    lbCap.textContent = p.dataset.cap || "";
+    lb.classList.remove("zoom"); lbZoom.textContent = "Puna veličina";
+    lb.hidden = false;
+    document.body.style.overflow = "hidden";
+    document.getElementById("lbClose").focus();
+  });
+  function close() {
+    lb.hidden = true; document.body.style.overflow = "";
+    if (last) last.focus();
+  }
+  document.getElementById("lbClose").addEventListener("click", close);
+  lbZoom.addEventListener("click", function () {
+    var z = lb.classList.toggle("zoom");
+    lbZoom.textContent = z ? "Prilagodi ekranu" : "Puna veličina";
+  });
+  lb.addEventListener("click", function (e) { if (e.target === lb) close(); });
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape" && !lb.hidden) close(); });
+
+  // aktivno poglavlje u navigaciji
+  var links = document.querySelectorAll("nav.top a[href^='#']");
+  if ("IntersectionObserver" in window) {
+    var io = new IntersectionObserver(function (en) {
+      en.forEach(function (x) {
+        if (!x.isIntersecting) return;
+        each(links, function (a) { a.classList.toggle("on", a.getAttribute("href") === "#" + x.target.id); });
+      });
+    }, {rootMargin: "-40% 0px -55% 0px"});
+    each(document.querySelectorAll("main section, header.hero"), function (s) { io.observe(s); });
+  }
+})();
+</script>
+
+</body>
+</html>
