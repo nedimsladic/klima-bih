@@ -209,6 +209,26 @@ figcaption { font: 400 .88rem/1.5 var(--f-ui); color: var(--muted); max-width: 7
 .stat .v { font: 700 1.7rem/1.1 var(--f-num); font-variant-numeric: tabular-nums; }
 .stat .d { font: 500 .82rem/1.2 var(--f-ui); color: var(--muted); }
 .card .bar { height: 24px; }
+.ex-plots { grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); }
+@media (max-width: 860px) { .ex-plots { grid-template-columns: 1fr; } }
+.card h3.sm { font-size: 1.15rem; line-height: 1.3; }
+.trend svg { display: block; width: 100%; height: auto; overflow: visible; }
+.trend .ax { stroke: var(--rule); stroke-width: 1; }
+.trend text { fill: var(--muted); font: 500 11px/1 var(--f-ui); }
+.rows.mini .row { grid-template-columns: 78px 1fr; gap: 10px; }
+.rows.mini .bar { height: 20px; }
+.rows.mini .bar span { font-size: .66rem; }
+.rank { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 330px), 1fr)); gap: 6px 32px; }
+.rank button { display: grid; grid-template-columns: 22px minmax(0, 150px) 1fr 52px; align-items: center; gap: 8px;
+  background: none; border: 0; padding: 3px 0; color: var(--ink); cursor: pointer; text-align: left; font: 500 .9rem/1.2 var(--f-ui); }
+.rank button:hover .nm { color: var(--accent); }
+.rank .no { color: var(--faint); font-variant-numeric: tabular-nums; }
+.rank .nm { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.rank .bg { height: 10px; background: var(--chip); border-radius: 2px; overflow: hidden; }
+.rank .bg i { display: block; height: 100%; border-radius: 2px; }
+.rank .vv { text-align: right; font: 700 .92rem/1 var(--f-num); font-variant-numeric: tabular-nums; }
+.rank button.on { color: var(--accent); }
+.rank button.on .nm { font-weight: 700; }
 .field { display: grid; gap: 6px; }
 .field label { font: 600 .72rem/1.2 var(--f-ui); text-transform: uppercase; letter-spacing: .14em; color: var(--muted); }
 select {
@@ -650,6 +670,20 @@ footer strong { font: 700 1.15rem/1.4 var(--f-display); color: var(--ink); displ
         <div id="exInfo"><p class="meta"><span class="bs">Učitavam podatke…</span><span class="en">Loading data…</span></p></div>
       </div>
     </div>
+    <div class="explorer ex-plots">
+      <div class="card">
+        <h3 class="sm" id="exTrendTitle"></h3>
+        <div id="exTrend"></div>
+      </div>
+      <div class="card">
+        <h3 class="sm"><span class="bs">Klimatski tipovi kroz vrijeme</span><span class="en">Climate types over time</span></h3>
+        <div class="rows mini" id="exTypes"></div>
+      </div>
+    </div>
+    <div class="card">
+      <h3 class="sm" id="exRankTitle"></h3>
+      <div class="rank" id="exRank"></div>
+    </div>
   </section>
 
   <section id="gradovi">
@@ -994,7 +1028,10 @@ footer strong { font: 700 1.15rem/1.4 var(--f-display); color: var(--ink); displ
       scale.innerHTML = "<span>" + cfg[lang()] + '</span><span class="ramp">' + cfg.col.map(function (c) { return '<i style="background:' + c + '"></i>'; }).join("") +
         "</span><span>" + num(cfg.stops[0], 0) + "–" + num(cfg.stops[cfg.stops.length - 1], 0) + "+" + cfg.u + "</span>";
     }
+    renderRank(k);
     if (EX.sel == null) return;
+    renderTrend(EX.data.m[EX.sel]);
+    renderTypes(EX.data.m[EX.sel]);
     var m = EX.data.m[EX.sel], d = m.d[k], r = m.d["1991_2020|hist"], L = LBL[lang()];
     var per = EX.p.replace("_", "–") + (EX.p >= "2041" ? " · " + F[EX.s].l : "");
     var dom = dominant(d[5]);
@@ -1011,6 +1048,96 @@ footer strong { font: 700 1.15rem/1.4 var(--f-display); color: var(--ink); displ
       '<div class="field"><span class="label">' + L.kg + '</span><div class="bar">' + barHTML(d[5]) + "</div></div>";
   }
   window.__exRender = render;
+
+  /* grafikoni za odabranu općinu */
+  var PER = ["1901_1930", "1931_1960", "1961_1990", "1991_2020", "2041_2070", "2071_2099"];
+  var PX = {"1901_1930": 1915.5, "1931_1960": 1945.5, "1961_1990": 1975.5, "1991_2020": 2005.5, "2041_2070": 2055.5, "2071_2099": 2085};
+  var PLBL = {"1901_1930": "1901–30", "1931_1960": "1931–60", "1961_1990": "1961–90", "1991_2020": "1991–2020", "2041_2070": "2041–70", "2071_2099": "2071–99"};
+  var trend = document.getElementById("exTrend"), types = document.getElementById("exTypes"), rank = document.getElementById("exRank");
+  trend.className = "trend";
+  function trendVar() { return EX.v === "kg" ? "t" : EX.v; }
+  function niceTicks(lo, hi) {
+    var span = hi - lo, step = Math.pow(10, Math.floor(Math.log10(span / 4)));
+    [1, 2, 2.5, 5, 10].some(function (f) { if (span / (step * f) <= 5) { step *= f; return true; } });
+    var t = [], v = Math.ceil(lo / step) * step;
+    for (; v <= hi + 1e-9; v += step) t.push(+v.toFixed(6));
+    return t;
+  }
+  function renderTrend(m) {
+    var vn = trendVar(), cfg = VARS[vn], i = cfg.i;
+    document.getElementById("exTrendTitle").textContent = cfg[lang()] + " · " + m.n;
+    var hist = PER.slice(0, 4).map(function (p) { return [PX[p], m.d[p + "|hist"][i]]; });
+    var ser = Object.keys(F).map(function (s) {
+      return {s: s, pts: [hist[3]].concat(["2041_2070", "2071_2099"].map(function (p) { return [PX[p], m.d[p + "|" + s][i]]; }))};
+    });
+    var all = hist.map(function (h) { return h[1]; });
+    ser.forEach(function (o) { o.pts.forEach(function (q) { all.push(q[1]); }); });
+    var lo = Math.min.apply(null, all), hi = Math.max.apply(null, all), pad = (hi - lo) * 0.12 || 1;
+    lo = Math.max(vn === "t" ? lo - pad : 0, vn === "t" ? -99 : 0); hi = hi + pad;
+    var W = 460, Hh = 250, l = 40, rgt = 54, tp = 12, bt = 34;
+    function x(v) { return l + (v - 1905) / (2095 - 1905) * (W - l - rgt); }
+    function y(v) { return tp + (1 - (v - lo) / (hi - lo)) * (Hh - tp - bt); }
+    var g = "";
+    niceTicks(lo, hi).forEach(function (t) {
+      g += '<line class="ax" x1="' + l + '" x2="' + (W - rgt) + '" y1="' + y(t) + '" y2="' + y(t) + '"/>' +
+        '<text x="' + (l - 6) + '" y="' + (y(t) + 4) + '" text-anchor="end">' + num(t, vn === "t" && t % 1 ? 1 : 0) + "</text>";
+    });
+    PER.forEach(function (p) {
+      g += '<text x="' + x(PX[p]) + '" y="' + (Hh - 14) + '" text-anchor="middle">' + PLBL[p] + "</text>";
+    });
+    g += '<line x1="' + x(2020) + '" x2="' + x(2020) + '" y1="' + tp + '" y2="' + (Hh - bt) + '" stroke="var(--faint)" stroke-dasharray="2 3"/>';
+    function poly(pts, col, w, op, dash) {
+      return '<polyline fill="none" stroke="' + col + '" stroke-width="' + w + '" stroke-opacity="' + op + '"' + (dash ? ' stroke-dasharray="5 3"' : "") +
+        ' stroke-linejoin="round" points="' + pts.map(function (q) { return x(q[0]) + "," + y(q[1]); }).join(" ") + '"/>' +
+        pts.map(function (q) { return '<circle cx="' + x(q[0]) + '" cy="' + y(q[1]) + '" r="' + (w > 2 ? 3.5 : 2.2) + '" fill="' + col + '" fill-opacity="' + op + '"/>'; }).join("");
+    }
+    ser.filter(function (o) { return o.s !== EX.s; }).forEach(function (o) { g += poly(o.pts, F[o.s].c, 1.3, 0.35, o.s === "ssp434" || o.s === "ssp460"); });
+    var selS = ser.filter(function (o) { return o.s === EX.s; })[0];
+    g += poly(hist, "var(--ink)", 2.6, 1);
+    g += poly(selS.pts, F[EX.s].c, 3, 1);
+    var end = selS.pts[2];
+    g += '<text x="' + (x(end[0]) + 7) + '" y="' + (y(end[1]) + 4) + '" style="fill:' + F[EX.s].c + ';font-weight:700;font-size:12px">' +
+      num(end[1], cfg.d) + cfg.u + "</text>";
+    g += '<text x="' + (x(hist[3][0]) - 6) + '" y="' + (y(hist[3][1]) - 8) + '" text-anchor="end" style="fill:var(--ink);font-weight:700;font-size:12px">' +
+      num(hist[3][1], cfg.d) + cfg.u + "</text>";
+    trend.innerHTML = '<svg viewBox="0 0 ' + W + " " + Hh + '" role="img" aria-label="' + cfg[lang()] + " · " + m.n + '">' + g + "</svg>" +
+      '<div class="keyline" style="margin-top:6px"><span><i style="background:var(--ink);border-radius:0;height:3px;width:16px"></i>' +
+      (lang() === "en" ? "Historical periods" : "Historijski periodi") + '</span><span><i style="background:' + F[EX.s].c +
+      ';border-radius:0;height:3px;width:16px"></i>' + F[EX.s].l + '</span><span style="color:var(--faint)">' +
+      (lang() === "en" ? "faint: other scenarios" : "blijedo: ostali scenariji") + "</span></div>";
+  }
+  function renderTypes(m) {
+    types.innerHTML = "";
+    PER.forEach(function (p, j) {
+      if (j === 4) { var dv = document.createElement("div"); dv.className = "divider"; dv.style.marginLeft = "88px";
+        dv.innerHTML = "<span>" + F[EX.s].l + "</span>"; types.appendChild(dv); }
+      var k = p + "|" + (j < 4 ? "hist" : EX.s), r = document.createElement("div");
+      r.className = "row";
+      r.innerHTML = '<div class="lbl"><b>' + PLBL[p] + '</b></div><div class="bar">' + barHTML(m.d[k][5]) + "</div>";
+      types.appendChild(r);
+    });
+  }
+  function renderRank(k) {
+    var vn = trendVar(), cfg = VARS[vn], i = cfg.i;
+    var list = EX.data.m.map(function (m, idx) { return {idx: idx, n: m.n, v: m.d[k][i]}; })
+      .sort(function (a, b) { return b.v - a.v; });
+    var top = list.slice(0, 15);
+    if (EX.sel != null && !top.some(function (o) { return o.idx === EX.sel; })) {
+      var pos = list.findIndex(function (o) { return o.idx === EX.sel; });
+      top.push(Object.assign({rank: pos + 1}, list[pos]));
+    }
+    var max = list[0].v || 1;
+    var per = EX.p.replace("_", "–") + (EX.p >= "2041" ? " · " + F[EX.s].l : "");
+    document.getElementById("exRankTitle").textContent = (lang() === "en" ? "Highest values: " : "Najviše vrijednosti: ") +
+      cfg[lang()] + " · " + per;
+    rank.innerHTML = top.map(function (o, j) {
+      var w = Math.max(0, (o.v - (vn === "t" ? Math.min(list[list.length - 1].v, 0) : 0)) / (max - (vn === "t" ? Math.min(list[list.length - 1].v, 0) : 0)) * 100);
+      return '<button type="button" data-i="' + o.idx + '" class="' + (o.idx === EX.sel ? "on" : "") + '"><span class="no">' + (o.rank || j + 1) +
+        '</span><span class="nm">' + o.n + '</span><span class="bg"><i style="width:' + w.toFixed(1) + "%;background:" + colorFor(o.v, cfg) +
+        '"></i></span><span class="vv">' + num(o.v, cfg.d) + cfg.u + "</span></button>";
+    }).join("");
+  }
+  rank.addEventListener("click", function (e) { var b = e.target.closest("button"); if (b) select(+b.dataset.i); });
   function select(i) { EX.sel = i; sel.value = String(i); render(); }
   fetch("data/opcine.json").then(function (r) { return r.json(); }).then(function (data) {
     EX.data = data;
