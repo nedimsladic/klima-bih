@@ -29,8 +29,8 @@
   --card: #ffffff;
   --shadow: 0 1px 1px rgba(20, 35, 32, .04), 0 12px 32px -8px rgba(20, 35, 32, .12);
   --f-display: "DIN Alternate", "DIN Next", "DIN 2014", "Barlow", "Helvetica Neue", Arial, sans-serif;
-  --f-body: "Barlow", "DIN Next", "Helvetica Neue", Arial, sans-serif;
-  --f-ui: "Barlow Semi Condensed", "Barlow", "Helvetica Neue", Arial, sans-serif;
+  --f-body: "DIN Alternate", "DIN Next", "DIN 2014", "Barlow", "Helvetica Neue", Arial, sans-serif;
+  --f-ui: "DIN Condensed", "DIN Alternate", "DIN Next Condensed", "Barlow Semi Condensed", "Barlow", "Helvetica Neue", Arial, sans-serif;
   --f-num: "DIN Alternate", "DIN Next", "Barlow", "Helvetica Neue", Arial, sans-serif;
   /* Köppen-Geigerove boje iz Beck et al. (2023) */
   --Csa: #ffff00; --Csb: #c8c800; --Cfa: #c8ff50; --Cfb: #64ff50;
@@ -75,7 +75,7 @@ h2 { font-size: clamp(1.8rem, 3.4vw, 2.6rem); line-height: 1.1; }
 h2 em { font-style: normal; font-family: var(--f-body); font-weight: 300; }
 h3 { font-size: 1.3rem; line-height: 1.25; font-weight: 600; }
 p { margin: 0; }
-.label { font: 600 .74rem/1.2 var(--f-ui); text-transform: uppercase; letter-spacing: .16em; color: var(--muted); }
+.label { font: 600 .84rem/1.2 var(--f-ui); text-transform: uppercase; letter-spacing: .16em; color: var(--muted); }
 
 /* navigacija */
 nav.top {
@@ -91,7 +91,7 @@ nav.top {
 nav.top .wrap { display: flex; align-items: center; gap: 12px; }
 nav.top .links { display: flex; align-items: baseline; gap: 22px; overflow-x: auto; padding-block: 13px; scrollbar-width: none; flex: 1; min-width: 0; }
 nav.top .links::-webkit-scrollbar { display: none; }
-nav.top a { font: 500 .88rem/1 var(--f-ui); color: var(--muted); text-decoration: none; white-space: nowrap; }
+nav.top a { font: 500 1rem/1 var(--f-ui); color: var(--muted); text-decoration: none; white-space: nowrap; }
 nav.top a:hover, nav.top a.on { color: var(--ink); }
 nav.top .brand { font: 700 1.05rem/1 var(--f-display); color: var(--ink); letter-spacing: .02em; }
 .lang { display: flex; border: 1px solid var(--rule); border-radius: 999px; overflow: hidden; flex: none; }
@@ -109,7 +109,7 @@ header.hero { padding-block: clamp(48px, 9vw, 112px) 24px; display: grid; gap: 2
 .stripes-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 12px 24px; }
 .chips { display: flex; flex-wrap: wrap; gap: 6px; }
 .chip {
-  font: 500 .84rem/1 var(--f-ui); padding: 8px 13px; border-radius: 999px; cursor: pointer;
+  font: 500 .98rem/1 var(--f-ui); padding: 8px 13px; border-radius: 999px; cursor: pointer;
   border: 1px solid var(--rule); background: transparent; color: var(--muted);
   display: inline-flex; align-items: center; gap: 7px; transition: background .15s, color .15s;
 }
