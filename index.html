@@ -335,7 +335,7 @@ footer strong { font: 700 1.15rem/1.4 var(--f-display); color: var(--ink); displ
       <a href="#pljusak"><span class="bs">Ekstremne padavine</span><span class="en">Extreme rainfall</span></a>
       <a href="#voda"><span class="bs">Vodni bilans</span><span class="en">Water balance</span></a>
       <a href="#agro"><span class="bs">Poljoprivreda i skijanje</span><span class="en">Farming and skiing</span></a>
-      <a href="#voce"><span class="bs">Voće i kulture</span><span class="en">Fruit and crops</span></a>
+      <a href="#voce"><span class="bs">Voće i povrće</span><span class="en">Fruit and vegetables</span></a>
       <a href="#visina"><span class="bs">Visina</span><span class="en">Elevation</span></a>
       <a href="#slivovi"><span class="bs">Slivovi</span><span class="en">River basins</span></a>
       <a href="#mjesto"><span class="bs">Moje mjesto</span><span class="en">My place</span></a>
@@ -538,8 +538,12 @@ footer strong { font: 700 1.15rem/1.4 var(--f-display); color: var(--ink); displ
         to 22 % of Croatia, 20 % of Montenegro, 23 % of Kosovo and 88 % of Albania. North Macedonia also gains hot steppe climate (BSh),
         which does not exist in the region today.</p>
     </div>
-    <figure><a class="plate" href="#" data-src="img/susjedi_karte.webp" data-cap="BiH i zemlje regije: klimatski tipovi">
-      <img src="img/susjedi_karte.webp" alt="Karte klimatskih tipova za BiH i zemlje regije, danas i 2071–2099" loading="lazy"></a></figure>
+    <div class="controls"><div class="grp tabs" data-target="susImg">
+      <button class="chip" aria-pressed="false" data-src="img/susjedi_karte_2041_2070.webp">2041–2070</button>
+      <button class="chip" aria-pressed="true" data-src="img/susjedi_karte_2071_2099.webp">2071–2099</button>
+    </div></div>
+    <figure><a class="plate" href="#" id="susImg" data-src="img/susjedi_karte_2071_2099.webp" data-cap="BiH i zemlje regije: klimatski tipovi">
+      <img src="img/susjedi_karte_2071_2099.webp" alt="Karte klimatskih tipova za BiH i zemlje regije, danas i u budućnosti" loading="lazy"></a></figure>
     <figure><a class="plate" href="#" data-src="img/susjedi_udjeli.webp" data-cap="BiH i zemlje regije: udio klimatskih tipova">
       <img src="img/susjedi_udjeli.webp" alt="Udio klimatskih tipova po zemljama 1901–2099" loading="lazy"></a></figure>
   </section>
@@ -602,12 +606,16 @@ footer strong { font: 700 1.15rem/1.4 var(--f-display); color: var(--ink); displ
       <a class="plate" href="#" id="sezImg" data-src="img/zima_temperatura_2071_2099.webp" data-cap="Zima i ljeto">
         <img src="img/zima_temperatura_2071_2099.webp" alt="Karte srednje sezonske temperature" loading="lazy"></a>
     </figure>
-    <div class="grid2">
-      <figure><a class="plate" href="#" data-src="img/promjena_temperature_zima_ljeto.webp" data-cap="Promjena temperature zimi i ljeti">
-        <img src="img/promjena_temperature_zima_ljeto.webp" alt="Promjena temperature zimi i ljeti" loading="lazy"></a></figure>
-      <figure><a class="plate" href="#" data-src="img/promjena_padavina_zima_ljeto.webp" data-cap="Promjena padavina zimi i ljeti">
-        <img src="img/promjena_padavina_zima_ljeto.webp" alt="Promjena padavina zimi i ljeti" loading="lazy"></a></figure>
+    <div class="controls" data-chooser="sezChgImg" data-pattern="img/promjena_{k}_zima_ljeto_{p}.webp">
+      <div class="grp" data-key="k"><span><span class="bs">Promjena</span><span class="en">Change</span></span>
+        <button class="chip" aria-pressed="true" data-v="temperature"><span class="bs">Temperatura</span><span class="en">Temperature</span></button>
+        <button class="chip" aria-pressed="false" data-v="padavina"><span class="bs">Padavine</span><span class="en">Precipitation</span></button></div>
+      <div class="grp" data-key="p"><span>Period</span>
+        <button class="chip" aria-pressed="false" data-v="2041_2070">2041–2070</button>
+        <button class="chip" aria-pressed="true" data-v="2071_2099">2071–2099</button></div>
     </div>
+    <figure><a class="plate" href="#" id="sezChgImg" data-src="img/promjena_temperature_zima_ljeto_2071_2099.webp" data-cap="Promjena zimi i ljeti">
+      <img src="img/promjena_temperature_zima_ljeto_2071_2099.webp" alt="Karte promjene temperature i padavina zimi i ljeti" loading="lazy"></a></figure>
   </section>
 
   <section id="dani">
@@ -637,8 +645,12 @@ footer strong { font: 700 1.15rem/1.4 var(--f-display); color: var(--ink); displ
     </div>
     <figure><a class="plate" href="#" id="daniImg" data-src="img/dani_vruci_2071_2099.webp" data-cap="Broj dana godišnje">
       <img src="img/dani_vruci_2071_2099.webp" alt="Karte broja dana godišnje" loading="lazy"></a></figure>
-    <figure><a class="plate" href="#" data-src="img/dani_po_gradovima.webp" data-cap="Hladni i vrući dani po gradovima">
-      <img src="img/dani_po_gradovima.webp" alt="Tabela hladnih i vrućih dana po gradovima i planinama" loading="lazy"></a></figure>
+    <div class="controls"><div class="grp tabs" data-target="dpgImg">
+      <button class="chip" aria-pressed="false" data-src="img/dani_po_gradovima_2041_2070.webp">2041–2070</button>
+      <button class="chip" aria-pressed="true" data-src="img/dani_po_gradovima_2071_2099.webp">2071–2099</button>
+    </div></div>
+    <figure><a class="plate" href="#" id="dpgImg" data-src="img/dani_po_gradovima_2071_2099.webp" data-cap="Hladni i vrući dani po gradovima">
+      <img src="img/dani_po_gradovima_2071_2099.webp" alt="Tabela hladnih i vrućih dana po gradovima i planinama" loading="lazy"></a></figure>
   </section>
 
   <section id="ekstremi">
@@ -671,8 +683,12 @@ footer strong { font: 700 1.15rem/1.4 var(--f-display); color: var(--ink); displ
     </div>
     <figure><a class="plate" href="#" id="ekstImg" data-src="img/ekstremi_tropske_noci_2071_2099.webp" data-cap="Tropske noći, grijanje, hlađenje i snijeg">
       <img src="img/ekstremi_tropske_noci_2071_2099.webp" alt="Karte po scenarijima" loading="lazy"></a></figure>
-    <figure><a class="plate" href="#" data-src="img/ekstremi_po_gradovima.webp" data-cap="Tropske noći, grijanje, hlađenje i snijeg po gradovima">
-      <img src="img/ekstremi_po_gradovima.webp" alt="Tabela po gradovima i planinama" loading="lazy"></a></figure>
+    <div class="controls"><div class="grp tabs" data-target="epgImg">
+      <button class="chip" aria-pressed="false" data-src="img/ekstremi_po_gradovima_2041_2070.webp">2041–2070</button>
+      <button class="chip" aria-pressed="true" data-src="img/ekstremi_po_gradovima_2071_2099.webp">2071–2099</button>
+    </div></div>
+    <figure><a class="plate" href="#" id="epgImg" data-src="img/ekstremi_po_gradovima_2071_2099.webp" data-cap="Tropske noći, grijanje, hlađenje i snijeg po gradovima">
+      <img src="img/ekstremi_po_gradovima_2071_2099.webp" alt="Tabela po gradovima i planinama" loading="lazy"></a></figure>
   </section>
 
   <section id="talasi">
@@ -727,8 +743,12 @@ footer strong { font: 700 1.15rem/1.4 var(--f-display); color: var(--ink); displ
     </div>
     <figure><a class="plate" href="#" id="kisaImg" data-src="img/padavine_r10_2071_2099.webp" data-cap="Dani s padavinama">
       <img src="img/padavine_r10_2071_2099.webp" alt="Karte broja dana s padavinama" loading="lazy"></a></figure>
-    <figure><a class="plate" href="#" data-src="img/padavine_promjena_dana.webp" data-cap="Promjena broja dana s padavinama">
-      <img src="img/padavine_promjena_dana.webp" alt="Promjena broja dana s padavinama u procentima" loading="lazy"></a></figure>
+    <div class="controls"><div class="grp tabs" data-target="ppdImg">
+      <button class="chip" aria-pressed="false" data-src="img/padavine_promjena_dana_2041_2070.webp">2041–2070</button>
+      <button class="chip" aria-pressed="true" data-src="img/padavine_promjena_dana_2071_2099.webp">2071–2099</button>
+    </div></div>
+    <figure><a class="plate" href="#" id="ppdImg" data-src="img/padavine_promjena_dana_2071_2099.webp" data-cap="Promjena broja dana s padavinama">
+      <img src="img/padavine_promjena_dana_2071_2099.webp" alt="Promjena broja dana s padavinama u procentima" loading="lazy"></a></figure>
   </section>
 
   <section id="pljusak">
@@ -820,23 +840,31 @@ footer strong { font: 700 1.15rem/1.4 var(--f-display); color: var(--ink); displ
   <section id="voce">
     <div class="head text">
       <p class="label"><span class="bs">Zimsko hlađenje i toplina za kulture</span><span class="en">Winter chill and warmth for crops</span></p>
-      <h2><span class="bs">Voće <em>i kulture</em></span><span class="en">Fruit <em>and crops</em></span></h2>
+      <h2><span class="bs">Voće <em>i povrće</em></span><span class="en">Fruit <em>and vegetables</em></span></h2>
       <p class="bs">Jabuka, kruška, šljiva i trešnja trebaju zimi dovoljno sati između 0 i 7 °C da bi u proljeće ravnomjerno procvjetale.
         Danas BiH u prosjeku ima oko 1250 takvih sati od novembra do februara, a do 2071–2099 to bi ostalo slično (1240–1310 sati).
         Prosjek, međutim, skriva dva suprotna smjera: na planinama i visoravnima sati hlađenja ima više, jer je zima blaža i manje je
         dana ispod nule, dok ih u nizinama ima sve manje. Mostar bi prema SSP5-8.5 pao s oko 1430 na 880 sati, što je ispod potreba
         mnogih sorti jabuke i trešnje, a Sarajevo bi poraslo s oko 1080 na 1320.</p>
-      <p class="bs">Gruba temperaturna pogodnost (bez tla i vode) pokazuje da bi kukuruz za zrno imao dovoljno topline na 55 % površine danas,
-        a na 78 %, 91 % ili 100 % do 2071–2099 (SSP1-2.6, SSP2-4.5, SSP5-8.5). Vinova loza bi se proširila sa 73 % na 92–100 %. Maslina
-        ostaje ograničena na jug Hercegovine: s 4 % na najviše 8 % površine, jer je i dalje ograničavaju zimski mrazevi.</p>
+      <p class="bs">Gruba temperaturna pogodnost (bez tla, vode i izbora sorte) pokazuje dva smjera. Rasponi su od SSP1-2.6 do SSP5-8.5,
+        prvo za 2041–2070, pa za 2071–2099. Kulture koje traže toplinu dobijaju prostor: kukuruz za zrno s 55 % površine danas na 77–91 % i 78–100 %,
+        paradajz i paprika na otvorenom s 43 % na 64–83 % i 64–99 %, lubenica i dinja sa 17 % na 43–59 % i 44–90 %, breskva i marelica s 34 % na
+        58–73 % i 59–93 %, a smokva s 5 % na 6–12 % i 6–40 %. Kulture koje ne podnose vrućinu gube prostor: krompir s 47 % na 14–31 % i 2–30 %,
+        kupus i lisnato povrće sa 71 % na 30–46 % i 5–45 %, jabuka sa 63 % na 37–49 % i 8–48 %, a trešnja s 58 % na 42–55 % i 13–55 %.
+        Vinova loza raste sa 73 % na 91–97 % i 92–100 %, šljiva sa 75 % na 93–97 % i 93–96 %, a maslina ostaje na jugu Hercegovine (s 4 % na
+        najviše 8 %), jer je i dalje ograničavaju zimski mrazevi.</p>
       <p class="en">Apple, pear, plum and cherry need enough winter hours between 0 and 7 °C to flower evenly in spring. Today BiH averages
         about 1250 such hours from November to February, and by 2071–2099 this stays similar (1240–1310 hours). The average hides two opposite
         trends: mountains and plateaus gain chill hours because winters are milder with fewer days below zero, while lowlands lose them. Under
         SSP5-8.5 Mostar would fall from about 1430 to 880 hours, below the needs of many apple and cherry varieties, while Sarajevo would rise
         from about 1080 to 1320.</p>
-      <p class="en">Rough temperature suitability (no soil or water) shows grain maize with enough warmth on 55 % of the country today and on
-        78 %, 91 % or 100 % by 2071–2099 (SSP1-2.6, SSP2-4.5, SSP5-8.5). Grapevine would spread from 73 % to 92–100 %. Olive stays confined to
-        southern Herzegovina, from 4 % to at most 8 %, because winter frost still limits it.</p>
+      <p class="en">Rough temperature suitability (no soil, water or choice of variety) shows two directions. Ranges run from SSP1-2.6 to
+        SSP5-8.5, first for 2041–2070, then for 2071–2099. Warmth-loving crops gain ground: grain maize from 55 % of the country today to 77–91 % and
+        78–100 %, outdoor tomato and pepper from 43 % to 64–83 % and 64–99 %, watermelon and melon from 17 % to 43–59 % and 44–90 %, peach and
+        apricot from 34 % to 58–73 % and 59–93 %, and fig from 5 % to 6–12 % and 6–40 %. Crops that dislike heat lose ground: potato from 47 % to
+        14–31 % and 2–30 %, cabbage and leafy vegetables from 71 % to 30–46 % and 5–45 %, apple from 63 % to 37–49 % and 8–48 %, and cherry from
+        58 % to 42–55 % and 13–55 %. Grapevine grows from 73 % to 91–97 % and 92–100 %, plum from 75 % to 93–97 % and 93–96 %, and olive stays in
+        southern Herzegovina (from 4 % to at most 8 %) because winter frost still limits it.</p>
     </div>
     <div class="controls"><div class="grp tabs" data-target="chillImg">
       <button class="chip" aria-pressed="false" data-src="img/hk_chill_historijski.webp">1901–2020</button>
@@ -845,8 +873,16 @@ footer strong { font: 700 1.15rem/1.4 var(--f-display); color: var(--ink); displ
     </div></div>
     <figure><a class="plate" href="#" id="chillImg" data-src="img/hk_chill_2071_2099.webp" data-cap="Sati zimskog hlađenja">
       <img src="img/hk_chill_2071_2099.webp" alt="Karte sati zimskog hlađenja za voće po scenarijima" loading="lazy"></a></figure>
-    <figure><a class="plate" href="#" data-src="img/kulture_bih.webp" data-cap="Klimatska pogodnost za kukuruz, vinovu lozu i maslinu">
-      <img src="img/kulture_bih.webp" alt="Karte područja dovoljno toplih za kukuruz, vinovu lozu i maslinu" loading="lazy"></a></figure>
+    <div class="controls" data-chooser="kultImg" data-pattern="img/kulture_{k}_{p}.webp">
+      <div class="grp" data-key="k"><span><span class="bs">Kulture</span><span class="en">Crops</span></span>
+        <button class="chip" aria-pressed="true" data-v="voce"><span class="bs">Voće i vinova loza</span><span class="en">Fruit and grapevine</span></button>
+        <button class="chip" aria-pressed="false" data-v="povrce"><span class="bs">Povrće i ratarske kulture</span><span class="en">Vegetables and field crops</span></button></div>
+      <div class="grp" data-key="p"><span>Period</span>
+        <button class="chip" aria-pressed="false" data-v="2041_2070">2041–2070</button>
+        <button class="chip" aria-pressed="true" data-v="2071_2099">2071–2099</button></div>
+    </div>
+    <figure><a class="plate" href="#" id="kultImg" data-src="img/kulture_voce_2071_2099.webp" data-cap="Klimatska pogodnost za kulture">
+      <img src="img/kulture_voce_2071_2099.webp" alt="Karte područja gdje temperatura odgovara voću, povrću i ratarskim kulturama" loading="lazy"></a></figure>
   </section>
 
   <section id="visina">
@@ -860,8 +896,12 @@ footer strong { font: 700 1.15rem/1.4 var(--f-display); color: var(--ink); displ
         By 2071–2099 that line would climb to 1000 m (SSP1-2.6), 1100 m (SSP2-4.5) or 1600 m (SSP5-8.5). Subalpine climate (Dfc),
         found today above about 1700 m, disappears in most scenarios.</p>
     </div>
-    <figure><a class="plate" href="#" data-src="img/visina_tipovi.webp" data-cap="Klimatski tipovi po nadmorskoj visini">
-      <img src="img/visina_tipovi.webp" alt="Udio klimatskih tipova po visinskim pojasevima od 100 m" loading="lazy"></a></figure>
+    <div class="controls"><div class="grp tabs" data-target="visImg">
+      <button class="chip" aria-pressed="false" data-src="img/visina_tipovi_2041_2070.webp">2041–2070</button>
+      <button class="chip" aria-pressed="true" data-src="img/visina_tipovi_2071_2099.webp">2071–2099</button>
+    </div></div>
+    <figure><a class="plate" href="#" id="visImg" data-src="img/visina_tipovi_2071_2099.webp" data-cap="Klimatski tipovi po nadmorskoj visini">
+      <img src="img/visina_tipovi_2071_2099.webp" alt="Udio klimatskih tipova po visinskim pojasevima od 100 m" loading="lazy"></a></figure>
     <figure style="max-width: 820px"><a class="plate" href="#" data-src="img/visina_granica.webp" data-cap="Granica kontinentalne klime">
       <img src="img/visina_granica.webp" alt="Donja granica kontinentalne i planinske klime 1901–2099" loading="lazy"></a></figure>
   </section>
@@ -1145,13 +1185,13 @@ footer strong { font: 700 1.15rem/1.4 var(--f-display); color: var(--ink); displ
       <div><dt><span class="bs">Zimsko hlađenje, ekstremne padavine i kulture</span><span class="en">Winter chill, extreme rainfall and crops</span></dt>
         <dd><span class="bs">Sati hlađenja po Weinbergeru (0–7,2 °C, novembar–februar), satne temperature iz dnevnog minimuma i maksimuma (kosinusna
           interpolacija). Rx1day i Rx5day (ETCCDI); druga procjena množi dnevne padavine s 1,07 po °C zagrijavanja u odnosu na 1991–2020.
-          Pogodnost: kukuruz stepen-dani (april–oktobar, baza 10 °C) ≥ 1250, vinova loza Huglinov indeks ≥ 1500, maslina Huglin ≥ 2100 i
-          najviše 20 mraznih dana. Grijanje i hlađenje u gradovima: stepen-dani po Eurostatu (grijanje: 18 °C − Tsr za dane s Tsr ≤ 15 °C; hlađenje: Tsr − 21 °C za dane s Tsr ≥ 24 °C); promjena potreba za energijom je
+          Pogodnost kultura: pragovi stepen-dana rasta (GDD, april–oktobar, baza 10 °C), Huglinovog indeksa, sati zimskog hlađenja, dana bez
+          mraza, datuma posljednjeg mraza te broja vrućih, mraznih i ledenih dana; pragovi su navedeni u legendi svake karte. Grijanje i hlađenje u gradovima: stepen-dani po Eurostatu (grijanje: 18 °C − Tsr za dane s Tsr ≤ 15 °C; hlađenje: Tsr − 21 °C za dane s Tsr ≥ 24 °C); promjena potreba za energijom je
           promjena stepen-dana, ne cijena.</span>
           <span class="en">Weinberger chill hours (0–7.2 °C, November–February), hourly temperatures from daily minimum and maximum (cosine
           interpolation). Rx1day and Rx5day (ETCCDI); the second estimate scales daily precipitation by 1.07 per °C of warming relative to 1991–2020.
-          Suitability: maize growing degree days (April–October, base 10 °C) ≥ 1250, grapevine Huglin index ≥ 1500, olive Huglin ≥ 2100 and at
-          most 20 frost days. Heating and cooling in cities: Eurostat degree days (heating: 18 °C − Tmean on days with Tmean ≤ 15 °C; cooling: Tmean − 21 °C on days with Tmean ≥ 24 °C); the change in energy need is the change in
+          Crop suitability: thresholds of growing degree days (GDD, April–October, base 10 °C), Huglin index, winter chill hours, frost-free
+          days, last-frost date and the numbers of hot, frost and ice days; the thresholds are listed in each map's legend. Heating and cooling in cities: Eurostat degree days (heating: 18 °C − Tmean on days with Tmean ≤ 15 °C; cooling: Tmean − 21 °C on days with Tmean ≥ 24 °C); the change in energy need is the change in
           degree days, not in prices.</span></dd></div>
       <div><dt><span class="bs">Visina i slivovi</span><span class="en">Elevation and basins</span></dt>
         <dd>Copernicus DEM GLO-90 (© DLR, Airbus); HydroBASINS v1c (Lehner &amp; Grill, 2013), <span class="bs">nivo 6, za Vrbas nivo 7 (uzvodno od Laktaša).</span><span class="en">level 6, level 7 for the Vrbas (upstream of Laktaši).</span></dd></div>

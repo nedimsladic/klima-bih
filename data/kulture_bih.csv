@@ -1,55 +1,217 @@
-kultura,period,scenarij,udio površine BiH s dovoljno topline (%)
-Kukuruz za zrno,1901–1930,historijski,31.6
-Kukuruz za zrno,1931–1960,historijski,40.0
-Kukuruz za zrno,1961–1990,historijski,35.5
-Kukuruz za zrno,1991–2020,historijski,54.9
-Kukuruz za zrno,2041–2070,SSP119,70.5
-Kukuruz za zrno,2041–2070,SSP126,76.7
-Kukuruz za zrno,2041–2070,SSP434,80.9
-Kukuruz za zrno,2041–2070,SSP245,82.8
-Kukuruz za zrno,2041–2070,SSP460,82.8
-Kukuruz za zrno,2041–2070,SSP370,87.4
-Kukuruz za zrno,2041–2070,SSP585,91.2
-Kukuruz za zrno,2071–2099,SSP119,68.1
-Kukuruz za zrno,2071–2099,SSP126,77.6
-Kukuruz za zrno,2071–2099,SSP434,83.4
-Kukuruz za zrno,2071–2099,SSP245,90.7
-Kukuruz za zrno,2071–2099,SSP460,93.6
-Kukuruz za zrno,2071–2099,SSP370,98.8
-Kukuruz za zrno,2071–2099,SSP585,100.0
-Vinova loza,1901–1930,historijski,54.4
-Vinova loza,1931–1960,historijski,59.9
-Vinova loza,1961–1990,historijski,56.2
-Vinova loza,1991–2020,historijski,72.8
-Vinova loza,2041–2070,SSP119,87.6
-Vinova loza,2041–2070,SSP126,90.7
-Vinova loza,2041–2070,SSP434,92.9
-Vinova loza,2041–2070,SSP245,93.4
-Vinova loza,2041–2070,SSP460,93.4
-Vinova loza,2041–2070,SSP370,95.7
-Vinova loza,2041–2070,SSP585,96.5
-Vinova loza,2071–2099,SSP119,86.9
-Vinova loza,2071–2099,SSP126,91.5
-Vinova loza,2071–2099,SSP434,93.8
-Vinova loza,2071–2099,SSP245,96.4
-Vinova loza,2071–2099,SSP460,97.2
-Vinova loza,2071–2099,SSP370,100.0
-Vinova loza,2071–2099,SSP585,100.0
-Maslina,1901–1930,historijski,1.4
-Maslina,1931–1960,historijski,1.4
-Maslina,1961–1990,historijski,1.7
-Maslina,1991–2020,historijski,3.7
-Maslina,2041–2070,SSP119,4.7
-Maslina,2041–2070,SSP126,5.4
-Maslina,2041–2070,SSP434,5.4
-Maslina,2041–2070,SSP245,5.6
-Maslina,2041–2070,SSP460,5.4
-Maslina,2041–2070,SSP370,6.1
-Maslina,2041–2070,SSP585,6.3
-Maslina,2071–2099,SSP119,4.4
-Maslina,2071–2099,SSP126,5.4
-Maslina,2071–2099,SSP434,5.6
-Maslina,2071–2099,SSP245,6.3
-Maslina,2071–2099,SSP460,6.3
-Maslina,2071–2099,SSP370,7.5
-Maslina,2071–2099,SSP585,8.2
+grupa,kultura,prag,period,scenarij,udio površine BiH s pogodnom temperaturom (%)
+Voće i vinova loza,Jabuka,"≥ 1000 sati hlađenja, GDD ≥ 900, ≤ 35 vrućih dana",1901–1930,historijski,59.0
+Voće i vinova loza,Jabuka,"≥ 1000 sati hlađenja, GDD ≥ 900, ≤ 35 vrućih dana",1931–1960,historijski,61.4
+Voće i vinova loza,Jabuka,"≥ 1000 sati hlađenja, GDD ≥ 900, ≤ 35 vrućih dana",1961–1990,historijski,60.4
+Voće i vinova loza,Jabuka,"≥ 1000 sati hlađenja, GDD ≥ 900, ≤ 35 vrućih dana",1991–2020,historijski,62.7
+Voće i vinova loza,Jabuka,"≥ 1000 sati hlađenja, GDD ≥ 900, ≤ 35 vrućih dana",2041–2070,SSP119,55.5
+Voće i vinova loza,Jabuka,"≥ 1000 sati hlađenja, GDD ≥ 900, ≤ 35 vrućih dana",2041–2070,SSP126,48.9
+Voće i vinova loza,Jabuka,"≥ 1000 sati hlađenja, GDD ≥ 900, ≤ 35 vrućih dana",2041–2070,SSP434,46.9
+Voće i vinova loza,Jabuka,"≥ 1000 sati hlađenja, GDD ≥ 900, ≤ 35 vrućih dana",2041–2070,SSP245,45.3
+Voće i vinova loza,Jabuka,"≥ 1000 sati hlađenja, GDD ≥ 900, ≤ 35 vrućih dana",2041–2070,SSP460,45.5
+Voće i vinova loza,Jabuka,"≥ 1000 sati hlađenja, GDD ≥ 900, ≤ 35 vrućih dana",2041–2070,SSP370,42.6
+Voće i vinova loza,Jabuka,"≥ 1000 sati hlađenja, GDD ≥ 900, ≤ 35 vrućih dana",2041–2070,SSP585,37.1
+Voće i vinova loza,Jabuka,"≥ 1000 sati hlađenja, GDD ≥ 900, ≤ 35 vrućih dana",2071–2099,SSP119,56.0
+Voće i vinova loza,Jabuka,"≥ 1000 sati hlađenja, GDD ≥ 900, ≤ 35 vrućih dana",2071–2099,SSP126,48.4
+Voće i vinova loza,Jabuka,"≥ 1000 sati hlađenja, GDD ≥ 900, ≤ 35 vrućih dana",2071–2099,SSP434,45.1
+Voće i vinova loza,Jabuka,"≥ 1000 sati hlađenja, GDD ≥ 900, ≤ 35 vrućih dana",2071–2099,SSP245,39.0
+Voće i vinova loza,Jabuka,"≥ 1000 sati hlađenja, GDD ≥ 900, ≤ 35 vrućih dana",2071–2099,SSP460,34.3
+Voće i vinova loza,Jabuka,"≥ 1000 sati hlađenja, GDD ≥ 900, ≤ 35 vrućih dana",2071–2099,SSP370,19.2
+Voće i vinova loza,Jabuka,"≥ 1000 sati hlađenja, GDD ≥ 900, ≤ 35 vrućih dana",2071–2099,SSP585,8.1
+Voće i vinova loza,Šljiva,"≥ 800 sati hlađenja, GDD ≥ 1000",1901–1930,historijski,54.5
+Voće i vinova loza,Šljiva,"≥ 800 sati hlađenja, GDD ≥ 1000",1931–1960,historijski,59.9
+Voće i vinova loza,Šljiva,"≥ 800 sati hlađenja, GDD ≥ 1000",1961–1990,historijski,56.1
+Voće i vinova loza,Šljiva,"≥ 800 sati hlađenja, GDD ≥ 1000",1991–2020,historijski,74.8
+Voće i vinova loza,Šljiva,"≥ 800 sati hlađenja, GDD ≥ 1000",2041–2070,SSP119,89.3
+Voće i vinova loza,Šljiva,"≥ 800 sati hlađenja, GDD ≥ 1000",2041–2070,SSP126,92.9
+Voće i vinova loza,Šljiva,"≥ 800 sati hlađenja, GDD ≥ 1000",2041–2070,SSP434,93.8
+Voće i vinova loza,Šljiva,"≥ 800 sati hlađenja, GDD ≥ 1000",2041–2070,SSP245,93.8
+Voće i vinova loza,Šljiva,"≥ 800 sati hlađenja, GDD ≥ 1000",2041–2070,SSP460,93.9
+Voće i vinova loza,Šljiva,"≥ 800 sati hlađenja, GDD ≥ 1000",2041–2070,SSP370,95.1
+Voće i vinova loza,Šljiva,"≥ 800 sati hlađenja, GDD ≥ 1000",2041–2070,SSP585,96.7
+Voće i vinova loza,Šljiva,"≥ 800 sati hlađenja, GDD ≥ 1000",2071–2099,SSP119,89.1
+Voće i vinova loza,Šljiva,"≥ 800 sati hlađenja, GDD ≥ 1000",2071–2099,SSP126,92.7
+Voće i vinova loza,Šljiva,"≥ 800 sati hlađenja, GDD ≥ 1000",2071–2099,SSP434,94.4
+Voće i vinova loza,Šljiva,"≥ 800 sati hlađenja, GDD ≥ 1000",2071–2099,SSP245,96.3
+Voće i vinova loza,Šljiva,"≥ 800 sati hlađenja, GDD ≥ 1000",2071–2099,SSP460,96.7
+Voće i vinova loza,Šljiva,"≥ 800 sati hlađenja, GDD ≥ 1000",2071–2099,SSP370,95.6
+Voće i vinova loza,Šljiva,"≥ 800 sati hlađenja, GDD ≥ 1000",2071–2099,SSP585,94.6
+Voće i vinova loza,Trešnja,"≥ 1100 sati hlađenja, GDD ≥ 1000, ≤ 40 vrućih dana",1901–1930,historijski,48.7
+Voće i vinova loza,Trešnja,"≥ 1100 sati hlađenja, GDD ≥ 1000, ≤ 40 vrućih dana",1931–1960,historijski,49.1
+Voće i vinova loza,Trešnja,"≥ 1100 sati hlađenja, GDD ≥ 1000, ≤ 40 vrućih dana",1961–1990,historijski,49.9
+Voće i vinova loza,Trešnja,"≥ 1100 sati hlađenja, GDD ≥ 1000, ≤ 40 vrućih dana",1991–2020,historijski,58.1
+Voće i vinova loza,Trešnja,"≥ 1100 sati hlađenja, GDD ≥ 1000, ≤ 40 vrućih dana",2041–2070,SSP119,55.9
+Voće i vinova loza,Trešnja,"≥ 1100 sati hlađenja, GDD ≥ 1000, ≤ 40 vrućih dana",2041–2070,SSP126,55.1
+Voće i vinova loza,Trešnja,"≥ 1100 sati hlađenja, GDD ≥ 1000, ≤ 40 vrućih dana",2041–2070,SSP434,51.8
+Voće i vinova loza,Trešnja,"≥ 1100 sati hlađenja, GDD ≥ 1000, ≤ 40 vrućih dana",2041–2070,SSP245,49.1
+Voće i vinova loza,Trešnja,"≥ 1100 sati hlađenja, GDD ≥ 1000, ≤ 40 vrućih dana",2041–2070,SSP460,49.4
+Voće i vinova loza,Trešnja,"≥ 1100 sati hlađenja, GDD ≥ 1000, ≤ 40 vrućih dana",2041–2070,SSP370,45.5
+Voće i vinova loza,Trešnja,"≥ 1100 sati hlađenja, GDD ≥ 1000, ≤ 40 vrućih dana",2041–2070,SSP585,42.4
+Voće i vinova loza,Trešnja,"≥ 1100 sati hlađenja, GDD ≥ 1000, ≤ 40 vrućih dana",2071–2099,SSP119,56.2
+Voće i vinova loza,Trešnja,"≥ 1100 sati hlađenja, GDD ≥ 1000, ≤ 40 vrućih dana",2071–2099,SSP126,54.6
+Voće i vinova loza,Trešnja,"≥ 1100 sati hlađenja, GDD ≥ 1000, ≤ 40 vrućih dana",2071–2099,SSP434,49.1
+Voće i vinova loza,Trešnja,"≥ 1100 sati hlađenja, GDD ≥ 1000, ≤ 40 vrućih dana",2071–2099,SSP245,43.8
+Voće i vinova loza,Trešnja,"≥ 1100 sati hlađenja, GDD ≥ 1000, ≤ 40 vrućih dana",2071–2099,SSP460,39.6
+Voće i vinova loza,Trešnja,"≥ 1100 sati hlađenja, GDD ≥ 1000, ≤ 40 vrućih dana",2071–2099,SSP370,25.5
+Voće i vinova loza,Trešnja,"≥ 1100 sati hlađenja, GDD ≥ 1000, ≤ 40 vrućih dana",2071–2099,SSP585,12.6
+Voće i vinova loza,Breskva i marelica,"≥ 600 sati hlađenja, GDD ≥ 1500, posljednji mraz do 10. aprila",1901–1930,historijski,6.4
+Voće i vinova loza,Breskva i marelica,"≥ 600 sati hlađenja, GDD ≥ 1500, posljednji mraz do 10. aprila",1931–1960,historijski,15.8
+Voće i vinova loza,Breskva i marelica,"≥ 600 sati hlađenja, GDD ≥ 1500, posljednji mraz do 10. aprila",1961–1990,historijski,11.4
+Voće i vinova loza,Breskva i marelica,"≥ 600 sati hlađenja, GDD ≥ 1500, posljednji mraz do 10. aprila",1991–2020,historijski,34.5
+Voće i vinova loza,Breskva i marelica,"≥ 600 sati hlađenja, GDD ≥ 1500, posljednji mraz do 10. aprila",2041–2070,SSP119,52.6
+Voće i vinova loza,Breskva i marelica,"≥ 600 sati hlađenja, GDD ≥ 1500, posljednji mraz do 10. aprila",2041–2070,SSP126,58.2
+Voće i vinova loza,Breskva i marelica,"≥ 600 sati hlađenja, GDD ≥ 1500, posljednji mraz do 10. aprila",2041–2070,SSP434,60.9
+Voće i vinova loza,Breskva i marelica,"≥ 600 sati hlađenja, GDD ≥ 1500, posljednji mraz do 10. aprila",2041–2070,SSP245,61.4
+Voće i vinova loza,Breskva i marelica,"≥ 600 sati hlađenja, GDD ≥ 1500, posljednji mraz do 10. aprila",2041–2070,SSP460,61.4
+Voće i vinova loza,Breskva i marelica,"≥ 600 sati hlađenja, GDD ≥ 1500, posljednji mraz do 10. aprila",2041–2070,SSP370,65.4
+Voće i vinova loza,Breskva i marelica,"≥ 600 sati hlađenja, GDD ≥ 1500, posljednji mraz do 10. aprila",2041–2070,SSP585,72.8
+Voće i vinova loza,Breskva i marelica,"≥ 600 sati hlađenja, GDD ≥ 1500, posljednji mraz do 10. aprila",2071–2099,SSP119,50.8
+Voće i vinova loza,Breskva i marelica,"≥ 600 sati hlađenja, GDD ≥ 1500, posljednji mraz do 10. aprila",2071–2099,SSP126,59.0
+Voće i vinova loza,Breskva i marelica,"≥ 600 sati hlađenja, GDD ≥ 1500, posljednji mraz do 10. aprila",2071–2099,SSP434,62.3
+Voće i vinova loza,Breskva i marelica,"≥ 600 sati hlađenja, GDD ≥ 1500, posljednji mraz do 10. aprila",2071–2099,SSP245,72.2
+Voće i vinova loza,Breskva i marelica,"≥ 600 sati hlađenja, GDD ≥ 1500, posljednji mraz do 10. aprila",2071–2099,SSP460,76.4
+Voće i vinova loza,Breskva i marelica,"≥ 600 sati hlađenja, GDD ≥ 1500, posljednji mraz do 10. aprila",2071–2099,SSP370,87.9
+Voće i vinova loza,Breskva i marelica,"≥ 600 sati hlađenja, GDD ≥ 1500, posljednji mraz do 10. aprila",2071–2099,SSP585,93.2
+Voće i vinova loza,Vinova loza,Huglinov indeks ≥ 1500,1901–1930,historijski,54.4
+Voće i vinova loza,Vinova loza,Huglinov indeks ≥ 1500,1931–1960,historijski,59.9
+Voće i vinova loza,Vinova loza,Huglinov indeks ≥ 1500,1961–1990,historijski,56.2
+Voće i vinova loza,Vinova loza,Huglinov indeks ≥ 1500,1991–2020,historijski,72.8
+Voće i vinova loza,Vinova loza,Huglinov indeks ≥ 1500,2041–2070,SSP119,87.6
+Voće i vinova loza,Vinova loza,Huglinov indeks ≥ 1500,2041–2070,SSP126,90.7
+Voće i vinova loza,Vinova loza,Huglinov indeks ≥ 1500,2041–2070,SSP434,92.9
+Voće i vinova loza,Vinova loza,Huglinov indeks ≥ 1500,2041–2070,SSP245,93.4
+Voće i vinova loza,Vinova loza,Huglinov indeks ≥ 1500,2041–2070,SSP460,93.4
+Voće i vinova loza,Vinova loza,Huglinov indeks ≥ 1500,2041–2070,SSP370,95.7
+Voće i vinova loza,Vinova loza,Huglinov indeks ≥ 1500,2041–2070,SSP585,96.5
+Voće i vinova loza,Vinova loza,Huglinov indeks ≥ 1500,2071–2099,SSP119,86.9
+Voće i vinova loza,Vinova loza,Huglinov indeks ≥ 1500,2071–2099,SSP126,91.5
+Voće i vinova loza,Vinova loza,Huglinov indeks ≥ 1500,2071–2099,SSP434,93.8
+Voće i vinova loza,Vinova loza,Huglinov indeks ≥ 1500,2071–2099,SSP245,96.4
+Voće i vinova loza,Vinova loza,Huglinov indeks ≥ 1500,2071–2099,SSP460,97.2
+Voće i vinova loza,Vinova loza,Huglinov indeks ≥ 1500,2071–2099,SSP370,100.0
+Voće i vinova loza,Vinova loza,Huglinov indeks ≥ 1500,2071–2099,SSP585,100.0
+Voće i vinova loza,Smokva,"GDD ≥ 1900, ≤ 40 mraznih i ≤ 3 ledena dana",1901–1930,historijski,1.9
+Voće i vinova loza,Smokva,"GDD ≥ 1900, ≤ 40 mraznih i ≤ 3 ledena dana",1931–1960,historijski,2.4
+Voće i vinova loza,Smokva,"GDD ≥ 1900, ≤ 40 mraznih i ≤ 3 ledena dana",1961–1990,historijski,2.1
+Voće i vinova loza,Smokva,"GDD ≥ 1900, ≤ 40 mraznih i ≤ 3 ledena dana",1991–2020,historijski,4.7
+Voće i vinova loza,Smokva,"GDD ≥ 1900, ≤ 40 mraznih i ≤ 3 ledena dana",2041–2070,SSP119,6.3
+Voće i vinova loza,Smokva,"GDD ≥ 1900, ≤ 40 mraznih i ≤ 3 ledena dana",2041–2070,SSP126,6.5
+Voće i vinova loza,Smokva,"GDD ≥ 1900, ≤ 40 mraznih i ≤ 3 ledena dana",2041–2070,SSP434,6.6
+Voće i vinova loza,Smokva,"GDD ≥ 1900, ≤ 40 mraznih i ≤ 3 ledena dana",2041–2070,SSP245,7.0
+Voće i vinova loza,Smokva,"GDD ≥ 1900, ≤ 40 mraznih i ≤ 3 ledena dana",2041–2070,SSP460,6.8
+Voće i vinova loza,Smokva,"GDD ≥ 1900, ≤ 40 mraznih i ≤ 3 ledena dana",2041–2070,SSP370,8.0
+Voće i vinova loza,Smokva,"GDD ≥ 1900, ≤ 40 mraznih i ≤ 3 ledena dana",2041–2070,SSP585,12.1
+Voće i vinova loza,Smokva,"GDD ≥ 1900, ≤ 40 mraznih i ≤ 3 ledena dana",2071–2099,SSP119,6.1
+Voće i vinova loza,Smokva,"GDD ≥ 1900, ≤ 40 mraznih i ≤ 3 ledena dana",2071–2099,SSP126,6.5
+Voće i vinova loza,Smokva,"GDD ≥ 1900, ≤ 40 mraznih i ≤ 3 ledena dana",2071–2099,SSP434,7.2
+Voće i vinova loza,Smokva,"GDD ≥ 1900, ≤ 40 mraznih i ≤ 3 ledena dana",2071–2099,SSP245,11.6
+Voće i vinova loza,Smokva,"GDD ≥ 1900, ≤ 40 mraznih i ≤ 3 ledena dana",2071–2099,SSP460,11.8
+Voće i vinova loza,Smokva,"GDD ≥ 1900, ≤ 40 mraznih i ≤ 3 ledena dana",2071–2099,SSP370,27.6
+Voće i vinova loza,Smokva,"GDD ≥ 1900, ≤ 40 mraznih i ≤ 3 ledena dana",2071–2099,SSP585,40.2
+Voće i vinova loza,Maslina,"Huglinov indeks ≥ 2100, ≤ 20 mraznih dana",1901–1930,historijski,1.4
+Voće i vinova loza,Maslina,"Huglinov indeks ≥ 2100, ≤ 20 mraznih dana",1931–1960,historijski,1.4
+Voće i vinova loza,Maslina,"Huglinov indeks ≥ 2100, ≤ 20 mraznih dana",1961–1990,historijski,1.7
+Voće i vinova loza,Maslina,"Huglinov indeks ≥ 2100, ≤ 20 mraznih dana",1991–2020,historijski,3.7
+Voće i vinova loza,Maslina,"Huglinov indeks ≥ 2100, ≤ 20 mraznih dana",2041–2070,SSP119,4.7
+Voće i vinova loza,Maslina,"Huglinov indeks ≥ 2100, ≤ 20 mraznih dana",2041–2070,SSP126,5.4
+Voće i vinova loza,Maslina,"Huglinov indeks ≥ 2100, ≤ 20 mraznih dana",2041–2070,SSP434,5.4
+Voće i vinova loza,Maslina,"Huglinov indeks ≥ 2100, ≤ 20 mraznih dana",2041–2070,SSP245,5.6
+Voće i vinova loza,Maslina,"Huglinov indeks ≥ 2100, ≤ 20 mraznih dana",2041–2070,SSP460,5.4
+Voće i vinova loza,Maslina,"Huglinov indeks ≥ 2100, ≤ 20 mraznih dana",2041–2070,SSP370,6.1
+Voće i vinova loza,Maslina,"Huglinov indeks ≥ 2100, ≤ 20 mraznih dana",2041–2070,SSP585,6.3
+Voće i vinova loza,Maslina,"Huglinov indeks ≥ 2100, ≤ 20 mraznih dana",2071–2099,SSP119,4.4
+Voće i vinova loza,Maslina,"Huglinov indeks ≥ 2100, ≤ 20 mraznih dana",2071–2099,SSP126,5.4
+Voće i vinova loza,Maslina,"Huglinov indeks ≥ 2100, ≤ 20 mraznih dana",2071–2099,SSP434,5.6
+Voće i vinova loza,Maslina,"Huglinov indeks ≥ 2100, ≤ 20 mraznih dana",2071–2099,SSP245,6.3
+Voće i vinova loza,Maslina,"Huglinov indeks ≥ 2100, ≤ 20 mraznih dana",2071–2099,SSP460,6.3
+Voće i vinova loza,Maslina,"Huglinov indeks ≥ 2100, ≤ 20 mraznih dana",2071–2099,SSP370,7.5
+Voće i vinova loza,Maslina,"Huglinov indeks ≥ 2100, ≤ 20 mraznih dana",2071–2099,SSP585,8.2
+Povrće i ratarske kulture,Kukuruz za zrno,"GDD ≥ 1250, ≥ 150 dana bez mraza",1901–1930,historijski,31.6
+Povrće i ratarske kulture,Kukuruz za zrno,"GDD ≥ 1250, ≥ 150 dana bez mraza",1931–1960,historijski,40.0
+Povrće i ratarske kulture,Kukuruz za zrno,"GDD ≥ 1250, ≥ 150 dana bez mraza",1961–1990,historijski,35.5
+Povrće i ratarske kulture,Kukuruz za zrno,"GDD ≥ 1250, ≥ 150 dana bez mraza",1991–2020,historijski,54.9
+Povrće i ratarske kulture,Kukuruz za zrno,"GDD ≥ 1250, ≥ 150 dana bez mraza",2041–2070,SSP119,70.5
+Povrće i ratarske kulture,Kukuruz za zrno,"GDD ≥ 1250, ≥ 150 dana bez mraza",2041–2070,SSP126,76.7
+Povrće i ratarske kulture,Kukuruz za zrno,"GDD ≥ 1250, ≥ 150 dana bez mraza",2041–2070,SSP434,80.9
+Povrće i ratarske kulture,Kukuruz za zrno,"GDD ≥ 1250, ≥ 150 dana bez mraza",2041–2070,SSP245,82.8
+Povrće i ratarske kulture,Kukuruz za zrno,"GDD ≥ 1250, ≥ 150 dana bez mraza",2041–2070,SSP460,82.8
+Povrće i ratarske kulture,Kukuruz za zrno,"GDD ≥ 1250, ≥ 150 dana bez mraza",2041–2070,SSP370,87.4
+Povrće i ratarske kulture,Kukuruz za zrno,"GDD ≥ 1250, ≥ 150 dana bez mraza",2041–2070,SSP585,91.2
+Povrće i ratarske kulture,Kukuruz za zrno,"GDD ≥ 1250, ≥ 150 dana bez mraza",2071–2099,SSP119,68.1
+Povrće i ratarske kulture,Kukuruz za zrno,"GDD ≥ 1250, ≥ 150 dana bez mraza",2071–2099,SSP126,77.6
+Povrće i ratarske kulture,Kukuruz za zrno,"GDD ≥ 1250, ≥ 150 dana bez mraza",2071–2099,SSP434,83.4
+Povrće i ratarske kulture,Kukuruz za zrno,"GDD ≥ 1250, ≥ 150 dana bez mraza",2071–2099,SSP245,90.7
+Povrće i ratarske kulture,Kukuruz za zrno,"GDD ≥ 1250, ≥ 150 dana bez mraza",2071–2099,SSP460,93.6
+Povrće i ratarske kulture,Kukuruz za zrno,"GDD ≥ 1250, ≥ 150 dana bez mraza",2071–2099,SSP370,98.8
+Povrće i ratarske kulture,Kukuruz za zrno,"GDD ≥ 1250, ≥ 150 dana bez mraza",2071–2099,SSP585,100.0
+Povrće i ratarske kulture,Paradajz i paprika,"na otvorenom, GDD ≥ 1400, ≥ 160 dana bez mraza",1901–1930,historijski,19.0
+Povrće i ratarske kulture,Paradajz i paprika,"na otvorenom, GDD ≥ 1400, ≥ 160 dana bez mraza",1931–1960,historijski,25.6
+Povrće i ratarske kulture,Paradajz i paprika,"na otvorenom, GDD ≥ 1400, ≥ 160 dana bez mraza",1961–1990,historijski,22.7
+Povrće i ratarske kulture,Paradajz i paprika,"na otvorenom, GDD ≥ 1400, ≥ 160 dana bez mraza",1991–2020,historijski,42.9
+Povrće i ratarske kulture,Paradajz i paprika,"na otvorenom, GDD ≥ 1400, ≥ 160 dana bez mraza",2041–2070,SSP119,59.4
+Povrće i ratarske kulture,Paradajz i paprika,"na otvorenom, GDD ≥ 1400, ≥ 160 dana bez mraza",2041–2070,SSP126,63.5
+Povrće i ratarske kulture,Paradajz i paprika,"na otvorenom, GDD ≥ 1400, ≥ 160 dana bez mraza",2041–2070,SSP434,67.1
+Povrće i ratarske kulture,Paradajz i paprika,"na otvorenom, GDD ≥ 1400, ≥ 160 dana bez mraza",2041–2070,SSP245,69.9
+Povrće i ratarske kulture,Paradajz i paprika,"na otvorenom, GDD ≥ 1400, ≥ 160 dana bez mraza",2041–2070,SSP460,69.3
+Povrće i ratarske kulture,Paradajz i paprika,"na otvorenom, GDD ≥ 1400, ≥ 160 dana bez mraza",2041–2070,SSP370,75.4
+Povrće i ratarske kulture,Paradajz i paprika,"na otvorenom, GDD ≥ 1400, ≥ 160 dana bez mraza",2041–2070,SSP585,82.6
+Povrće i ratarske kulture,Paradajz i paprika,"na otvorenom, GDD ≥ 1400, ≥ 160 dana bez mraza",2071–2099,SSP119,58.3
+Povrće i ratarske kulture,Paradajz i paprika,"na otvorenom, GDD ≥ 1400, ≥ 160 dana bez mraza",2071–2099,SSP126,64.0
+Povrće i ratarske kulture,Paradajz i paprika,"na otvorenom, GDD ≥ 1400, ≥ 160 dana bez mraza",2071–2099,SSP434,71.2
+Povrće i ratarske kulture,Paradajz i paprika,"na otvorenom, GDD ≥ 1400, ≥ 160 dana bez mraza",2071–2099,SSP245,81.6
+Povrće i ratarske kulture,Paradajz i paprika,"na otvorenom, GDD ≥ 1400, ≥ 160 dana bez mraza",2071–2099,SSP460,85.0
+Povrće i ratarske kulture,Paradajz i paprika,"na otvorenom, GDD ≥ 1400, ≥ 160 dana bez mraza",2071–2099,SSP370,94.6
+Povrće i ratarske kulture,Paradajz i paprika,"na otvorenom, GDD ≥ 1400, ≥ 160 dana bez mraza",2071–2099,SSP585,99.5
+Povrće i ratarske kulture,Lubenica i dinja,"GDD ≥ 1700, ≥ 170 dana bez mraza",1901–1930,historijski,3.7
+Povrće i ratarske kulture,Lubenica i dinja,"GDD ≥ 1700, ≥ 170 dana bez mraza",1931–1960,historijski,4.5
+Povrće i ratarske kulture,Lubenica i dinja,"GDD ≥ 1700, ≥ 170 dana bez mraza",1961–1990,historijski,3.8
+Povrće i ratarske kulture,Lubenica i dinja,"GDD ≥ 1700, ≥ 170 dana bez mraza",1991–2020,historijski,17.5
+Povrće i ratarske kulture,Lubenica i dinja,"GDD ≥ 1700, ≥ 170 dana bez mraza",2041–2070,SSP119,37.9
+Povrće i ratarske kulture,Lubenica i dinja,"GDD ≥ 1700, ≥ 170 dana bez mraza",2041–2070,SSP126,42.9
+Povrće i ratarske kulture,Lubenica i dinja,"GDD ≥ 1700, ≥ 170 dana bez mraza",2041–2070,SSP434,47.3
+Povrće i ratarske kulture,Lubenica i dinja,"GDD ≥ 1700, ≥ 170 dana bez mraza",2041–2070,SSP245,49.2
+Povrće i ratarske kulture,Lubenica i dinja,"GDD ≥ 1700, ≥ 170 dana bez mraza",2041–2070,SSP460,48.5
+Povrće i ratarske kulture,Lubenica i dinja,"GDD ≥ 1700, ≥ 170 dana bez mraza",2041–2070,SSP370,53.9
+Povrće i ratarske kulture,Lubenica i dinja,"GDD ≥ 1700, ≥ 170 dana bez mraza",2041–2070,SSP585,59.2
+Povrće i ratarske kulture,Lubenica i dinja,"GDD ≥ 1700, ≥ 170 dana bez mraza",2071–2099,SSP119,35.8
+Povrće i ratarske kulture,Lubenica i dinja,"GDD ≥ 1700, ≥ 170 dana bez mraza",2071–2099,SSP126,44.1
+Povrće i ratarske kulture,Lubenica i dinja,"GDD ≥ 1700, ≥ 170 dana bez mraza",2071–2099,SSP434,50.1
+Povrće i ratarske kulture,Lubenica i dinja,"GDD ≥ 1700, ≥ 170 dana bez mraza",2071–2099,SSP245,59.0
+Povrće i ratarske kulture,Lubenica i dinja,"GDD ≥ 1700, ≥ 170 dana bez mraza",2071–2099,SSP460,61.6
+Povrće i ratarske kulture,Lubenica i dinja,"GDD ≥ 1700, ≥ 170 dana bez mraza",2071–2099,SSP370,77.1
+Povrće i ratarske kulture,Lubenica i dinja,"GDD ≥ 1700, ≥ 170 dana bez mraza",2071–2099,SSP585,90.2
+Povrće i ratarske kulture,Krompir,"GDD ≥ 700, ≤ 20 vrućih dana (vrućina smanjuje prinos)",1901–1930,historijski,59.2
+Povrće i ratarske kulture,Krompir,"GDD ≥ 700, ≤ 20 vrućih dana (vrućina smanjuje prinos)",1931–1960,historijski,57.3
+Povrće i ratarske kulture,Krompir,"GDD ≥ 700, ≤ 20 vrućih dana (vrućina smanjuje prinos)",1961–1990,historijski,58.8
+Povrće i ratarske kulture,Krompir,"GDD ≥ 700, ≤ 20 vrućih dana (vrućina smanjuje prinos)",1991–2020,historijski,46.9
+Povrće i ratarske kulture,Krompir,"GDD ≥ 700, ≤ 20 vrućih dana (vrućina smanjuje prinos)",2041–2070,SSP119,36.2
+Povrće i ratarske kulture,Krompir,"GDD ≥ 700, ≤ 20 vrućih dana (vrućina smanjuje prinos)",2041–2070,SSP126,31.4
+Povrće i ratarske kulture,Krompir,"GDD ≥ 700, ≤ 20 vrućih dana (vrućina smanjuje prinos)",2041–2070,SSP434,28.1
+Povrće i ratarske kulture,Krompir,"GDD ≥ 700, ≤ 20 vrućih dana (vrućina smanjuje prinos)",2041–2070,SSP245,25.2
+Povrće i ratarske kulture,Krompir,"GDD ≥ 700, ≤ 20 vrućih dana (vrućina smanjuje prinos)",2041–2070,SSP460,25.0
+Povrće i ratarske kulture,Krompir,"GDD ≥ 700, ≤ 20 vrućih dana (vrućina smanjuje prinos)",2041–2070,SSP370,21.2
+Povrće i ratarske kulture,Krompir,"GDD ≥ 700, ≤ 20 vrućih dana (vrućina smanjuje prinos)",2041–2070,SSP585,14.3
+Povrće i ratarske kulture,Krompir,"GDD ≥ 700, ≤ 20 vrućih dana (vrućina smanjuje prinos)",2071–2099,SSP119,37.1
+Povrće i ratarske kulture,Krompir,"GDD ≥ 700, ≤ 20 vrućih dana (vrućina smanjuje prinos)",2071–2099,SSP126,30.5
+Povrće i ratarske kulture,Krompir,"GDD ≥ 700, ≤ 20 vrućih dana (vrućina smanjuje prinos)",2071–2099,SSP434,24.3
+Povrće i ratarske kulture,Krompir,"GDD ≥ 700, ≤ 20 vrućih dana (vrućina smanjuje prinos)",2071–2099,SSP245,14.9
+Povrće i ratarske kulture,Krompir,"GDD ≥ 700, ≤ 20 vrućih dana (vrućina smanjuje prinos)",2071–2099,SSP460,12.4
+Povrće i ratarske kulture,Krompir,"GDD ≥ 700, ≤ 20 vrućih dana (vrućina smanjuje prinos)",2071–2099,SSP370,4.7
+Povrće i ratarske kulture,Krompir,"GDD ≥ 700, ≤ 20 vrućih dana (vrućina smanjuje prinos)",2071–2099,SSP585,1.6
+Povrće i ratarske kulture,Kupus i lisnato povrće,"≥ 120 dana bez mraza, ≤ 30 vrućih dana",1901–1930,historijski,96.2
+Povrće i ratarske kulture,Kupus i lisnato povrće,"≥ 120 dana bez mraza, ≤ 30 vrućih dana",1931–1960,historijski,91.9
+Povrće i ratarske kulture,Kupus i lisnato povrće,"≥ 120 dana bez mraza, ≤ 30 vrućih dana",1961–1990,historijski,96.7
+Povrće i ratarske kulture,Kupus i lisnato povrće,"≥ 120 dana bez mraza, ≤ 30 vrućih dana",1991–2020,historijski,71.0
+Povrće i ratarske kulture,Kupus i lisnato povrće,"≥ 120 dana bez mraza, ≤ 30 vrućih dana",2041–2070,SSP119,51.7
+Povrće i ratarske kulture,Kupus i lisnato povrće,"≥ 120 dana bez mraza, ≤ 30 vrućih dana",2041–2070,SSP126,45.7
+Povrće i ratarske kulture,Kupus i lisnato povrće,"≥ 120 dana bez mraza, ≤ 30 vrućih dana",2041–2070,SSP434,42.6
+Povrće i ratarske kulture,Kupus i lisnato povrće,"≥ 120 dana bez mraza, ≤ 30 vrućih dana",2041–2070,SSP245,40.5
+Povrće i ratarske kulture,Kupus i lisnato povrće,"≥ 120 dana bez mraza, ≤ 30 vrućih dana",2041–2070,SSP460,40.5
+Povrće i ratarske kulture,Kupus i lisnato povrće,"≥ 120 dana bez mraza, ≤ 30 vrućih dana",2041–2070,SSP370,36.6
+Povrće i ratarske kulture,Kupus i lisnato povrće,"≥ 120 dana bez mraza, ≤ 30 vrućih dana",2041–2070,SSP585,30.0
+Povrće i ratarske kulture,Kupus i lisnato povrće,"≥ 120 dana bez mraza, ≤ 30 vrućih dana",2071–2099,SSP119,52.9
+Povrće i ratarske kulture,Kupus i lisnato povrće,"≥ 120 dana bez mraza, ≤ 30 vrućih dana",2071–2099,SSP126,45.2
+Povrće i ratarske kulture,Kupus i lisnato povrće,"≥ 120 dana bez mraza, ≤ 30 vrućih dana",2071–2099,SSP434,39.5
+Povrće i ratarske kulture,Kupus i lisnato povrće,"≥ 120 dana bez mraza, ≤ 30 vrućih dana",2071–2099,SSP245,30.9
+Povrće i ratarske kulture,Kupus i lisnato povrće,"≥ 120 dana bez mraza, ≤ 30 vrućih dana",2071–2099,SSP460,27.3
+Povrće i ratarske kulture,Kupus i lisnato povrće,"≥ 120 dana bez mraza, ≤ 30 vrućih dana",2071–2099,SSP370,11.9
+Povrće i ratarske kulture,Kupus i lisnato povrće,"≥ 120 dana bez mraza, ≤ 30 vrućih dana",2071–2099,SSP585,5.0
