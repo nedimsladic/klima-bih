@@ -255,6 +255,17 @@ select {
 .zvcard dl { display: grid; grid-template-columns: 1fr auto; gap: 6px 12px; margin: 0; font: 500 .95rem/1.3 var(--f-ui); }
 .zvcard dt { color: var(--muted); } .zvcard dd { margin: 0; font-weight: 700; font-variant-numeric: tabular-nums; text-align: right; }
 .zvsum { grid-column: 1 / -1; font-size: 1.1rem; max-width: 760px; }
+.tblwrap { overflow-x: auto; }
+table.cmp { border-collapse: collapse; width: 100%; font: 500 .95rem/1.3 var(--f-ui); font-variant-numeric: tabular-nums; }
+table.cmp th, table.cmp td { padding: 8px 10px; border-top: 1px solid var(--rule); text-align: right; white-space: nowrap; }
+table.cmp th:first-child { text-align: left; font-weight: 500; color: var(--muted); white-space: normal; }
+table.cmp thead th { font-weight: 700; color: var(--ink); border-top: 0; }
+table.cmp td { font-weight: 700; }
+table.cmp .sw { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 7px; vertical-align: 0; border: 1px solid rgba(0, 0, 0, .15); }
+table.cmp .kgt { color: #10201c; padding: 1px 6px; border-radius: 3px; }
+details.embed summary { cursor: pointer; font: 600 .9rem/1.3 var(--f-ui); color: var(--accent); }
+details.embed textarea { width: 100%; box-sizing: border-box; margin: 10px 0 8px; font: 400 .8rem/1.4 ui-monospace, Menlo, monospace; padding: 8px;
+  border: 1px solid var(--rule); border-radius: 4px; background: var(--bg); color: var(--ink); resize: vertical; }
 
 /* moje mjesto-css */
 .mjlist { display: grid; max-height: 360px; overflow-y: auto; border-top: 1px solid var(--rule); }
@@ -321,8 +332,10 @@ footer strong { font: 700 1.15rem/1.4 var(--f-display); color: var(--ink); displ
       <a href="#ekstremi"><span class="bs">Noći, grijanje, snijeg</span><span class="en">Nights, heating, snow</span></a>
       <a href="#talasi"><span class="bs">Toplotni talasi</span><span class="en">Heatwaves</span></a>
       <a href="#kisa"><span class="bs">Kišni dani</span><span class="en">Rain days</span></a>
+      <a href="#pljusak"><span class="bs">Ekstremne padavine</span><span class="en">Extreme rainfall</span></a>
       <a href="#voda"><span class="bs">Vodni bilans</span><span class="en">Water balance</span></a>
       <a href="#agro"><span class="bs">Poljoprivreda i skijanje</span><span class="en">Farming and skiing</span></a>
+      <a href="#voce"><span class="bs">Voće i kulture</span><span class="en">Fruit and crops</span></a>
       <a href="#visina"><span class="bs">Visina</span><span class="en">Elevation</span></a>
       <a href="#slivovi"><span class="bs">Slivovi</span><span class="en">River basins</span></a>
       <a href="#mjesto"><span class="bs">Moje mjesto</span><span class="en">My place</span></a>
@@ -718,6 +731,35 @@ footer strong { font: 700 1.15rem/1.4 var(--f-display); color: var(--ink); displ
       <img src="img/padavine_promjena_dana.webp" alt="Promjena broja dana s padavinama u procentima" loading="lazy"></a></figure>
   </section>
 
+  <section id="pljusak">
+    <div class="head text">
+      <p class="label"><span class="bs">Najjače kiše u godini</span><span class="en">The heaviest rain of the year</span></p>
+      <h2><span class="bs">Ekstremne <em>padavine</em></span><span class="en">Extreme <em>rainfall</em></span></h2>
+      <p class="bs">Rx1day je najveća dnevna količina padavina u godini, a Rx5day najveća petodnevna. Danas je Rx1day u prosjeku za BiH 35 mm,
+        a Rx5day 81 mm. Prikazane su dvije procjene. Prva samo prenosi promjenu mjesečnih padavina na dnevne kiše: tada se Rx1day do 2071–2099
+        malo mijenja (32–36 mm), jer ljeta postaju suša. Druga dodaje fizičko pravilo da topliji zrak nosi oko 7 % više vlage po stepenu
+        (Clausius-Clapeyron): tada Rx1day raste na 37–47 mm, a Rx5day na 87–109 mm. Mjerenja u Evropi bliža su drugoj procjeni.</p>
+      <p class="en">Rx1day is the largest one-day precipitation of the year and Rx5day the largest five-day total. Today Rx1day averages
+        35 mm in BiH and Rx5day 81 mm. Two estimates are shown. The first only carries the change in monthly precipitation over to daily rain:
+        Rx1day then barely changes by 2071–2099 (32–36 mm), because summers get drier. The second adds the physical rule that warmer air holds
+        about 7 % more moisture per degree (Clausius-Clapeyron): Rx1day then rises to 37–47 mm and Rx5day to 87–109 mm. Observations in
+        Europe are closer to the second estimate.</p>
+    </div>
+    <figure><a class="plate" href="#" data-src="img/hk_prosjek_bih.webp" data-cap="Zimsko hlađenje i ekstremne padavine: prosjek BiH">
+      <img src="img/hk_prosjek_bih.webp" alt="Sati zimskog hlađenja, Rx1day i Rx5day 1901–2099" loading="lazy"></a></figure>
+    <div class="controls" data-chooser="rxImg" data-pattern="img/hk_{k}_{p}.webp">
+      <div class="grp" data-key="k"><span><span class="bs">Pokazatelj</span><span class="en">Indicator</span></span>
+        <button class="chip" aria-pressed="true" data-v="rx1"><span class="bs">Najjači dan (Rx1day)</span><span class="en">Wettest day (Rx1day)</span></button>
+        <button class="chip" aria-pressed="false" data-v="rx5"><span class="bs">Najjačih 5 dana (Rx5day)</span><span class="en">Wettest 5 days (Rx5day)</span></button></div>
+      <div class="grp" data-key="p"><span>Period</span>
+        <button class="chip" aria-pressed="false" data-v="historijski">1901–2020</button>
+        <button class="chip" aria-pressed="false" data-v="2041_2070">2041–2070</button>
+        <button class="chip" aria-pressed="true" data-v="2071_2099">2071–2099</button></div>
+    </div>
+    <figure><a class="plate" href="#" id="rxImg" data-src="img/hk_rx1_2071_2099.webp" data-cap="Ekstremne padavine">
+      <img src="img/hk_rx1_2071_2099.webp" alt="Karte najveće dnevne i petodnevne količine padavina po scenarijima" loading="lazy"></a></figure>
+  </section>
+
   <section id="voda">
     <div class="head text">
       <p class="label"><span class="bs">Ljeto (JJA)</span><span class="en">Summer (JJA)</span></p>
@@ -773,6 +815,38 @@ footer strong { font: 700 1.15rem/1.4 var(--f-display); color: var(--ink); displ
     </div>
     <figure><a class="plate" href="#" id="agroImg" data-src="img/agro_gsl_2071_2099.webp" data-cap="Poljoprivreda i vinogradarstvo">
       <img src="img/agro_gsl_2071_2099.webp" alt="Karte pokazatelja za poljoprivredu po scenarijima" loading="lazy"></a></figure>
+  </section>
+
+  <section id="voce">
+    <div class="head text">
+      <p class="label"><span class="bs">Zimsko hlađenje i toplina za kulture</span><span class="en">Winter chill and warmth for crops</span></p>
+      <h2><span class="bs">Voće <em>i kulture</em></span><span class="en">Fruit <em>and crops</em></span></h2>
+      <p class="bs">Jabuka, kruška, šljiva i trešnja trebaju zimi dovoljno sati između 0 i 7 °C da bi u proljeće ravnomjerno procvjetale.
+        Danas BiH u prosjeku ima oko 1250 takvih sati od novembra do februara, a do 2071–2099 to bi ostalo slično (1240–1310 sati).
+        Prosjek, međutim, skriva dva suprotna smjera: na planinama i visoravnima sati hlađenja ima više, jer je zima blaža i manje je
+        dana ispod nule, dok ih u nizinama ima sve manje. Mostar bi prema SSP5-8.5 pao s oko 1430 na 880 sati, što je ispod potreba
+        mnogih sorti jabuke i trešnje, a Sarajevo bi poraslo s oko 1080 na 1320.</p>
+      <p class="bs">Gruba temperaturna pogodnost (bez tla i vode) pokazuje da bi kukuruz za zrno imao dovoljno topline na 55 % površine danas,
+        a na 78 %, 91 % ili 100 % do 2071–2099 (SSP1-2.6, SSP2-4.5, SSP5-8.5). Vinova loza bi se proširila sa 73 % na 92–100 %. Maslina
+        ostaje ograničena na jug Hercegovine: s 4 % na najviše 8 % površine, jer je i dalje ograničavaju zimski mrazevi.</p>
+      <p class="en">Apple, pear, plum and cherry need enough winter hours between 0 and 7 °C to flower evenly in spring. Today BiH averages
+        about 1250 such hours from November to February, and by 2071–2099 this stays similar (1240–1310 hours). The average hides two opposite
+        trends: mountains and plateaus gain chill hours because winters are milder with fewer days below zero, while lowlands lose them. Under
+        SSP5-8.5 Mostar would fall from about 1430 to 880 hours, below the needs of many apple and cherry varieties, while Sarajevo would rise
+        from about 1080 to 1320.</p>
+      <p class="en">Rough temperature suitability (no soil or water) shows grain maize with enough warmth on 55 % of the country today and on
+        78 %, 91 % or 100 % by 2071–2099 (SSP1-2.6, SSP2-4.5, SSP5-8.5). Grapevine would spread from 73 % to 92–100 %. Olive stays confined to
+        southern Herzegovina, from 4 % to at most 8 %, because winter frost still limits it.</p>
+    </div>
+    <div class="controls"><div class="grp tabs" data-target="chillImg">
+      <button class="chip" aria-pressed="false" data-src="img/hk_chill_historijski.webp">1901–2020</button>
+      <button class="chip" aria-pressed="false" data-src="img/hk_chill_2041_2070.webp">2041–2070</button>
+      <button class="chip" aria-pressed="true" data-src="img/hk_chill_2071_2099.webp">2071–2099</button>
+    </div></div>
+    <figure><a class="plate" href="#" id="chillImg" data-src="img/hk_chill_2071_2099.webp" data-cap="Sati zimskog hlađenja">
+      <img src="img/hk_chill_2071_2099.webp" alt="Karte sati zimskog hlađenja za voće po scenarijima" loading="lazy"></a></figure>
+    <figure><a class="plate" href="#" data-src="img/kulture_bih.webp" data-cap="Klimatska pogodnost za kukuruz, vinovu lozu i maslinu">
+      <img src="img/kulture_bih.webp" alt="Karte područja dovoljno toplih za kukuruz, vinovu lozu i maslinu" loading="lazy"></a></figure>
   </section>
 
   <section id="visina">
@@ -890,7 +964,11 @@ footer strong { font: 700 1.15rem/1.4 var(--f-display); color: var(--ink); displ
         <button class="chip" aria-pressed="false" data-v="vruci"><span class="bs">Vrući dani</span><span class="en">Hot days</span></button>
         <button class="chip" aria-pressed="false" data-v="mrazni"><span class="bs">Mrazni dani</span><span class="en">Frost days</span></button>
         <button class="chip" aria-pressed="false" data-v="tropske_noci"><span class="bs">Tropske noći</span><span class="en">Tropical nights</span></button>
-        <button class="chip" aria-pressed="false" data-v="snijeg"><span class="bs">Snijeg</span><span class="en">Snow</span></button></div>
+        <button class="chip" aria-pressed="false" data-v="snijeg"><span class="bs">Snijeg</span><span class="en">Snow</span></button>
+        <button class="chip" aria-pressed="false" data-v="grijanje"><span class="bs">Grijanje</span><span class="en">Heating</span></button>
+        <button class="chip" aria-pressed="false" data-v="hladjenje"><span class="bs">Hlađenje</span><span class="en">Cooling</span></button>
+        <button class="chip" aria-pressed="false" data-v="chill"><span class="bs">Zimsko hlađenje voća</span><span class="en">Winter chill</span></button>
+        <button class="chip" aria-pressed="false" data-v="rx1"><span class="bs">Najjača kiša</span><span class="en">Wettest day</span></button></div>
       <div class="grp" data-ex="p"><span>Period</span>
         <button class="chip" aria-pressed="false" data-v="1901_1930">1901–1930</button>
         <button class="chip" aria-pressed="false" data-v="1961_1990">1961–1990</button>
@@ -922,6 +1000,14 @@ footer strong { font: 700 1.15rem/1.4 var(--f-display); color: var(--ink); displ
         <div class="rows mini" id="exTypes"></div>
       </div>
     </div>
+    <div class="card" id="cmpCard">
+      <h3 class="sm"><span class="bs">Uporedite dva grada</span><span class="en">Compare two cities</span></h3>
+      <div class="controls" style="margin:0">
+        <div class="field" style="min-width: 200px"><label for="cmpA"><span class="bs">Prvi grad</span><span class="en">First city</span></label><select id="cmpA"></select></div>
+        <div class="field" style="min-width: 200px"><label for="cmpB"><span class="bs">Drugi grad</span><span class="en">Second city</span></label><select id="cmpB"></select></div>
+      </div>
+      <div id="cmpOut"></div>
+    </div>
     <div class="card">
       <h3 class="sm" id="exRankTitle"></h3>
       <div class="rank" id="exRank"></div>
@@ -942,6 +1028,7 @@ footer strong { font: 700 1.15rem/1.4 var(--f-display); color: var(--ink); displ
       <div class="grp" id="zvSsp"><span><span class="bs">Scenarij</span><span class="en">Scenario</span></span></div>
     </div>
     <div class="zvgrid" id="zvOut"></div>
+    <p><button type="button" class="chip" id="zvDl"><span class="bs">Preuzmi sliku za dijeljenje (PNG)</span><span class="en">Download a shareable image (PNG)</span></button></p>
   </section>
 
   <section id="gradovi">
@@ -1055,6 +1142,17 @@ footer strong { font: 700 1.15rem/1.4 var(--f-display); color: var(--ink); displ
           padavinama: padavine ≥ 1 mm i Tsr ≤ 0 °C, decembar–mart, za ćeliju od oko 10 km na lokaciji planinskog centra (vrhovi su hladniji).</span>
           <span class="en">Growing season per the ETCCDI definition (GSL); Huglin index with the latitude day-length factor; snowfall days: precipitation
           ≥ 1 mm and Tmean ≤ 0 °C, December–March, for the ~10 km cell at each mountain centre (summits are colder).</span></dd></div>
+      <div><dt><span class="bs">Zimsko hlađenje, ekstremne padavine i kulture</span><span class="en">Winter chill, extreme rainfall and crops</span></dt>
+        <dd><span class="bs">Sati hlađenja po Weinbergeru (0–7,2 °C, novembar–februar), satne temperature iz dnevnog minimuma i maksimuma (kosinusna
+          interpolacija). Rx1day i Rx5day (ETCCDI); druga procjena množi dnevne padavine s 1,07 po °C zagrijavanja u odnosu na 1991–2020.
+          Pogodnost: kukuruz stepen-dani (april–oktobar, baza 10 °C) ≥ 1250, vinova loza Huglinov indeks ≥ 1500, maslina Huglin ≥ 2100 i
+          najviše 20 mraznih dana. Grijanje i hlađenje u gradovima: stepen-dani po Eurostatu (grijanje: 18 °C − Tsr za dane s Tsr ≤ 15 °C; hlađenje: Tsr − 21 °C za dane s Tsr ≥ 24 °C); promjena potreba za energijom je
+          promjena stepen-dana, ne cijena.</span>
+          <span class="en">Weinberger chill hours (0–7.2 °C, November–February), hourly temperatures from daily minimum and maximum (cosine
+          interpolation). Rx1day and Rx5day (ETCCDI); the second estimate scales daily precipitation by 1.07 per °C of warming relative to 1991–2020.
+          Suitability: maize growing degree days (April–October, base 10 °C) ≥ 1250, grapevine Huglin index ≥ 1500, olive Huglin ≥ 2100 and at
+          most 20 frost days. Heating and cooling in cities: Eurostat degree days (heating: 18 °C − Tmean on days with Tmean ≤ 15 °C; cooling: Tmean − 21 °C on days with Tmean ≥ 24 °C); the change in energy need is the change in
+          degree days, not in prices.</span></dd></div>
       <div><dt><span class="bs">Visina i slivovi</span><span class="en">Elevation and basins</span></dt>
         <dd>Copernicus DEM GLO-90 (© DLR, Airbus); HydroBASINS v1c (Lehner &amp; Grill, 2013), <span class="bs">nivo 6, za Vrbas nivo 7 (uzvodno od Laktaša).</span><span class="en">level 6, level 7 for the Vrbas (upstream of Laktaši).</span></dd></div>
       <div><dt><span class="bs">Isparavanje</span><span class="en">Evapotranspiration</span></dt>
@@ -1081,6 +1179,8 @@ footer strong { font: 700 1.15rem/1.4 var(--f-display); color: var(--ink); displ
       <a href="data/padavine_dani_bih.csv"><span class="bs">Dani s padavinama</span><span class="en">Precipitation days</span><span>CSV</span></a>
       <a href="data/vodni_bilans_bih.csv"><span class="bs">Ljetni vodni bilans</span><span class="en">Summer water balance</span><span>CSV</span></a>
       <a href="data/agro_bih.csv"><span class="bs">Poljoprivreda i vinogradarstvo</span><span class="en">Farming and wine</span><span>CSV</span></a>
+      <a href="data/hladnoca_kisa_bih.csv"><span class="bs">Zimsko hlađenje i ekstremne padavine</span><span class="en">Winter chill and extreme rainfall</span><span>CSV</span></a>
+      <a href="data/kulture_bih.csv"><span class="bs">Pogodnost za kulture</span><span class="en">Crop suitability</span><span>CSV</span></a>
       <a href="data/skijanje_planine.csv"><span class="bs">Skijaška sezona na planinama</span><span class="en">Ski season on mountains</span><span>CSV</span></a>
       <a href="data/visina_bih.csv"><span class="bs">Granica klime po visini</span><span class="en">Climate boundary by elevation</span><span>CSV</span></a>
       <a href="data/slivovi_bih.csv"><span class="bs">Riječni slivovi</span><span class="en">River basins</span><span>CSV</span></a>
@@ -1248,7 +1348,15 @@ footer strong { font: 700 1.15rem/1.4 var(--f-display); color: var(--ink); displ
     tropske_noci: {i: 3, d: 0, u: "", bs: "Tropske noći godišnje (≥ 20 °C)", en: "Tropical nights per year (≥ 20 °C)",
         stops: [0, 1, 5, 10, 20, 40, 60], col: ["#fdf2f8", "#f6d2e6", "#e7a3c8", "#d4669e", "#c03d8b", "#8e1a69", "#5e0f4c"]},
     snijeg: {i: 4, d: 0, u: "", bs: "Dani sa snijegom godišnje (procjena)", en: "Snow days per year (estimate)",
-        stops: [0, 2, 5, 10, 20, 30, 45], col: ["#f7fbff", "#e1edf8", "#c6dbef", "#9ecae1", "#6baed6", "#3182bd", "#08519c"]}
+        stops: [0, 2, 5, 10, 20, 30, 45], col: ["#f7fbff", "#e1edf8", "#c6dbef", "#9ecae1", "#6baed6", "#3182bd", "#08519c"]},
+    grijanje: {i: 6, d: 0, u: "", bs: "Stepen-dani grijanja godišnje", en: "Heating degree days per year",
+        stops: [1000, 1500, 2000, 2500, 3000, 3500, 4000], col: ["#fff7ec", "#fee8c8", "#fdd49e", "#fdbb84", "#fc8d59", "#e34a33", "#b30000"]},
+    hladjenje: {i: 7, d: 0, u: "", bs: "Stepen-dani hlađenja godišnje", en: "Cooling degree days per year",
+        stops: [0, 25, 50, 100, 200, 400, 700], col: ["#f7fcfd", "#e0ecf4", "#bfd3e6", "#9ebcda", "#8c96c6", "#8856a7", "#810f7c"]},
+    chill: {i: 8, d: 0, u: " h", bs: "Sati zimskog hlađenja za voće (0–7 °C, nov–feb)", en: "Winter chill hours for fruit (0–7 °C, Nov–Feb)",
+        stops: [600, 800, 1000, 1100, 1200, 1300, 1400], col: ["#ffffcc", "#d9f0a3", "#addd8e", "#78c679", "#41ab5d", "#238443", "#005a32"]},
+    rx1: {i: 9, d: 0, u: " mm", bs: "Najveća dnevna kiša u godini (Rx1day)", en: "Wettest day of the year (Rx1day)",
+        stops: [25, 30, 35, 40, 45, 55, 70], col: ["#f7fbff", "#c6dbef", "#9ecae1", "#6baed6", "#4292c6", "#2171b5", "#084594"]}
   };
   var LBL = {
     bs: {pop: "stanovnika", km2: "km²", vs: "u odnosu na 1991–2020", kg: "Klimatski tipovi", dom: "Preovlađujući tip", nod: "bez promjene"},
@@ -1272,7 +1380,7 @@ footer strong { font: 700 1.15rem/1.4 var(--f-display); color: var(--ink); displ
     var b = e.target.closest("button"); if (!b || b.disabled) return;
     var g = b.closest("[data-ex]");
     each(g.querySelectorAll("button"), function (x) { x.setAttribute("aria-pressed", x === b ? "true" : "false"); });
-    EX[g.dataset.ex] = b.dataset.v; render();
+    EX[g.dataset.ex] = b.dataset.v; render(); renderCmp();
   });
 
   function stat(label, v, ref, d, u) {
@@ -1319,12 +1427,69 @@ footer strong { font: 700 1.15rem/1.4 var(--f-display); color: var(--ink); displ
       '<div class="stat"><span class="k">' + L.dom + '</span><span class="v">' + (dom || "–") + '</span><span class="d">' +
       (dom ? NAMES[lang()][dom] : "") + "</span></div></div>" +
       '<div class="field"><span class="label">' + L.kg + '</span><div class="bar">' + barHTML(d[5]) + "</div></div>" +
-      '<p><a class="chip" href="pdf/klima_' + slugify(m.n) + '.pdf">' + (lang() === "en" ? "One-page PDF" : "PDF na jednoj stranici") + " · " + m.n + "</a></p>";
+      (d.length > 9 ? energyHTML(d, r) : "") +
+      '<p><a class="chip" href="pdf/klima_' + slugify(m.n) + '.pdf">' + (lang() === "en" ? "One-page PDF" : "PDF na jednoj stranici") + " · " + m.n + "</a></p>" +
+      embedHTML(m);
+  }
+  function pct(a, b) { var p = (a / b - 1) * 100; return (p > 0 ? "+" : "−") + num(Math.abs(p), 0) + " %"; }
+  function energyHTML(d, r) {
+    var en = lang() === "en", now = EX.p === "1991_2020";
+    var heat = now ? num(d[6], 0) : pct(d[6], r[6]), cool = now ? num(d[7], 0) : (r[7] < 20 ? "×" + num(d[7] / Math.max(r[7], 1), 0) : pct(d[7], r[7]));
+    return '<div class="stats">' +
+      '<div class="stat"><span class="k">' + (en ? "Heating need" : "Potrebe za grijanjem") + '</span><span class="v">' + heat + '</span><span class="d">' +
+      (now ? (en ? "degree days per year (Eurostat)" : "stepen-dana godišnje (Eurostat)") : num(r[6], 0) + " → " + num(d[6], 0) + (en ? " degree days" : " stepen-dana")) + "</span></div>" +
+      '<div class="stat"><span class="k">' + (en ? "Cooling need" : "Potrebe za hlađenjem") + '</span><span class="v">' + cool + '</span><span class="d">' +
+      (now ? (en ? "degree days per year (Eurostat)" : "stepen-dana godišnje (Eurostat)") : num(r[7], 0) + " → " + num(d[7], 0) + (en ? " degree days" : " stepen-dana")) + "</span></div>" +
+      '<div class="stat"><span class="k">' + (en ? "Winter chill (fruit)" : "Zimsko hlađenje (voće)") + '</span><span class="v">' + num(d[8], 0) + " h</span>" +
+      (now ? "" : '<span class="d">' + (d[8] >= r[8] ? "+" : "−") + num(Math.abs(d[8] - r[8]), 0) + " h " + LBL[lang()].vs + "</span>") + "</div>" +
+      '<div class="stat"><span class="k">' + (en ? "Wettest day" : "Najjača dnevna kiša") + '</span><span class="v">' + num(d[9], 0) + " mm</span>" +
+      '<span class="d">' + (now ? (en ? "Rx1day, mean of yearly maxima" : "Rx1day, prosjek godišnjih maksimuma") :
+        (en ? "up to " : "do ") + num(d[10], 0) + (en ? " mm with +7 %/°C" : " mm uz +7 %/°C")) + "</span></div></div>";
+  }
+  function embedHTML(m) {
+    var en = lang() === "en", url = "https://nedimsladic.github.io/klima-bih/widget.html?grad=" + slugify(m.n) + (en ? "&amp;lang=en" : "");
+    var code = '<iframe src="' + url + '" width="340" height="370" style="border:0" loading="lazy" title="' +
+      (en ? "Climate of " : "Klima: ") + m.n + '"></iframe>';
+    return '<details class="embed"><summary>' + (en ? "Embed this city on your website" : "Ugradite ovaj grad na svoju web stranicu") + "</summary>" +
+      '<textarea readonly rows="3" onclick="this.select()">' + code.replace(/</g, "&lt;") + "</textarea>" +
+      '<button type="button" class="chip" onclick="var t=this.previousElementSibling;t.select();navigator.clipboard&&navigator.clipboard.writeText(t.value);this.textContent=\'' +
+      (en ? "Copied" : "Kopirano") + "'\">" + (en ? "Copy code" : "Kopiraj kod") + "</button></details>";
   }
   function slugify(n) {
     return n.replace(/đ/g, "dj").replace(/Đ/g, "Dj").normalize("NFKD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/ /g, "-");
   }
-  window.__exRender = render;
+  var cmpA = document.getElementById("cmpA"), cmpB = document.getElementById("cmpB"), cmpOut = document.getElementById("cmpOut");
+  function renderCmp() {
+    if (!EX.data || cmpA.value === "") return;
+    var en = lang() === "en", k = key(), A = EX.data.m[+cmpA.value], B = EX.data.m[+cmpB.value];
+    var per = EX.p.replace("_", "–") + (EX.p >= "2041" ? " · " + F[EX.s].l : "");
+    var a = A.d[k], b = B.d[k], ta = dominant(a[5]), tb = dominant(b[5]);
+    var rows = [["t", 0, 1, "Temperatura (°C)", "Temperature (°C)"], ["vruci", 1, 0, "Vrući dani", "Hot days"], ["mrazni", 2, 0, "Mrazni dani", "Frost days"],
+      ["tropske_noci", 3, 0, "Tropske noći", "Tropical nights"], ["snijeg", 4, 0, "Dani sa snijegom", "Snow days"]];
+    if (a.length > 9) rows = rows.concat([["grijanje", 6, 0, "Grijanje (stepen-dani)", "Heating (degree days)"],
+      ["hladjenje", 7, 0, "Hlađenje (stepen-dani)", "Cooling (degree days)"], ["chill", 8, 0, "Zimsko hlađenje voća (h)", "Winter chill (h)"],
+      ["rx1", 9, 0, "Najjača kiša (mm)", "Wettest day (mm)"]]);
+    function cell(v, w, cfg) { return '<td><span class="sw" style="background:' + colorFor(v, cfg) + '"></span>' + num(v, w) + "</td>"; }
+    cmpOut.innerHTML = '<p class="meta">' + per + "</p>" + '<div class="tblwrap"><table class="cmp"><thead><tr><th></th><th>' + A.n + "</th><th>" + B.n + "</th><th>" +
+      (en ? "Difference" : "Razlika") + "</th></tr></thead><tbody>" +
+      "<tr><th>" + (en ? "Climate type" : "Klimatski tip") + '</th><td><b class="kgt" style="background:' + color(ta) + '">' + ta + '</b></td><td><b class="kgt" style="background:' +
+      color(tb) + '">' + tb + "</b></td><td>" + (ta === tb ? (en ? "same" : "isti") : "") + "</td></tr>" +
+      rows.map(function (q) {
+        var cfg = VARS[q[0]], dv = a[q[1]] - b[q[1]];
+        return "<tr><th>" + (en ? q[4] : q[3]) + "</th>" + cell(a[q[1]], q[2], cfg) + cell(b[q[1]], q[2], cfg) + "<td>" +
+          (Math.abs(dv) < Math.pow(10, -q[2]) / 2 ? "0" : (dv > 0 ? "+" : "−") + num(Math.abs(dv), q[2])) + "</td></tr>";
+      }).join("") + "</tbody></table></div>";
+  }
+  cmpA.addEventListener("change", renderCmp); cmpB.addEventListener("change", renderCmp);
+  (function waitCmp() {
+    if (!EX.data) { setTimeout(waitCmp, 200); return; }
+    EX.data.m.forEach(function (m, i) {
+      [cmpA, cmpB].forEach(function (s_) { var o = document.createElement("option"); o.value = String(i); o.textContent = m.n; s_.appendChild(o); });
+    });
+    var ia = EX.data.m.findIndex(function (m) { return m.n === "Sarajevo"; }), ib = EX.data.m.findIndex(function (m) { return m.n === "Mostar"; });
+    cmpA.value = String(Math.max(ia, 0)); cmpB.value = String(Math.max(ib, 1)); renderCmp();
+  })();
+  window.__exRender = function () { render(); renderCmp(); };
 
   /* grafikoni za odabranu općinu */
   var PER = ["1901_1930", "1931_1960", "1961_1990", "1991_2020", "2041_2070", "2071_2099"];
@@ -1417,6 +1582,7 @@ footer strong { font: 700 1.15rem/1.4 var(--f-display); color: var(--ink); displ
   rank.addEventListener("click", function (e) { var b = e.target.closest("button"); if (b) select(+b.dataset.i); });
   function select(i) { EX.sel = i; sel.value = String(i); render(); }
   fetch("data/gradovi.json").then(function (r) { return r.json(); }).then(function (data) {
+    data.m.forEach(function (m) { for (var kk in m.d) { var v = m.d[kk]; if (Array.isArray(v[6])) m.d[kk] = v.slice(0, 6).concat(v[6]); } });
     EX.data = data;
     svg.setAttribute("viewBox", "-20 -20 " + (data.w + 40) + " " + (data.h + 40));
     var ns = "http://www.w3.org/2000/svg";
@@ -1547,6 +1713,43 @@ footer strong { font: 700 1.15rem/1.4 var(--f-display); color: var(--ink); displ
         ". godine, to bi bilo oko " + num(h2, 0) + " prema " + F[ZV.s].l + ".";
     zvOut.innerHTML = '<p class="zvsum">' + sum + "</p>" + cards;
   }
+  document.getElementById("zvDl").addEventListener("click", function () {
+    if (!EX.data || zvCity.value === "") return;
+    var m = EX.data.m[+zvCity.value], y = Math.max(1901, Math.min(2026, +zvYear.value || 1990)), en = lang() === "en";
+    var Wc = 1200, Hc = 675, cv = document.createElement("canvas"); cv.width = Wc * 2; cv.height = Hc * 2;
+    var c = cv.getContext("2d"); c.scale(2, 2);
+    var FONT = '"DIN Alternate", "Barlow", "Helvetica Neue", Arial, sans-serif';
+    c.fillStyle = "#f6f7f4"; c.fillRect(0, 0, Wc, Hc);
+    c.fillStyle = "#18211f"; c.font = "400 46px " + FONT; c.fillText((en ? "The climate of my life · " : "Klima mog života · ") + m.n, 60, 92);
+    c.fillStyle = "#155e63"; c.font = "400 26px " + FONT;
+    c.fillText((en ? "Born " : "Rođen/a ") + y + (en ? ". Scenario " : ". Scenarij ") + F[ZV.s].l, 60, 136);
+    var pts = [[y, en ? "Year I was born" : "Godina rođenja"], [2026, en ? "Today" : "Danas"], [y + 80, en ? "When I turn 80" : "Kad napunim 80"]];
+    var rows = [[en ? "Mean temperature" : "Srednja temperatura", 0, 1, " °C"], [en ? "Hot days (≥ 30 °C)" : "Vrući dani (≥ 30 °C)", 1, 0, ""],
+      [en ? "Frost days" : "Mrazni dani", 2, 0, ""], [en ? "Tropical nights" : "Tropske noći", 3, 0, ""], [en ? "Snow days" : "Dani sa snijegom", 4, 0, ""]];
+    pts.forEach(function (q, j) {
+      var x0 = 60 + j * 368, t = zvType(m, q[0]);
+      c.fillStyle = "#ffffff"; c.strokeStyle = "#d9dfdb"; c.lineWidth = 1; c.fillRect(x0, 172, 344, 420); c.strokeRect(x0 + .5, 172.5, 343, 419);
+      c.fillStyle = "#7a8683"; c.font = "600 15px " + FONT; c.fillText(q[1].toUpperCase(), x0 + 22, 206);
+      c.fillStyle = "#18211f"; c.font = "700 52px " + FONT; c.fillText(String(q[0]), x0 + 22, 262);
+      c.fillStyle = color(t); c.fillRect(x0 + 22, 284, 72, 34);
+      c.fillStyle = "#10201c"; c.font = "700 22px " + FONT; c.fillText(t, x0 + 32, 309);
+      c.fillStyle = "#5b6663"; c.font = "400 16px " + FONT; c.fillText(NAMES[lang()][t] || "", x0 + 104, 307);
+      rows.forEach(function (r, i) {
+        var yy = 360 + i * 46;
+        c.fillStyle = "#5b6663"; c.font = "400 19px " + FONT; c.textAlign = "left"; c.fillText(r[0], x0 + 22, yy);
+        c.fillStyle = "#18211f"; c.font = "700 22px " + FONT; c.textAlign = "right"; c.fillText(num(zvAt(m, q[0], r[1]), r[2]) + r[3], x0 + 322, yy);
+        c.textAlign = "left";
+      });
+    });
+    c.fillStyle = "#7a8683"; c.font = "400 16px " + FONT;
+    c.fillText((en ? "Analysis: Nedim Sladić, following Beck et al. (2018, 2023) · E-OBS · " : "Analiza: Nedim Sladić, prateći Beck et al. (2018, 2023) · E-OBS · ") +
+      "nedimsladic.github.io/klima-bih", 60, 640);
+    cv.toBlob(function (bl) {
+      var a = document.createElement("a"); a.href = URL.createObjectURL(bl);
+      a.download = (en ? "climate-of-my-life-" : "klima-mog-zivota-") + slugify(m.n) + "-" + y + ".png";
+      document.body.appendChild(a); a.click(); setTimeout(function () { URL.revokeObjectURL(a.href); a.remove(); }, 1000);
+    }, "image/png");
+  });
   zvYear.addEventListener("input", zvRender);
   zvCity.addEventListener("change", zvRender);
   var _zvR = window.__exRender;

@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="bs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Klima grada</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;600;700&display=swap">
+<style>
+:root {
+  --bg: #f6f7f4; --card: #ffffff; --ink: #18211f; --muted: #5b6663; --faint: #7a8683; --rule: #d9dfdb; --accent: #155e63;
+  --f: "DIN Alternate", "Barlow", "Helvetica Neue", Arial, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --bg: #101615; --card: #161e1c; --ink: #e6ece9; --muted: #a0aca8; --faint: #7a8683; --rule: #28322f; --accent: #6cc6c4; }
+}
+:root[data-theme="dark"] { --bg: #101615; --card: #161e1c; --ink: #e6ece9; --muted: #a0aca8; --faint: #7a8683; --rule: #28322f; --accent: #6cc6c4; }
+html, body { margin: 0; background: var(--bg); color: var(--ink); font: 400 15px/1.35 var(--f); }
+.w { box-sizing: border-box; max-width: 420px; padding: 16px; display: grid; gap: 12px; }
+h1 { margin: 0; font: 400 1.7rem/1.1 var(--f); }
+.sub { margin: 2px 0 0; color: var(--muted); font-size: .85rem; }
+table { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+th, td { padding: 6px 4px; border-top: 1px solid var(--rule); text-align: right; }
+th:first-child { text-align: left; font-weight: 400; color: var(--muted); }
+thead th { border-top: 0; font-size: .74rem; letter-spacing: .1em; text-transform: uppercase; color: var(--faint); font-weight: 600; }
+td { font-weight: 700; }
+.kg { color: #10201c; padding: 1px 6px; border-radius: 3px; }
+.ft { font-size: .78rem; color: var(--faint); display: flex; justify-content: space-between; gap: 8px; flex-wrap: wrap; }
+a { color: var(--accent); }
+</style>
+</head>
+<body>
+<div class="w" id="w"><p class="sub">…</p></div>
+<script>
+(function () {
+  var q = new URLSearchParams(location.search), en = q.get("lang") === "en";
+  var S = {ssp126: "SSP1-2.6", ssp245: "SSP2-4.5", ssp585: "SSP5-8.5", ssp119: "SSP1-1.9", ssp434: "SSP4-3.4", ssp460: "SSP4-6.0", ssp370: "SSP3-7.0"};
+  var s = S[q.get("s")] ? q.get("s") : "ssp245";
+  var C = {Csa: "#ffff00", Csb: "#c8c800", Cfa: "#c8ff50", Cfb: "#64ff50", Dsb: "#c800c8", Dfa: "#00ffff", Dfb: "#37c8ff", Dfc: "#007d7d", ET: "#b2b2b2"};
+  var w = document.getElementById("w");
+  if (q.get("theme") === "dark" || q.get("theme") === "light") document.documentElement.dataset.theme = q.get("theme");
+  function slug(n) { return n.replace(/đ/g, "dj").replace(/Đ/g, "Dj").normalize("NFKD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/ /g, "-"); }
+  function num(v, d) { return v.toFixed(d).replace(".", en ? "." : ",").replace("-", "−"); }
+  function dom(sh) { var b = null; for (var k in sh) if (!b || sh[k] > sh[b]) b = k; return b || "–"; }
+  fetch("data/gradovi.json").then(function (r) { return r.json(); }).then(function (D) {
+    var want = q.get("grad") || "sarajevo";
+    var m = D.m.filter(function (x) { return slug(x.n) === want; })[0] || D.m.filter(function (x) { return x.n === "Sarajevo"; })[0];
+    var a = m.d["1991_2020|hist"], b = m.d["2071_2099|" + s];
+    var hd = function (v) { return Array.isArray(v[6]) ? v[6] : null; };
+    var rows = [[en ? "Temperature" : "Temperatura", a[0], b[0], 1, " °C"], [en ? "Hot days" : "Vrući dani", a[1], b[1], 0, ""],
+      [en ? "Frost days" : "Mrazni dani", a[2], b[2], 0, ""], [en ? "Tropical nights" : "Tropske noći", a[3], b[3], 0, ""]];
+    if (hd(a)) rows.push([en ? "Heating (degree days)" : "Grijanje (stepen-dani)", hd(a)[0], hd(b)[0], 0, ""]);
+    var ta = dom(a[5]), tb = dom(b[5]);
+    document.title = (en ? "Climate of " : "Klima: ") + m.n;
+    w.innerHTML = "<div><h1>" + m.n + '</h1><p class="sub">' + (en ? "Climate today and in 2071–2099 · " : "Klima danas i 2071–2099 · ") + S[s] + "</p></div>" +
+      "<table><thead><tr><th></th><th>1991–2020</th><th>2071–2099</th></tr></thead><tbody>" +
+      "<tr><th>" + (en ? "Climate type" : "Klimatski tip") + '</th><td><span class="kg" style="background:' + (C[ta] || "#ddd") + '">' + ta +
+      '</span></td><td><span class="kg" style="background:' + (C[tb] || "#ddd") + '">' + tb + "</span></td></tr>" +
+      rows.map(function (r) { return "<tr><th>" + r[0] + "</th><td>" + num(r[1], r[3]) + r[4] + "</td><td>" + num(r[2], r[3]) + r[4] + "</td></tr>"; }).join("") +
+      '</tbody></table><div class="ft"><span>' + (en ? "Analysis: Nedim Sladić" : "Analiza: Nedim Sladić") +
+      '</span><a href="https://nedimsladic.github.io/klima-bih/#grad" target="_blank" rel="noopener">' + (en ? "Full climate atlas" : "Cijeli klimatski atlas") + " →</a></div>";
+  }).catch(function () { w.innerHTML = '<p class="sub">' + (en ? "Data could not be loaded." : "Podaci se nisu mogli učitati.") + "</p>"; });
+})();
+</script>
+</body>
+</html>
