@@ -1,5 +1,8 @@
 """
-Toplotni talasi u BiH (1901–2099): niz od najmanje 3 uzastopna dana s najvišom temperaturom ≥ 30 °C.
+Toplotni talasi u BiH (1901–2099): niz od najmanje 5 uzastopnih dana u kojima je najviša dnevna temperatura
+za 5 °C ili više iznad prosjeka (normale) za taj dan u godini. Normala: prosjek najviše dnevne temperature
+1991–2020 (E-OBS) za svaki kalendarski dan, izglađen pomičnim prosjekom od 5 dana.
+Broje se talasi koji počinju od maja do septembra (cijelom dužinom).
 
 Ista "delta change" metoda kao dani_bih.py (E-OBS 1991–2020 + mjesečna promjena iz Beck et al. 2023).
 Pokazatelji (godišnje, prosjek 30 godina):
@@ -28,7 +31,8 @@ from bih_stil import (Bih, HIST, FUT, REF, SSP, SSP_COLORS, SSP_DASH, CITIES, PE
 EOBS, CLIM, BOUNDARY, OUT = sys.argv[1:5]
 B = Bih(BOUNDARY, OUT)
 BOX = dict(lon=(15.3, 20.0), lat=(42.2, 45.6))
-MINLEN, THR = 3, 30.0
+MINLEN, DT = 5, 5.0
+SEASON = (4, 8)                                   # mjeseci 0-indeksirano: maj–septembar
 
 parts = []
 for f in sorted(glob.glob(os.path.join(EOBS, "tx_ens_mean_0.1deg_reg_*_v31.0e.nc"))):
@@ -49,6 +53,13 @@ MONTH = TX["time"].dt.month.values - 1
 YEAR = TX["time"].dt.year.values
 YEARS = np.unique(YEAR)
 tx = TX.values
+# normala najviše temperature za svaki dan u godini (1991–2020), 29. februar = 28. februar
+DOY = TX["time"].dt.dayofyear.values - 1
+leap = TX["time"].dt.is_leap_year.values
+DOY = np.where(leap & (DOY >= 59), DOY - 1, DOY)              # 0..364
+norm = np.stack([np.nanmean(tx[DOY == d], axis=0) for d in range(365)])
+norm = np.mean([np.roll(norm, k, axis=0) for k in (-2, -1, 0, 1, 2)], axis=0)   # 5-dnevni prosjek
+THR = norm[DOY] + DT                                            # prag za svaki dan (t, y, x)
 
 
 def clim(p, s):
@@ -64,14 +75,16 @@ KEYS = [(p, None) for p in HIST] + [(p, s) for p in FUT for s in SSP]
 
 def waves(key):
     d = np.zeros((12,) + tx.shape[1:]) if key == (REF, None) else clim(*key) - T_REF
-    hot = (tx + d[MONTH]) >= THR                          # (t, y, x)
+    hot = (tx + d[MONTH]) >= THR                          # (t, y, x); normala ostaje 1991–2020
     n_ev = np.zeros(tx.shape[1:]); n_day = np.zeros(tx.shape[1:]); longest = np.zeros(tx.shape[1:])
     for yr in YEARS:
-        h = hot[YEAR == yr]
-        run = np.zeros(h.shape[1:]); ymax = np.zeros(h.shape[1:])
+        h = hot[YEAR == yr]; mo = MONTH[YEAR == yr]
+        run = np.zeros(h.shape[1:]); ymax = np.zeros(h.shape[1:]); start = np.zeros(h.shape[1:], bool)
         for t in range(h.shape[0] + 1):
             cur = h[t] if t < h.shape[0] else np.zeros(h.shape[1:], bool)
-            ended = (~cur) & (run >= MINLEN)
+            if t < h.shape[0]:                                  # talas se broji ako počne u sezoni (maj–septembar)
+                start = np.where(cur & (run == 0), SEASON[0] <= mo[t] <= SEASON[1], start)
+            ended = (~cur) & (run >= MINLEN) & start
             n_ev += ended; n_day += np.where(ended, run, 0)
             ymax = np.maximum(ymax, np.where(ended, run, 0))
             run = np.where(cur, run + 1, 0)
@@ -90,11 +103,11 @@ def bmean(a):
 
 
 IND = {
-    "broj": ("Broj toplotnih talasa", "godišnje; talas = najmanje 3 uzastopna dana ≥ 30 °C", "talasa/god.",
+    "broj": ("Broj toplotnih talasa", "maj–septembar; talas = najmanje 5 uzastopnih dana ≥ 5 °C iznad normale", "talasa/god.",
              [0, 0.2, 0.5, 1, 2, 3, 4, 5, 6, 8, 10], "{:.1f}"),
-    "dani": ("Dani u toplotnim talasima", "godišnje; dani unutar talasa od najmanje 3 dana ≥ 30 °C", "dana/god.",
+    "dani": ("Dani u toplotnim talasima", "maj–septembar; dani unutar talasa od najmanje 5 dana ≥ 5 °C iznad normale", "dana/god.",
              [0, 1, 3, 5, 10, 20, 30, 40, 50, 60, 80], "{:.0f}"),
-    "najduzi": ("Najduži toplotni talas", "prosjek najdužeg niza dana ≥ 30 °C u godini (samo nizovi ≥ 3 dana)", "dana",
+    "najduzi": ("Najduži toplotni talas", "maj–septembar; prosjek najdužeg niza dana ≥ 5 °C iznad normale (nizovi ≥ 5 dana)", "dana",
                 [0, 1, 2, 3, 5, 7, 10, 15, 20, 25, 30], "{:.0f}"),
 }
 
@@ -153,7 +166,7 @@ x0 = axes[0].get_position().x0 - 0.035
 fig.legend(handles=hs, loc="lower left", ncol=4, frameon=False, fontsize=12, bbox_to_anchor=(x0, 0.0),
            title="Period / scenarij", title_fontproperties={"weight": "bold", "size": 13}, alignment="left")
 fig.text(x0, 0.95, "Toplotni talasi u Bosni i Hercegovini", fontsize=27, ha="left", va="baseline")
-fig.text(x0, 0.885, "• Najmanje 3 uzastopna dana ≥ 30 °C, prosjek BiH (1901–2099)", fontsize=27,
+fig.text(x0, 0.885, "• Najmanje 5 dana zaredom ≥ 5 °C iznad normale (maj–sep), prosjek BiH", fontsize=27,
          ha="left", va="baseline")
 B.put_credit(fig, fig.transFigure, 0.98, 0.885, 15)
 fig.savefig(os.path.join(OUT, "talasi_prosjek_bih.png"), dpi=DPI, bbox_inches="tight")
@@ -196,7 +209,7 @@ for ax, k in zip(axes, ["dani", "najduzi"]):
 axes[0].set_yticks(range(len(places))); axes[0].set_yticklabels(places, fontsize=12.5)
 fig.subplots_adjust(left=0.075, right=0.99, top=0.8, bottom=0.02, wspace=0.06)
 fig.text(0.01, 0.955, "Toplotni talasi u gradovima BiH", fontsize=27, ha="left", va="baseline")
-fig.text(0.01, 0.91, "• Dani u talasima i najduži talas godišnje", fontsize=27, ha="left", va="baseline")
+fig.text(0.01, 0.91, "• Dani u talasima i najduži talas, maj–septembar", fontsize=27, ha="left", va="baseline")
 B.put_credit(fig, fig.transFigure, 0.99, 0.91, 15)
 fig.savefig(os.path.join(OUT, "talasi_po_gradovima.png"), dpi=DPI, bbox_inches="tight")
 plt.close(fig)

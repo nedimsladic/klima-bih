@@ -695,12 +695,18 @@ footer strong { font: 700 1.15rem/1.4 var(--f-display); color: var(--ink); displ
     <div class="head text">
       <p class="label"><span class="bs">Najmanje 3 dana ≥ 30 °C</span><span class="en">At least 3 days ≥ 30 °C</span></p>
       <h2><span class="bs">Toplotni <em>talasi</em></span><span class="en">Heat<em>waves</em></span></h2>
-      <p class="bs">Toplotni talas je niz od najmanje tri uzastopna dana s najvišom temperaturom od 30 °C ili više. U periodu 1991–2020 BiH je
-        u prosjeku imala 2,8 talasa i 16 dana u talasima godišnje, a najduži talas u godini trajao je 6 dana. Do 2071–2099 bilo bi to
-        28 dana i 10 dana najdužeg talasa prema SSP1-2.6, odnosno 65 dana i 24 dana prema SSP5-8.5.</p>
-      <p class="en">A heatwave is a run of at least three consecutive days with a maximum of 30 °C or more. In 1991–2020 BiH averaged
-        2.8 heatwaves and 16 heatwave days a year, and the longest heatwave of the year lasted 6 days. By 2071–2099 that would be
-        28 days and a 10-day longest heatwave under SSP1-2.6, or 65 days and 24 days under SSP5-8.5.</p>
+      <p class="bs">Toplotni talas je niz od najmanje pet uzastopnih dana u kojima je najviša dnevna temperatura za 5 °C ili više iznad
+        prosjeka za taj dan u godini. Prosjek (normala) je najviša dnevna temperatura u periodu 1991–2020, a broje se talasi koji počinju od
+        maja do septembra. U periodu 1991–2020 BiH je imala oko jedan takav talas i 6 dana u talasima godišnje. Do 2041–2070 bilo bi
+        16 dana prema SSP1-2.6 i 30 dana prema SSP5-8.5, a do 2071–2099 17 dana prema SSP1-2.6 i 64 dana prema SSP5-8.5. Najduži talas
+        u godini produžio bi se s 4 na 8 (SSP1-2.6) ili 18 dana (SSP5-8.5). Pošto se prag računa u odnosu na normalu svakog mjesta,
+        razlike između gradova su male: i Mostar i Sarajevo dobijaju talase podjednako često.</p>
+      <p class="en">A heatwave is a run of at least five consecutive days with a maximum temperature 5 °C or more above the average for
+        that day of the year. The average (normal) is the daily maximum temperature in 1991–2020, and waves starting from May to September
+        are counted. In 1991–2020 BiH had about one such wave and 6 heatwave days a year. By 2041–2070 that would be 16 days under SSP1-2.6
+        and 30 days under SSP5-8.5, and by 2071–2099 17 days under SSP1-2.6 and 64 days under SSP5-8.5. The longest wave of the year would
+        grow from 4 to 8 (SSP1-2.6) or 18 days (SSP5-8.5). Because the threshold is relative to each place's own normal, differences between
+        cities are small: Mostar and Sarajevo get heatwaves about equally often.</p>
     </div>
     <figure><a class="plate" href="#" data-src="img/talasi_prosjek_bih.webp" data-cap="Toplotni talasi: prosjek BiH">
       <img src="img/talasi_prosjek_bih.webp" alt="Broj toplotnih talasa, dani u talasima i najduži talas 1901–2099" loading="lazy"></a></figure>
@@ -1182,6 +1188,13 @@ footer strong { font: 700 1.15rem/1.4 var(--f-display); color: var(--ink); displ
           padavinama: padavine ≥ 1 mm i Tsr ≤ 0 °C, decembar–mart, za ćeliju od oko 10 km na lokaciji planinskog centra (vrhovi su hladniji).</span>
           <span class="en">Growing season per the ETCCDI definition (GSL); Huglin index with the latitude day-length factor; snowfall days: precipitation
           ≥ 1 mm and Tmean ≤ 0 °C, December–March, for the ~10 km cell at each mountain centre (summits are colder).</span></dd></div>
+      <div><dt><span class="bs">Toplotni talasi</span><span class="en">Heatwaves</span></dt>
+        <dd><span class="bs">Najmanje 5 uzastopnih dana s najvišom temperaturom za 5 °C ili više iznad normale za taj kalendarski dan
+          (prosjek 1991–2020 iz E-OBS, izglađen na 5 dana); broje se talasi koji počinju od maja do septembra. Normala je ista za sve periode,
+          a buduće dnevne temperature dobijene su delta metodom.</span>
+          <span class="en">At least 5 consecutive days with a maximum temperature 5 °C or more above the normal for that calendar day
+          (1991–2020 mean from E-OBS, smoothed over 5 days); waves starting from May to September are counted. The normal is the same for all
+          periods, and future daily temperatures come from the delta method.</span></dd></div>
       <div><dt><span class="bs">Zimsko hlađenje, ekstremne padavine i kulture</span><span class="en">Winter chill, extreme rainfall and crops</span></dt>
         <dd><span class="bs">Sati hlađenja po Weinbergeru (0–7,2 °C, novembar–februar), satne temperature iz dnevnog minimuma i maksimuma (kosinusna
           interpolacija). Rx1day i Rx5day (ETCCDI); druga procjena množi dnevne padavine s 1,07 po °C zagrijavanja u odnosu na 1991–2020.
