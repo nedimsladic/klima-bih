@@ -194,9 +194,10 @@ figcaption { font: 400 .88rem/1.5 var(--f-ui); color: var(--muted); max-width: 7
 @media (max-width: 860px) { .explorer { grid-template-columns: 1fr; } }
 .mapbox { background: var(--card); border: 1px solid var(--rule); border-radius: 4px; padding: 12px; }
 .mapbox svg { display: block; width: 100%; height: auto; }
-.mapbox path { stroke: var(--bg); stroke-width: .8; cursor: pointer; transition: opacity .15s; }
-.mapbox path:hover { opacity: .78; }
-.mapbox path.sel { stroke: var(--ink); stroke-width: 2.2; }
+.mapbox .outline { fill: var(--chip); stroke: var(--faint); stroke-width: 1.2; }
+.mapbox .pt { stroke: #fff; stroke-width: 1.4; cursor: pointer; transition: opacity .15s; }
+.mapbox .pt:hover { opacity: .8; }
+.mapbox .pt.sel { stroke: var(--ink); stroke-width: 3.2; }
 .scale { display: flex; align-items: center; gap: 10px; margin-top: 10px; font: 500 .82rem/1.2 var(--f-ui); color: var(--muted); flex-wrap: wrap; }
 .scale .ramp { display: flex; height: 10px; flex: 1; min-width: 160px; border-radius: 2px; overflow: hidden; }
 .scale .ramp i { flex: 1; }
@@ -278,7 +279,7 @@ footer strong { font: 700 1.15rem/1.4 var(--f-display); color: var(--ink); displ
 .lightbox .scroll { overflow: auto; background: #fff; border-radius: 3px; }
 .lightbox img { display: block; width: 100%; height: auto; }
 .lightbox.zoom img { width: auto; max-width: none; }
-@media (prefers-reduced-motion: reduce) { .bar span, .chip, .mapbox path { transition: none; } }
+@media (prefers-reduced-motion: reduce) { .bar span, .chip, .mapbox .pt { transition: none; } }
 </style>
 </head>
 <body>
@@ -304,7 +305,7 @@ footer strong { font: 700 1.15rem/1.4 var(--f-display); color: var(--ink); displ
       <a href="#mjesto"><span class="bs">Moje mjesto</span><span class="en">My place</span></a>
       <a href="#ljudi"><span class="bs">Stanovništvo</span><span class="en">Population</span></a>
       <a href="#blizanci"><span class="bs">Klimatski blizanci</span><span class="en">Climate twins</span></a>
-      <a href="#opcine"><span class="bs">Općine</span><span class="en">Municipalities</span></a>
+      <a href="#grad"><span class="bs">Klima grada</span><span class="en">City climate</span></a>
       <a href="#gradovi"><span class="bs">Gradovi</span><span class="en">Cities</span></a>
       <a href="#udio"><span class="bs">Udio tipova</span><span class="en">Type shares</span></a>
       <a href="#pouzdanost"><span class="bs">Pouzdanost</span><span class="en">Confidence</span></a>
@@ -695,8 +696,8 @@ footer strong { font: 700 1.15rem/1.4 var(--f-display); color: var(--ink); displ
   <!-- III. LJUDI I MJESTA -->
   <div class="part"><p class="label"><span class="bs">Treći dio</span><span class="en">Part three</span></p>
     <h2><span class="bs">Ljudi i mjesta</span><span class="en">People and places</span></h2>
-    <p class="bs">Koliko ljudi to osjeti, kako će se osjećati gradovi i šta se mijenja u svakoj općini.</p>
-    <p class="en">How many people feel it, what cities will feel like, and what changes in every municipality.</p></div>
+    <p class="bs">Koliko ljudi to osjeti, kako će se osjećati gradovi i šta se mijenja u svakom većem gradu.</p>
+    <p class="en">How many people feel it, what cities will feel like, and what changes in every larger town.</p></div>
 
   <section id="mjesto">
     <div class="head text">
@@ -761,12 +762,12 @@ footer strong { font: 700 1.15rem/1.4 var(--f-display); color: var(--ink); displ
       <img src="img/klimatski_blizanci_tabela_2071_2099.webp" alt="Tabela klimatskih blizanaca za 20 gradova i sedam scenarija" loading="lazy"></a></figure>
   </section>
 
-  <section id="opcine">
+  <section id="grad">
     <div class="head text">
-      <p class="label"><span class="bs">142 općine i grada</span><span class="en">142 municipalities</span></p>
-      <h2><span class="bs">Klima <em>vaše općine</em></span><span class="en">The climate <em>of your municipality</em></span></h2>
-      <p class="bs">Odaberite pokazatelj, period i scenarij, pa kliknite na općinu ili je izaberite s liste.</p>
-      <p class="en">Choose an indicator, period and scenario, then click a municipality or pick it from the list.</p>
+      <p class="label"><span class="bs">78 većih gradova</span><span class="en">78 larger towns and cities</span></p>
+      <h2><span class="bs">Klima <em>vašeg grada</em></span><span class="en">The climate <em>of your city</em></span></h2>
+      <p class="bs">Odaberite pokazatelj, period i scenarij, pa kliknite na grad ili ga izaberite s liste. Veličina kruga odgovara broju stanovnika.</p>
+      <p class="en">Choose an indicator, period and scenario, then click a city or pick it from the list. Circle size follows population.</p>
     </div>
     <div class="controls" id="exControls">
       <div class="grp" data-ex="v"><span><span class="bs">Prikaz</span><span class="en">Show</span></span>
@@ -786,12 +787,12 @@ footer strong { font: 700 1.15rem/1.4 var(--f-display); color: var(--ink); displ
     </div>
     <div class="explorer">
       <div class="mapbox">
-        <svg id="exMap" role="img" aria-label="Karta općina BiH"></svg>
+        <svg id="exMap" role="img" aria-label="Karta većih gradova BiH"></svg>
         <div class="scale" id="exScale"></div>
       </div>
       <div class="card" id="exCard" aria-live="polite">
         <div class="field">
-          <label for="exSelect"><span class="bs">Općina</span><span class="en">Municipality</span></label>
+          <label for="exSelect"><span class="bs">Grad</span><span class="en">City</span></label>
           <select id="exSelect"></select>
         </div>
         <div id="exInfo"><p class="meta"><span class="bs">Učitavam podatke…</span><span class="en">Loading data…</span></p></div>
@@ -917,8 +918,8 @@ footer strong { font: 700 1.15rem/1.4 var(--f-display); color: var(--ink); displ
           mjesečnim omjerom) iz Beck et al. (2023). Prije 1991. to je procjena. Metoda ne mijenja dnevnu varijabilnost ni broj dana bez kiše.</span>
           <span class="en">Delta-change method: daily 1991–2020 values are shifted by the monthly temperature change (precipitation scaled by the
           monthly ratio) from Beck et al. (2023). Before 1991 this is an estimate. The method keeps day-to-day variability and the number of dry days unchanged.</span></dd></div>
-      <div><dt><span class="bs">Općine</span><span class="en">Municipalities</span></dt>
-        <dd><span class="bs">Vrijednosti su prosjek za cijelu općinu, uključujući planine, pa su gradovi u dolinama nešto topliji.</span><span class="en">Values are averages over the whole municipality, mountains included, so towns in valleys are somewhat warmer.</span></dd></div>
+      <div><dt><span class="bs">Klima grada</span><span class="en">City climate</span></dt>
+        <dd><span class="bs">78 većih gradova: naselja s najmanje 10.000 stanovnika prema GeoNames i službeni gradovi. Klimatski tip je udio u kvadratu 5 × 5 km oko centra grada; temperatura i dani su za ćeliju mreže od oko 10 km.</span><span class="en">78 larger towns and cities: settlements of at least 10,000 people in GeoNames plus official cities. Climate type is the share within a 5 × 5 km square around the centre; temperature and days are for the ~10 km grid cell.</span></dd></div>
       <div><dt><span class="bs">Isparavanje</span><span class="en">Evapotranspiration</span></dt>
         <dd><span class="bs">Potencijalna evapotranspiracija po Thornthwaiteu iz mjesečne temperature, s indeksom topline iz 1991–2020.</span><span class="en">Thornthwaite potential evapotranspiration from monthly temperature, with the heat index from 1991–2020.</span></dd></div>
       <div><dt><span class="bs">Stanovništvo, granice i naselja</span><span class="en">Population, boundaries and settlements</span></dt>
@@ -945,7 +946,7 @@ footer strong { font: 700 1.15rem/1.4 var(--f-display); color: var(--ink); displ
       <a href="data/izlozenost_stanovnistva.csv"><span class="bs">Izloženost stanovništva</span><span class="en">Population exposure</span><span>CSV</span></a>
       <a href="data/klimatski_blizanci.csv"><span class="bs">Klimatski blizanci</span><span class="en">Climate twins</span><span>CSV</span></a>
       <a href="data/klima_po_gradovima.csv"><span class="bs">Klimatski tip po gradovima</span><span class="en">Climate type by city</span><span>CSV</span></a>
-      <a href="data/opcine_bih.csv"><span class="bs">Sve vrijednosti po općinama</span><span class="en">All values by municipality</span><span>CSV</span></a>
+      <a href="data/gradovi_bih.csv"><span class="bs">Sve vrijednosti po gradovima</span><span class="en">All values by city</span><span>CSV</span></a>
     </div>
   </section>
 
@@ -1142,8 +1143,8 @@ footer strong { font: 700 1.15rem/1.4 var(--f-display); color: var(--ink); displ
     if (!EX.data) return;
     each(sg.querySelectorAll("button"), function (b) { b.disabled = EX.p < "2041"; });
     var k = key(), cfg = VARS[EX.v];
-    each(svg.querySelectorAll("path"), function (pth, i) {
-      var m = EX.data.m[i], d = m.d[k];
+    each(svg.querySelectorAll(".pt"), function (pth) {
+      var i = +pth.dataset.i, m = EX.data.m[i], d = m.d[k];
       pth.setAttribute("fill", EX.v === "kg" ? color(dominant(d[5]) || "ET") : colorFor(d[cfg.i], cfg));
       pth.classList.toggle("sel", i === EX.sel);
       pth.querySelector("title").textContent = m.n;
@@ -1166,8 +1167,7 @@ footer strong { font: 700 1.15rem/1.4 var(--f-display); color: var(--ink); displ
     var m = EX.data.m[EX.sel], d = m.d[k], r = m.d["1991_2020|hist"], L = LBL[lang()];
     var per = EX.p.replace("_", "–") + (EX.p >= "2041" ? " · " + F[EX.s].l : "");
     var dom = dominant(d[5]);
-    info.innerHTML = "<h3>" + m.n + '</h3><p class="meta">' + int(m.pop) + " " + L.pop +
-      " · " + int(m.km2) + " " + L.km2 + " · " + per + "</p>" +
+    info.innerHTML = "<h3>" + m.n + '</h3><p class="meta">' + (m.pop ? "≈ " + int(m.pop) + " " + L.pop + " · " : "") + per + "</p>" +
       '<div class="stats">' +
       stat(lang() === "en" ? "Mean temperature" : "Srednja temperatura", d[0], r[0], 1, " °C") +
       stat(lang() === "en" ? "Hot days" : "Vrući dani", d[1], r[1], 0, "") +
@@ -1270,24 +1270,31 @@ footer strong { font: 700 1.15rem/1.4 var(--f-display); color: var(--ink); displ
   }
   rank.addEventListener("click", function (e) { var b = e.target.closest("button"); if (b) select(+b.dataset.i); });
   function select(i) { EX.sel = i; sel.value = String(i); render(); }
-  fetch("data/opcine.json").then(function (r) { return r.json(); }).then(function (data) {
+  fetch("data/gradovi.json").then(function (r) { return r.json(); }).then(function (data) {
     EX.data = data;
-    svg.setAttribute("viewBox", "0 0 " + data.w + " " + data.h);
+    svg.setAttribute("viewBox", "-20 -20 " + (data.w + 40) + " " + (data.h + 40));
     var ns = "http://www.w3.org/2000/svg";
+    var ol = document.createElementNS(ns, "path"); ol.setAttribute("d", data.outline); ol.setAttribute("class", "outline");
+    svg.appendChild(ol);
+    var order = data.m.map(function (m, i) { return i; }).sort(function (a, b) { return data.m[b].pop - data.m[a].pop; });
+    order.forEach(function (i) {                       // veći gradovi ispod, manji iznad
+      var m = data.m[i], c = document.createElementNS(ns, "circle");
+      c.setAttribute("cx", m.cx); c.setAttribute("cy", m.cy);
+      c.setAttribute("r", Math.max(9, Math.min(34, 3.2 * Math.sqrt((m.pop || 8000) / 1000))));
+      c.setAttribute("class", "pt"); c.setAttribute("tabindex", "0"); c.dataset.i = String(i);
+      var t = document.createElementNS(ns, "title"); c.appendChild(t);
+      c.addEventListener("click", function () { select(i); });
+      c.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); select(i); } });
+      svg.appendChild(c);
+    });
     data.m.forEach(function (m, i) {
-      var p = document.createElementNS(ns, "path");
-      p.setAttribute("d", m.path); p.setAttribute("tabindex", "0");
-      var t = document.createElementNS(ns, "title"); p.appendChild(t);
-      p.addEventListener("click", function () { select(i); });
-      p.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); select(i); } });
-      svg.appendChild(p);
       var o = document.createElement("option"); o.value = String(i); o.textContent = m.n; sel.appendChild(o);
     });
     sel.addEventListener("change", function () { select(+sel.value); });
     var start = data.m.findIndex(function (m) { return m.n === "Banja Luka"; });
     select(start < 0 ? 0 : start);
   }).catch(function () {
-    info.innerHTML = '<p class="meta">' + (lang() === "en" ? "Municipality data could not be loaded." : "Podaci o općinama nisu se mogli učitati.") + "</p>";
+    info.innerHTML = '<p class="meta">' + (lang() === "en" ? "City data could not be loaded." : "Podaci o gradovima nisu se mogli učitati.") + "</p>";
   });
 
   /* moje mjesto */
