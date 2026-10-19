@@ -1,0 +1,19 @@
+period,scenarij,vegetacijski period (dana),posljednji proljetni mraz,prvi jesenji mraz,stepen-dani rasta (°C·dan),Huglinov indeks
+1901–1930,procjena,247,20. apr,20. okt,1055,1539
+1931–1960,procjena,247,18. apr,22. okt,1126,1617
+1961–1990,procjena,252,18. apr,23. okt,1080,1563
+1991–2020,opažanja (E-OBS),268,10. apr,28. okt,1313,1805
+2041–2070,SSP119,280,3. apr,4. nov,1526,2014
+2041–2070,SSP126,286,2. apr,6. nov,1600,2086
+2041–2070,SSP434,287,31. mar,7. nov,1649,2132
+2041–2070,SSP245,291,30. mar,8. nov,1674,2159
+2041–2070,SSP460,287,31. mar,7. nov,1669,2157
+2041–2070,SSP370,295,29. mar,9. nov,1739,2221
+2041–2070,SSP585,299,27. mar,11. nov,1824,2302
+2071–2099,SSP119,279,3. apr,2. nov,1507,2000
+2071–2099,SSP126,287,1. apr,6. nov,1611,2098
+2071–2099,SSP434,291,29. mar,7. nov,1690,2175
+2071–2099,SSP245,299,27. mar,12. nov,1814,2290
+2071–2099,SSP460,300,25. mar,12. nov,1871,2348
+2071–2099,SSP370,312,20. mar,18. nov,2072,2537
+2071–2099,SSP585,321,17. mar,22. nov,2278,2729
